@@ -1,0 +1,1756 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Башавтостекло — UI мокап (Light Metal)</title>
+  <meta name="description" content="UI прототип лендинга-визитки: замена/ремонт автостёкол, тонировка, бронирование, оптика, кондиционеры." />
+  <style>
+    :root {
+      --bg: radial-gradient(1200px 800px at 25% 15%, rgba(0,180,255,.12), transparent 60%), radial-gradient(900px 700px at 85% 25%, rgba(255,180,0,.10), transparent 55%), linear-gradient(180deg, #F6F7F9 0%, #F1F2F5 55%, #ECEEF2 100%);
+      --surface: rgba(255,255,255,.75);
+      --surface2: rgba(255,255,255,.04);
+      --stroke: rgba(15,20,30,.12);
+      --text: rgba(10,14,20,.92);
+      --sub: rgba(10,14,20,.70);
+      --accent: #007BFF;
+      --accent2: #FFB020;
+      --shadow: 0 18px 60px rgba(10,14,20,.12);
+      --btnText: #FFFFFF;
+      --radius: 22px;
+      --radius2: 14px;
+      --max: 1200px;
+      --pad: 28px;
+      --blur: 18px;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: var(--sans);
+      color: var(--text);
+      background: var(--bg);
+      overflow-x: hidden;
+    }
+    body.no-scroll { overflow: hidden; }
+
+    /* subtle noise */
+    .noise {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.06;
+      mix-blend-mode: overlay;
+      background-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E");
+      background-size: 260px 260px;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 var(--pad); }
+    .grid { display: grid; gap: 18px; }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: var(--surface2);
+      border: 1px solid var(--stroke);
+      backdrop-filter: blur(var(--blur));
+      -webkit-backdrop-filter: blur(var(--blur));
+      font-size: 13px;
+      color: var(--sub);
+      white-space: nowrap;
+    }
+    .dot {
+      width: 6px; height: 6px; border-radius: 99px;
+      background: var(--accent);
+      box-shadow: 0 0 0 4px rgba(0,0,0,.0);
+    }
+
+    /* header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      border-bottom: 1px solid rgba(255,255,255,.0);
+      transition: border-color .2s ease, background .2s ease, transform .2s ease;
+      background: rgba(0,0,0,.0);
+      backdrop-filter: blur(0px);
+      -webkit-backdrop-filter: blur(0px);
+    }
+    header.is-scrolled {
+      background: rgba(0,0,0,.22);
+      backdrop-filter: blur(var(--blur));
+      -webkit-backdrop-filter: blur(var(--blur));
+      border-bottom: 1px solid var(--stroke);
+    }
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 0;
+      gap: 14px;
+    }
+    .brand {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      font-weight: 720;
+      font-size: 14px;
+    }
+    .brand small {
+      font-family: var(--mono);
+      letter-spacing: .02em;
+      font-weight: 600;
+      color: var(--sub);
+      text-transform: none;
+    }
+    nav {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      justify-content: center;
+    }
+    nav a {
+      font-size: 13px;
+      color: var(--sub);
+      padding: 8px 10px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      transition: transform .15s ease, background .15s ease, border-color .15s ease, color .15s ease;
+    }
+    nav a:hover {
+      background: var(--surface2);
+      border-color: var(--stroke);
+      color: var(--text);
+    }
+    nav a.is-active {
+      background: rgba(0,0,0,.0);
+      border-color: rgba(0,0,0,.0);
+      color: var(--text);
+    }
+    .hdr-cta {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .tel {
+      font-family: var(--mono);
+      font-size: 13px;
+      color: var(--sub);
+      padding: 8px 10px;
+      border-radius: 12px;
+      border: 1px solid transparent;
+      transition: border-color .15s ease, background .15s ease, color .15s ease;
+    }
+    .tel:hover {
+      background: var(--surface2);
+      border-color: var(--stroke);
+      color: var(--text);
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 12px 14px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      cursor: pointer;
+      user-select: none;
+      transition: transform .15s ease, border-color .15s ease, background .15s ease, filter .15s ease;
+      font-weight: 650;
+      font-size: 13px;
+      letter-spacing: .01em;
+      white-space: nowrap;
+    }
+    .btn:active { transform: translateY(1px); }
+    .btn.primary {
+      background: var(--accent);
+      color: var(--btnText);
+      border-color: rgba(255,255,255,.0);
+      filter: saturate(1.05);
+      box-shadow: 0 10px 28px rgba(0,0,0,.22);
+    }
+    .btn.primary:hover { filter: saturate(1.15) brightness(1.02); }
+    .btn.outline {
+      background: rgba(0,0,0,.0);
+      border-color: var(--stroke);
+      color: var(--text);
+      backdrop-filter: blur(var(--blur));
+      -webkit-backdrop-filter: blur(var(--blur));
+    }
+    .btn.outline:hover {
+      background: var(--surface2);
+    }
+    .btn.ghost {
+      background: rgba(0,0,0,.0);
+      border-color: transparent;
+      color: var(--sub);
+    }
+    .btn.ghost:hover { color: var(--text); background: rgba(0,0,0,.0); }
+
+    .menu-btn {
+      display: none;
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      border: 1px solid var(--stroke);
+      background: var(--surface2);
+      color: var(--text);
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+      backdrop-filter: blur(var(--blur));
+      -webkit-backdrop-filter: blur(var(--blur));
+    }
+
+    /* hero */
+    .hero {
+      padding: 62px 0 26px;
+      position: relative;
+    }
+    .hero .headline {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 22px;
+      align-items: end;
+    }
+    .kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--sub);
+      font-size: 13px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    h1 {
+      margin: 12px 0 10px;
+      font-size: clamp(34px, 4.6vw, 64px);
+      line-height: 1.02;
+      letter-spacing: -.02em;
+    }
+    .lead {
+      color: var(--sub);
+      font-size: 16px;
+      line-height: 1.55;
+      margin: 0 0 18px;
+      max-width: 62ch;
+    }
+    .hero-ctas {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .hero-right {
+      border-radius: var(--radius);
+      background: var(--surface);
+      border: 1px solid var(--stroke);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      position: relative;
+      min-height: 220px;
+      padding: 18px;
+      backdrop-filter: blur(var(--blur));
+      -webkit-backdrop-filter: blur(var(--blur));
+    }
+    .glass-art {
+      position: absolute;
+      inset: -60px -80px -80px -80px;
+      background:
+        radial-gradient(500px 320px at 40% 35%, rgba(255,255,255,.18), transparent 60%),
+        radial-gradient(700px 500px at 70% 55%, rgba(0,0,0,.0), transparent 65%),
+        conic-gradient(from 240deg at 35% 40%, rgba(0,0,0,.0), rgba(255,255,255,.12), rgba(0,0,0,.0), rgba(255,255,255,.08), rgba(0,0,0,.0));
+      filter: blur(0px);
+      opacity: .95;
+      transform: rotate(-6deg);
+    }
+    .hero-card {
+      position: relative;
+      display: grid;
+      gap: 12px;
+    }
+    .hero-card .mini-title {
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--sub);
+    }
+    .facts {
+      display: grid;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .fact {
+      display: grid;
+      grid-template-columns: 36px 1fr;
+      gap: 10px;
+      align-items: start;
+      padding: 12px 12px;
+      border-radius: var(--radius2);
+      background: rgba(0,0,0,.0);
+      border: 1px solid rgba(255,255,255,.0);
+      transition: background .15s ease, border-color .15s ease;
+    }
+    .fact:hover {
+      background: var(--surface2);
+      border-color: var(--stroke);
+    }
+    .fact .ic {
+      width: 36px; height: 36px;
+      border-radius: 14px;
+      border: 1px solid var(--stroke);
+      background: rgba(0,0,0,.0);
+      display: grid;
+      place-items: center;
+      font-family: var(--mono);
+      color: var(--text);
+    }
+    .fact b { font-size: 14px; }
+    .fact p { margin: 4px 0 0; color: var(--sub); font-size: 13px; line-height: 1.4; }
+
+    /* sections */
+    section {
+      padding: 44px 0;
+      scroll-margin-top: 86px;
+    }
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 18px;
+    }
+    .section-head h2 {
+      margin: 0;
+      font-size: clamp(22px, 2.6vw, 34px);
+      line-height: 1.1;
+      letter-spacing: -.01em;
+    }
+    .section-head .hint {
+      color: var(--sub);
+      font-size: 13px;
+      max-width: 50ch;
+      line-height: 1.4;
+      text-align: right;
+    }
+    .divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--stroke), transparent);
+      margin: 10px 0 0;
+    }
+
+    /* services */
+    .services {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+    .card {
+      border-radius: var(--radius);
+      background: var(--surface);
+      border: 1px solid var(--stroke);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(var(--blur));
+      -webkit-backdrop-filter: blur(var(--blur));
+    }
+    .service-card {
+      padding: 16px;
+      cursor: pointer;
+      user-select: none;
+      transition: transform .15s ease, border-color .15s ease, background .15s ease;
+      outline: none;
+    }
+    .service-card:hover {
+      transform: translateY(-2px);
+      background: color-mix(in srgb, var(--surface) 92%, rgba(255,255,255,.05));
+      border-color: color-mix(in srgb, var(--stroke) 70%, var(--accent) 30%);
+    }
+    .service-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+    .service-top .name {
+      font-weight: 740;
+      letter-spacing: -.01em;
+      font-size: 15px;
+    }
+    .badge {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--sub);
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--stroke);
+      background: rgba(0,0,0,.0);
+    }
+    .service-card ul {
+      margin: 10px 0 0;
+      padding: 0 0 0 18px;
+      color: var(--sub);
+      font-size: 13px;
+      line-height: 1.55;
+    }
+    .service-foot {
+      display: flex;
+      gap: 10px;
+      margin-top: 14px;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .link {
+      font-family: var(--mono);
+      color: var(--sub);
+      font-size: 12px;
+      letter-spacing: .02em;
+    }
+    .link span {
+      color: var(--accent);
+    }
+
+    /* why */
+    .why {
+      grid-template-columns: 1.1fr .9fr;
+      gap: 14px;
+      align-items: stretch;
+    }
+    .why .big {
+      padding: 18px;
+    }
+    .why .big h3 {
+      margin: 0 0 8px;
+      font-size: 18px;
+      letter-spacing: -.01em;
+    }
+    .why .big p {
+      margin: 0;
+      color: var(--sub);
+      line-height: 1.6;
+      font-size: 14px;
+    }
+    .why .list {
+      padding: 18px;
+      display: grid;
+      gap: 10px;
+    }
+    .why-item {
+      display: grid;
+      grid-template-columns: 18px 1fr;
+      gap: 10px;
+      align-items: start;
+      padding: 10px 12px;
+      border-radius: var(--radius2);
+      border: 1px solid rgba(255,255,255,.0);
+      transition: border-color .15s ease, background .15s ease;
+    }
+    .why-item:hover {
+      border-color: var(--stroke);
+      background: var(--surface2);
+    }
+    .check {
+      width: 18px; height: 18px; border-radius: 99px;
+      background: color-mix(in srgb, var(--accent) 14%, transparent);
+      border: 1px solid color-mix(in srgb, var(--accent) 50%, var(--stroke) 50%);
+      display: grid;
+      place-items: center;
+      color: var(--accent);
+      font-weight: 900;
+      line-height: 1;
+      font-size: 12px;
+      margin-top: 2px;
+    }
+    .why-item b { font-size: 13px; }
+    .why-item p { margin: 4px 0 0; color: var(--sub); font-size: 12.5px; line-height: 1.45; }
+
+    /* process */
+    .process {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+    .step {
+      padding: 16px;
+      min-height: 138px;
+      position: relative;
+      overflow: hidden;
+    }
+    .step .n {
+      font-family: var(--mono);
+      color: color-mix(in srgb, var(--accent) 55%, var(--sub) 45%);
+      letter-spacing: .22em;
+      font-size: 12px;
+    }
+    .step b {
+      display: block;
+      margin-top: 8px;
+      font-size: 14px;
+      letter-spacing: -.01em;
+    }
+    .step p {
+      margin: 8px 0 0;
+      color: var(--sub);
+      font-size: 13px;
+      line-height: 1.55;
+    }
+    .step:before {
+      content: "";
+      position: absolute;
+      inset: -80px -100px auto -100px;
+      height: 140px;
+      background: radial-gradient(160px 120px at 30% 60%, color-mix(in srgb, var(--accent) 18%, transparent), transparent 65%);
+      transform: rotate(-6deg);
+      pointer-events: none;
+    }
+
+    /* gallery */
+    .gallery {
+      grid-template-columns: 1.05fr .95fr;
+      gap: 14px;
+      align-items: stretch;
+    }
+    .ba {
+      padding: 18px;
+      position: relative;
+      overflow: hidden;
+    }
+    .ba .frame {
+      position: relative;
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--stroke);
+      height: 320px;
+      background: #0b1018;
+    }
+    .ba .img {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      filter: saturate(1.05);
+    }
+    .ba .before {
+      background-image:
+        radial-gradient(900px 420px at 20% 20%, rgba(255,255,255,.12), transparent 60%),
+        linear-gradient(120deg, rgba(0,0,0,.0), rgba(0,0,0,.25)),
+        linear-gradient(180deg, #1b2430, #0f141b);
+    }
+    .ba .after {
+      background-image:
+        radial-gradient(900px 420px at 20% 20%, rgba(255,255,255,.18), transparent 60%),
+        linear-gradient(120deg, rgba(0,0,0,.0), rgba(0,0,0,.12)),
+        linear-gradient(180deg, #24344a, #101721);
+      clip-path: inset(0 0 0 55%);
+    }
+    .ba .labels {
+      position: absolute;
+      top: 16px; left: 16px; right: 16px;
+      display: flex;
+      justify-content: space-between;
+      pointer-events: none;
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.85);
+      mix-blend-mode: screen;
+    }
+    .ba .range-wrap {
+      margin-top: 14px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 12px;
+    }
+    .ba input[type="range"] {
+      width: 100%;
+      accent-color: var(--accent);
+    }
+    .ba .ba-pct {
+      font-family: var(--mono);
+      color: var(--sub);
+      font-size: 12px;
+      padding: 8px 10px;
+      border-radius: 12px;
+      border: 1px solid var(--stroke);
+      background: var(--surface2);
+    }
+
+    .cases {
+      padding: 18px;
+      display: grid;
+      gap: 10px;
+      align-content: start;
+    }
+    .case {
+      display: grid;
+      grid-template-columns: 78px 1fr;
+      gap: 12px;
+      padding: 12px;
+      border-radius: var(--radius2);
+      border: 1px solid rgba(255,255,255,.0);
+      transition: border-color .15s ease, background .15s ease, transform .15s ease;
+    }
+    .case:hover {
+      border-color: var(--stroke);
+      background: var(--surface2);
+      transform: translateY(-1px);
+    }
+    .thumb {
+      height: 58px;
+      border-radius: 14px;
+      border: 1px solid var(--stroke);
+      background:
+        radial-gradient(70px 50px at 30% 30%, rgba(255,255,255,.14), transparent 70%),
+        linear-gradient(135deg, color-mix(in srgb, var(--accent2) 20%, #111), color-mix(in srgb, var(--accent) 20%, #111));
+    }
+    .case b { font-size: 13px; }
+    .case p { margin: 4px 0 0; color: var(--sub); font-size: 12.5px; line-height: 1.45; }
+
+    /* reviews */
+    .reviews {
+      padding: 0;
+    }
+    .reviews-wrap {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius);
+    }
+    .reviews-track {
+      display: flex;
+      width: 300%;
+      transition: transform .35s ease;
+    }
+    .review-slide {
+      width: 100%;
+      padding: 18px;
+    }
+    .review-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+    .review {
+      padding: 16px;
+      min-height: 170px;
+      display: grid;
+      grid-template-rows: 1fr auto;
+      gap: 12px;
+    }
+    .review p {
+      margin: 0;
+      color: var(--sub);
+      line-height: 1.55;
+      font-size: 13px;
+    }
+    .review .who {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      color: var(--text);
+      font-size: 13px;
+      font-weight: 650;
+    }
+    .review .who small {
+      color: var(--sub);
+      font-weight: 600;
+    }
+    .rev-controls {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-top: 12px;
+    }
+    .rev-btns {
+      display: flex;
+      gap: 10px;
+    }
+    .icon-btn {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      border: 1px solid var(--stroke);
+      background: var(--surface2);
+      color: var(--text);
+      cursor: pointer;
+      backdrop-filter: blur(var(--blur));
+      -webkit-backdrop-filter: blur(var(--blur));
+    }
+    .icon-btn:hover { background: color-mix(in srgb, var(--surface2) 80%, rgba(255,255,255,.06)); }
+    .dots {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+    .dots button {
+      width: 10px; height: 10px;
+      border-radius: 99px;
+      border: 1px solid var(--stroke);
+      background: rgba(0,0,0,.0);
+      cursor: pointer;
+    }
+    .dots button.on {
+      background: var(--accent);
+      border-color: rgba(0,0,0,.0);
+    }
+
+    /* contact */
+    .contact {
+      grid-template-columns: .95fr 1.05fr;
+      gap: 14px;
+      align-items: stretch;
+    }
+    .contact .info {
+      padding: 18px;
+      display: grid;
+      gap: 12px;
+      align-content: start;
+    }
+    .kv {
+      display: grid;
+      gap: 6px;
+      padding: 12px;
+      border-radius: var(--radius2);
+      border: 1px solid var(--stroke);
+      background: var(--surface2);
+    }
+    .kv b { font-size: 13px; }
+    .kv span { color: var(--sub); font-size: 13px; line-height: 1.45; }
+    .map {
+      padding: 18px;
+      position: relative;
+      overflow: hidden;
+    }
+    .map .mock {
+      height: 360px;
+      border-radius: var(--radius);
+      border: 1px solid var(--stroke);
+      background:
+        radial-gradient(220px 160px at 30% 40%, rgba(255,255,255,.10), transparent 70%),
+        radial-gradient(260px 180px at 70% 60%, color-mix(in srgb, var(--accent) 18%, transparent), transparent 72%),
+        linear-gradient(135deg, rgba(255,255,255,.06), rgba(0,0,0,.0));
+      display: grid;
+      place-items: center;
+      color: var(--sub);
+      font-family: var(--mono);
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      font-size: 12px;
+    }
+    .form {
+      display: grid;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .field {
+      display: grid;
+      gap: 6px;
+    }
+    label {
+      font-size: 12px;
+      color: var(--sub);
+      letter-spacing: .02em;
+    }
+    input, select, textarea {
+      padding: 12px 12px;
+      border-radius: 14px;
+      border: 1px solid var(--stroke);
+      background: rgba(0,0,0,.0);
+      color: var(--text);
+      outline: none;
+      font-family: var(--sans);
+    }
+    input:focus, textarea:focus {
+      border-color: color-mix(in srgb, var(--accent) 55%, var(--stroke) 45%);
+      box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 18%, transparent);
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    .fine {
+      color: var(--sub);
+      font-size: 12px;
+      line-height: 1.4;
+    }
+
+    footer {
+      padding: 26px 0 86px;
+      color: var(--sub);
+      font-size: 12px;
+    }
+    footer .foot {
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+      flex-wrap: wrap;
+      border-top: 1px solid var(--stroke);
+      padding-top: 16px;
+    }
+
+    /* bottom bar (mobile) */
+    .bottombar {
+      position: fixed;
+      left: 12px;
+      right: 12px;
+      bottom: 12px;
+      z-index: 60;
+      display: none;
+      gap: 10px;
+      padding: 10px;
+      border-radius: 22px;
+      border: 1px solid var(--stroke);
+      background: rgba(0,0,0,.34);
+      backdrop-filter: blur(var(--blur));
+      -webkit-backdrop-filter: blur(var(--blur));
+      box-shadow: 0 18px 50px rgba(0,0,0,.35);
+    }
+    .bottombar a {
+      flex: 1;
+      padding: 12px 10px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,.0);
+      background: rgba(255,255,255,.06);
+      text-align: center;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .bottombar a.primary {
+      background: var(--accent);
+      color: var(--btnText);
+    }
+
+    /* modal */
+    .backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.55);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .2s ease;
+      z-index: 80;
+    }
+    .backdrop.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .modal {
+      position: fixed;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -46%);
+      width: min(720px, calc(100vw - 28px));
+      max-height: calc(100vh - 40px);
+      overflow: auto;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .2s ease, transform .2s ease;
+      z-index: 90;
+      border-radius: var(--radius);
+      background: var(--surface);
+      border: 1px solid var(--stroke);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(var(--blur));
+      -webkit-backdrop-filter: blur(var(--blur));
+    }
+    .modal.open {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translate(-50%, -50%);
+    }
+    .modal .head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 16px 16px 10px;
+      border-bottom: 1px solid var(--stroke);
+    }
+    .modal .head b {
+      font-size: 15px;
+      letter-spacing: -.01em;
+    }
+    .modal .body {
+      padding: 14px 16px 16px;
+      color: var(--sub);
+      font-size: 13px;
+      line-height: 1.55;
+    }
+    .x {
+      width: 38px; height: 38px;
+      border-radius: 14px;
+      border: 1px solid var(--stroke);
+      background: var(--surface2);
+      cursor: pointer;
+      color: var(--text);
+    }
+    .modal-bullets {
+      margin: 0 0 10px;
+      padding: 0 0 0 18px;
+    }
+    .modal-note {
+      padding: 12px;
+      border-radius: var(--radius2);
+      border: 1px solid var(--stroke);
+      background: var(--surface2);
+      margin: 10px 0 14px;
+    }
+    .modal-cta {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    /* drawer */
+    .drawer {
+      position: fixed;
+      top: 0; right: 0;
+      height: 100%;
+      width: min(360px, calc(100vw - 60px));
+      transform: translateX(100%);
+      transition: transform .2s ease;
+      z-index: 85;
+      background: var(--surface);
+      border-left: 1px solid var(--stroke);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(var(--blur));
+      -webkit-backdrop-filter: blur(var(--blur));
+      padding: 14px;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      gap: 10px;
+    }
+    .drawer.open { transform: translateX(0); }
+    .drawer .top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+    .drawer nav {
+      display: grid;
+      gap: 8px;
+      align-items: start;
+      justify-content: start;
+      padding: 10px 0;
+    }
+    .drawer nav a {
+      justify-self: start;
+      padding: 10px 12px;
+      width: 100%;
+      border-radius: 14px;
+    }
+
+    /* toast */
+    .toast {
+      position: fixed;
+      left: 50%;
+      bottom: 92px;
+      transform: translateX(-50%) translateY(18px);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .2s ease, transform .2s ease;
+      z-index: 120;
+      padding: 10px 12px;
+      border-radius: 14px;
+      border: 1px solid var(--stroke);
+      background: rgba(0,0,0,.45);
+      backdrop-filter: blur(var(--blur));
+      -webkit-backdrop-filter: blur(var(--blur));
+      color: var(--text);
+      font-size: 13px;
+      max-width: min(560px, calc(100vw - 24px));
+      text-align: center;
+    }
+    .toast.on {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    /* responsive */
+    @media (max-width: 980px) {
+      .hero .headline { grid-template-columns: 1fr; }
+      nav { display: none; }
+      .menu-btn { display: inline-flex; }
+      .services { grid-template-columns: repeat(2, 1fr); }
+      .why { grid-template-columns: 1fr; }
+      .process { grid-template-columns: repeat(2, 1fr); }
+      .gallery { grid-template-columns: 1fr; }
+      .review-grid { grid-template-columns: 1fr; }
+      .contact { grid-template-columns: 1fr; }
+      .bottombar { display: grid; grid-template-columns: repeat(4, 1fr); }
+      footer { padding-bottom: 120px; }
+    }
+    @media (max-width: 520px) {
+      :root { --pad: 18px; }
+      .hdr-cta .tel { display: none; }
+      .form-row { grid-template-columns: 1fr; }
+      .bottombar { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+
+  <header id="header">
+    <div class="wrap">
+      <div class="topbar">
+        <div class="brand">
+          БАШАВТОСТЕКЛО <small>Уфа · Черниковка</small>
+        </div>
+
+        <nav id="topnav" aria-label="Навигация">
+          <a href="#services">Услуги</a>
+          <a href="#why">Почему мы</a>
+          <a href="#work">Примеры</a>
+          <a href="#reviews">Отзывы</a>
+          <a href="#contact">Контакты</a>
+        </nav>
+
+        <div class="hdr-cta">
+          <a class="tel" href="tel:+73472661784">+7 (347) 266‑17‑84</a>
+          <a class="btn primary" href="#contact">Онлайн‑запись</a>
+          <button id="menuBtn" class="menu-btn" aria-label="Открыть меню" aria-expanded="false">≡</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="top">
+      <div class="wrap">
+        <div class="headline">
+          <div>
+            <div class="kicker"><span class="dot"></span> автостёкла · тонировка · пленки · кондиционеры</div>
+            <h1>Автостёкла и всё, что с ними связано.</h1>
+            <p class="lead">
+              Замена, ремонт сколов и трещин, тонировка стекол и оптики, бронирование пленкой.
+              Быстро, аккуратно, с гарантией.
+            </p>
+            <div class="hero-ctas">
+              <a class="btn primary" href="tel:+73472661784">Позвонить</a>
+              <a class="btn outline" href="https://wa.me/79272361784" target="_blank" rel="noopener">WhatsApp</a>
+              <a class="btn ghost" href="#services">Смотреть услуги →</a>
+            </div>
+
+            <div style="margin-top:16px; display:flex; gap:10px; flex-wrap:wrap;">
+              <span class="pill">ул. Дмитрия Донского, 50а</span>
+              <span class="pill">Пн‑Вс: 10:00–20:00</span>
+              <span class="pill">Гарантия на работы</span>
+            </div>
+          </div>
+
+          <div class="hero-right card">
+            <div class="glass-art" aria-hidden="true"></div>
+            <div class="hero-card">
+              <div class="mini-title">быстрые факты</div>
+              <div class="facts">
+                <div class="fact">
+                  <div class="ic">01</div>
+                  <div>
+                    <b>Замена стекол</b>
+                    <p>От 1 часа · гарантия 1 год · стекла напрямую с заводов.</p>
+                  </div>
+                </div>
+                <div class="fact">
+                  <div class="ic">02</div>
+                  <div>
+                    <b>Ремонт</b>
+                    <p>От 10 минут · современный прозрачный полимер.</p>
+                  </div>
+                </div>
+                <div class="fact">
+                  <div class="ic">03</div>
+                  <div>
+                    <b>Тонировка</b>
+                    <p>Пленка США/Корея · гарантия 5–10 лет.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div style="margin-top:10px; display:flex; gap:10px; flex-wrap:wrap;">
+                <span class="pill">чай/кофе</span>
+                <span class="pill">Wi‑Fi</span>
+                <span class="pill">ТВ</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <h2>Услуги</h2>
+            <div class="divider"></div>
+          </div>
+          <div class="hint">Клик по карточке открывает детали (демо‑модалка).</div>
+        </div>
+
+        <div class="grid services">
+          <div class="card service-card" tabindex="0" role="button" aria-label="Замена стекол" data-service="replace">
+            <div class="service-top">
+              <div class="name">Замена стекол</div>
+              <div class="badge">от 1ч</div>
+            </div>
+            <ul>
+              <li>Гарантия на работы — 1 год</li>
+              <li>Стекла напрямую с заводов</li>
+            </ul>
+            <div class="service-foot">
+              <div class="link"><span>Подробнее</span> · Enter</div>
+              <div class="pill">лобовое · боковое · заднее</div>
+            </div>
+          </div>
+
+          <div class="card service-card" tabindex="0" role="button" aria-label="Ремонт стекол" data-service="repair">
+            <div class="service-top">
+              <div class="name">Ремонт стекол</div>
+              <div class="badge">от 10мин</div>
+            </div>
+            <ul>
+              <li>Сколы и трещины</li>
+              <li>100% прозрачный полимер</li>
+            </ul>
+            <div class="service-foot">
+              <div class="link"><span>Подробнее</span> · Enter</div>
+              <div class="pill">сохранить стекло</div>
+            </div>
+          </div>
+
+          <div class="card service-card" tabindex="0" role="button" aria-label="Тонирование стекол" data-service="tint">
+            <div class="service-top">
+              <div class="name">Тонирование стекол</div>
+              <div class="badge">от 1ч</div>
+            </div>
+            <ul>
+              <li>Пленка США / Корея</li>
+              <li>Гарантия 5–10 лет</li>
+            </ul>
+            <div class="service-foot">
+              <div class="link"><span>Подробнее</span> · Enter</div>
+              <div class="pill">SunControl · Llumar</div>
+            </div>
+          </div>
+
+          <div class="card service-card" tabindex="0" role="button" aria-label="Тонирование оптики" data-service="optics">
+            <div class="service-top">
+              <div class="name">Тонирование оптики</div>
+              <div class="badge">защита</div>
+            </div>
+            <ul>
+              <li>От камешков и гравия</li>
+              <li>Глянцевый вид оптики</li>
+            </ul>
+            <div class="service-foot">
+              <div class="link"><span>Подробнее</span> · Enter</div>
+              <div class="pill">фары · ПТФ</div>
+            </div>
+          </div>
+
+          <div class="card service-card" tabindex="0" role="button" aria-label="Бронирование фар и кузова" data-service="armor">
+            <div class="service-top">
+              <div class="name">Бронирование</div>
+              <div class="badge">пленка</div>
+            </div>
+            <ul>
+              <li>Защита от сколов и реагентов</li>
+              <li>Полиуретан (антигравий)</li>
+            </ul>
+            <div class="service-foot">
+              <div class="link"><span>Подробнее</span> · Enter</div>
+              <div class="pill">капот · бампер · стойки</div>
+            </div>
+          </div>
+
+          <div class="card service-card" tabindex="0" role="button" aria-label="Заправка кондиционеров" data-service="ac">
+            <div class="service-top">
+              <div class="name">Кондиционер</div>
+              <div class="badge">от 15мин</div>
+            </div>
+            <ul>
+              <li>Соблюдение регламентов</li>
+              <li>Бесплатная диагностика</li>
+            </ul>
+            <div class="service-foot">
+              <div class="link"><span>Подробнее</span> · Enter</div>
+              <div class="pill">проверка утечек</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="why">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <h2>Почему мы</h2>
+            <div class="divider"></div>
+          </div>
+          <div class="hint">Сдержанно, но “дорого”: факты вместо обещаний.</div>
+        </div>
+
+        <div class="grid why">
+          <div class="card big">
+            <h3>Фокус на качестве и предсказуемом результате</h3>
+            <p>
+              Комплексные работы выполняют несколько специалистов: каждый отвечает за свою часть.
+              Подбор материалов — под задачу и бюджет (без навязывания). На месте есть комфортные мелочи,
+              чтобы вы не “теряли” время.
+            </p>
+
+            <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap;">
+              <span class="pill">чай и кофе</span>
+              <span class="pill">Wi‑Fi</span>
+              <span class="pill">телевидение</span>
+              <span class="pill">подъезд со стороны ул. Свободы</span>
+            </div>
+          </div>
+
+          <div class="card list">
+            <div class="why-item">
+              <div class="check">✓</div>
+              <div><b>Гарантия</b><p>На все виды работ — фиксируем условия заранее.</p></div>
+            </div>
+            <div class="why-item">
+              <div class="check">✓</div>
+              <div><b>Материалы</b><p>Плёнки и решения от проверенных производителей.</p></div>
+            </div>
+            <div class="why-item">
+              <div class="check">✓</div>
+              <div><b>Сроки</b><p>Планируем время работ и предупреждаем о нюансах.</p></div>
+            </div>
+            <div class="why-item">
+              <div class="check">✓</div>
+              <div><b>Честный выбор</b><p>Оригинал / аналог — аргументируем разницу.</p></div>
+            </div>
+            <div class="why-item">
+              <div class="check">✓</div>
+              <div><b>Большой опыт</b><p>Замена, ремонт, оклейка — “рутина”, а не эксперимент.</p></div>
+            </div>
+            <div class="why-item">
+              <div class="check">✓</div>
+              <div><b>Почти любые марки</b><p>Работаем с широким списком автомобилей.</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="work">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <h2>Примеры работ</h2>
+            <div class="divider"></div>
+          </div>
+          <div class="hint">Демо‑галерея: важна механика и визуальный ритм.</div>
+        </div>
+
+        <div class="grid gallery">
+          <div class="card ba">
+            <div class="frame">
+              <div class="img before"></div>
+              <div class="img after ba-after"></div>
+              <div class="labels">
+                <span>до</span>
+                <span>после</span>
+              </div>
+            </div>
+            <div class="range-wrap">
+              <input class="ba-range" type="range" min="0" max="100" value="55" aria-label="Слайдер до/после" />
+              <div class="ba-pct">—</div>
+            </div>
+            <div class="fine" style="margin-top:8px;">
+              Идея: в продакшене — реальные фото “до/после”, фильтры по типу работ.
+            </div>
+          </div>
+
+          <div class="card cases">
+            <div class="case">
+              <div class="thumb"></div>
+              <div>
+                <b>Замена лобового</b>
+                <p>Подбор по VIN · герметик по регламенту · выдача с гарантией.</p>
+              </div>
+            </div>
+            <div class="case">
+              <div class="thumb"></div>
+              <div>
+                <b>Ремонт скола</b>
+                <p>Полимерная заливка · “невидимый” результат, если позволяет зона.</p>
+              </div>
+            </div>
+            <div class="case">
+              <div class="thumb"></div>
+              <div>
+                <b>Тонировка задней полусферы</b>
+                <p>Плёнка США/Корея · ровные кромки · аккуратная усадка.</p>
+              </div>
+            </div>
+            <div class="case">
+              <div class="thumb"></div>
+              <div>
+                <b>Бронирование фар</b>
+                <p>Антигравий · защита от пескоструя · внешний вид “как новый”.</p>
+              </div>
+            </div>
+            <div class="fine">Карточки можно сделать кликабельными → детальная страница кейса (если нужно).</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="reviews" class="reviews">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <h2>Отзывы</h2>
+            <div class="divider"></div>
+          </div>
+          <div class="hint">Демо‑карусель. В продакшене — подключение Яндекс/2ГИС или ручная модерация.</div>
+        </div>
+
+        <div class="card reviews-wrap">
+          <div class="reviews-track" id="reviewsTrack">
+            <div class="review-slide">
+              <div class="review-grid">
+                <div class="card review">
+                  <p>«Сами всё нашли и привезли, предложили честно и дорогие стекла и дешевые — цена установки не меняется.»</p>
+                  <div class="who">Али <small>BMW</small></div>
+                </div>
+                <div class="card review">
+                  <p>«Качественно и быстро. Сделали лобовое, приеду ещё на тонировку.»</p>
+                  <div class="who">Blissargon <small>Lada</small></div>
+                </div>
+                <div class="card review">
+                  <p>«Тонировка + ремонт трещины + бронирование — результатом доволен, выглядит солидно.»</p>
+                  <div class="who">salte mortale <small>Volkswagen</small></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="review-slide">
+              <div class="review-grid">
+                <div class="card review">
+                  <p>«Быстро и по делу. Понравилось отношение и аккуратность.»</p>
+                  <div class="who">Елена <small>—</small></div>
+                </div>
+                <div class="card review">
+                  <p>«Хорошо объяснили варианты: оригинал / аналог, без давления. По срокам уложились.»</p>
+                  <div class="who">Динар <small>—</small></div>
+                </div>
+                <div class="card review">
+                  <p>«После бронирования фар — меньше следов от пескоструя. Визуально — отлично.»</p>
+                  <div class="who">Павел <small>—</small></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="review-slide">
+              <div class="review-grid">
+                <div class="card review">
+                  <p>«Замена стекла: без скрипов, всё ровно, герметик аккуратно. Проверили после установки.»</p>
+                  <div class="who">Роман <small>—</small></div>
+                </div>
+                <div class="card review">
+                  <p>«Тонировка: чисто, без пузырей, кромки ровные. Смотрится спокойно и дорого.»</p>
+                  <div class="who">Ильдар <small>—</small></div>
+                </div>
+                <div class="card review">
+                  <p>«Кондиционер заправили быстро, дали рекомендации. Диагностика — по делу.»</p>
+                  <div class="who">Алина <small>—</small></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="rev-controls">
+          <div class="rev-btns">
+            <button class="icon-btn" id="revPrev" aria-label="Предыдущие отзывы">←</button>
+            <button class="icon-btn" id="revNext" aria-label="Следующие отзывы">→</button>
+          </div>
+          <div class="dots" id="reviewsDots" aria-label="Переключатель слайдов">
+            <button class="on" aria-label="Слайд 1"></button>
+            <button aria-label="Слайд 2"></button>
+            <button aria-label="Слайд 3"></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <h2>Контакты и запись</h2>
+            <div class="divider"></div>
+          </div>
+          <div class="hint">Форма — демо (показывает toast). В реальности подключите Telegram/WhatsApp/CRM.</div>
+        </div>
+
+        <div class="grid contact">
+          <div class="card info">
+            <div class="kv">
+              <b>Адрес</b>
+              <span>Уфа, Черниковка · ул. Дмитрия Донского, 50а<br/>Подъезд со стороны улицы Свободы.</span>
+            </div>
+            <div class="kv">
+              <b>График</b>
+              <span>Пн‑Вс: 10:00–20:00</span>
+            </div>
+            <div class="kv">
+              <b>Телефон</b>
+              <span><a href="tel:+73472661784">+7 (347) 266‑17‑84</a> · <a href="tel:+79272361784">+7 (927) 236‑17‑84</a></span>
+            </div>
+            <div class="kv">
+              <b>Почта</b>
+              <span><a href="mailto:bashavtosteklo@yandex.ru">bashavtosteklo@yandex.ru</a></span>
+            </div>
+
+            <div class="form">
+              <form id="demoForm">
+                <div class="form-row">
+                  <div class="field">
+                    <label for="fName">Имя</label>
+                    <input id="fName" autocomplete="name" placeholder="Например, Данил" />
+                  </div>
+                  <div class="field">
+                    <label for="fPhone">Телефон</label>
+                    <input id="fPhone" inputmode="tel" autocomplete="tel" placeholder="+7 ___ ___‑__‑__" />
+                  </div>
+                </div>
+
+                <div class="field">
+                  <label for="fService">Услуга</label>
+                  <select id="fService">
+                    <option>Замена стекол</option>
+                    <option>Ремонт сколов/трещин</option>
+                    <option>Тонирование стекол</option>
+                    <option>Тонирование оптики</option>
+                    <option>Бронирование пленкой</option>
+                    <option>Заправка кондиционера</option>
+                  </select>
+                </div>
+
+                <div class="field">
+                  <label for="fNote">Комментарий</label>
+                  <textarea id="fNote" rows="3" placeholder="Марка/модель, что нужно сделать, удобное время (демо)"></textarea>
+                </div>
+
+                <div style="display:flex; gap:10px; flex-wrap:wrap; align-items:center; margin-top:4px;">
+                  <button class="btn primary" type="submit">Отправить</button>
+                  <a class="btn outline" href="https://wa.me/79272361784" target="_blank" rel="noopener">Написать в WhatsApp</a>
+                  <a class="btn ghost" href="tel:+73472661784">Звонок →</a>
+                </div>
+                <div class="fine" style="margin-top:8px;">
+                  Демо‑прототип: форма не отправляет данные, показывает уведомление.
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <div class="card map">
+            <div class="mock">карта (плейсхолдер)</div>
+            <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
+              <a class="btn outline" href="https://yandex.ru/maps/?text=%D0%A3%D1%84%D0%B0%2C%20%D0%94%D0%BC%D0%B8%D1%82%D1%80%D0%B8%D1%8F%20%D0%94%D0%BE%D0%BD%D1%81%D0%BA%D0%BE%D0%B3%D0%BE%2050%D0%B0" target="_blank" rel="noopener">Открыть в картах</a>
+              <span class="pill">точка: Донского 50а</span>
+            </div>
+          </div>
+        </div>
+
+        <footer>
+          <div class="wrap">
+            <div class="foot">
+              <div>© Башавтостекло · UI прототип</div>
+              <div style="display:flex; gap:10px; flex-wrap:wrap;">
+                <a class="pill" href="#top">Наверх</a>
+                <a class="pill" href="https://wa.me/79272361784" target="_blank" rel="noopener">WhatsApp</a>
+                <a class="pill" href="tel:+73472661784">Звонок</a>
+              </div>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </section>
+  </main>
+
+  <!-- mobile bottom bar -->
+  <div class="bottombar" aria-label="Быстрые действия">
+    <a class="primary" href="tel:+73472661784">Позвонить</a>
+    <a href="https://wa.me/79272361784" target="_blank" rel="noopener">WhatsApp</a>
+    <a href="https://yandex.ru/maps/?text=%D0%A3%D1%84%D0%B0%2C%20%D0%94%D0%BC%D0%B8%D1%82%D1%80%D0%B8%D1%8F%20%D0%94%D0%BE%D0%BD%D1%81%D0%BA%D0%BE%D0%B3%D0%BE%2050%D0%B0" target="_blank" rel="noopener">Маршрут</a>
+    <a href="#contact">Запись</a>
+  </div>
+
+  <!-- drawer -->
+  <div class="backdrop" id="backdrop" aria-hidden="true"></div>
+  <aside class="drawer" id="drawer" aria-label="Меню">
+    <div class="top">
+      <div class="brand">БАШАВТОСТЕКЛО <small>меню</small></div>
+      <button class="x" id="drawerClose" aria-label="Закрыть меню">×</button>
+    </div>
+    <nav aria-label="Навигация">
+      <a href="#services">Услуги</a>
+      <a href="#why">Почему мы</a>
+      <a href="#work">Примеры</a>
+      <a href="#reviews">Отзывы</a>
+      <a href="#contact">Контакты</a>
+    </nav>
+    <div style="display:grid; gap:10px;">
+      <a class="btn primary" href="#contact">Онлайн‑запись</a>
+      <a class="btn outline" href="tel:+73472661784">Позвонить</a>
+      <a class="btn outline" href="https://wa.me/79272361784" target="_blank" rel="noopener">WhatsApp</a>
+      <div class="fine">Демо‑прототип. Открывайте на телефоне, чтобы увидеть нижнюю панель.</div>
+    </div>
+  </aside>
+
+  <!-- modal -->
+  <div class="backdrop" id="modalBackdrop" aria-hidden="true"></div>
+  <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="head">
+      <b id="modalTitle">Детали услуги</b>
+      <button class="x" id="modalClose" aria-label="Закрыть">×</button>
+    </div>
+    <div class="body" id="modalBody"></div>
+  </div>
+
+  <div class="toast" id="toast" aria-live="polite"><span id="toastMsg"></span></div>
+
+  
+<script>
+(() => {
+  const $ = (q, el=document) => el.querySelector(q);
+  const $$ = (q, el=document) => Array.from(el.querySelectorAll(q));
+
+  // Smooth scroll for anchor links
+  $$('#topnav a[href^="#"], .drawer a[href^="#"]').forEach(a => {
+    a.addEventListener('click', (e) => {
+      const id = a.getAttribute('href');
+      const target = $(id);
+      if (!target) return;
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      closeDrawer();
+    });
+  });
+
+  // Active section highlight
+  const navLinks = $$('#topnav a[href^="#"]');
+  const sections = navLinks
+    .map(a => $(a.getAttribute('href')))
+    .filter(Boolean);
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(ent => {
+      if (!ent.isIntersecting) return;
+      const id = '#' + ent.target.id;
+      navLinks.forEach(a => a.classList.toggle('is-active', a.getAttribute('href') === id));
+    });
+  }, { rootMargin: "-35% 0px -55% 0px", threshold: 0.01 });
+
+  sections.forEach(s => io.observe(s));
+
+  // Header compact on scroll
+  const header = $('#header');
+  const onScroll = () => header.classList.toggle('is-scrolled', window.scrollY > 12);
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // Drawer (mobile menu)
+  const drawer = $('#drawer');
+  const backdrop = $('#backdrop');
+  const menuBtn = $('#menuBtn');
+  const closeBtn = $('#drawerClose');
+
+  function openDrawer() {
+    drawer.classList.add('open');
+    backdrop.classList.add('open');
+    document.body.classList.add('no-scroll');
+    menuBtn.setAttribute('aria-expanded', 'true');
+  }
+  function closeDrawer() {
+    drawer.classList.remove('open');
+    backdrop.classList.remove('open');
+    document.body.classList.remove('no-scroll');
+    menuBtn.setAttribute('aria-expanded', 'false');
+  }
+  window.closeDrawer = closeDrawer;
+
+  menuBtn?.addEventListener('click', () => {
+    if (drawer.classList.contains('open')) closeDrawer();
+    else openDrawer();
+  });
+  closeBtn?.addEventListener('click', closeDrawer);
+  backdrop?.addEventListener('click', closeDrawer);
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') { closeDrawer(); closeModal(); }
+  });
+
+  // Service modal
+  const modal = $('#modal');
+  const modalBackdrop = $('#modalBackdrop');
+  const modalClose = $('#modalClose');
+  const modalTitle = $('#modalTitle');
+  const modalBody = $('#modalBody');
+
+  const services = {
+    replace: {
+      title: 'Замена стекол',
+      bullets: ['От 1 часа', 'Гарантия на работы — 1 год', 'Стекла напрямую с заводов изготовителей'],
+      note: 'Подбор стекла по VIN или модели. Возможны оригинал / качественный аналог.'
+    },
+    repair: {
+      title: 'Ремонт сколов и трещин',
+      bullets: ['От 10 минут', 'Современный 100% прозрачный полимер', 'Сохранение заводского стекла, когда это возможно'],
+      note: 'Если повреждение в зоне обзора или трещина “пошла” — мастер честно скажет и предложит замену.'
+    },
+    tint: {
+      title: 'Тонирование стекол',
+      bullets: ['От 1 часа', 'Пленка США / Корея', 'Гарантия 5–10 лет'],
+      note: 'Подберём светопропускание и оттенок под ваши задачи. Снятие старой пленки — отдельно.'
+    },
+    optics: {
+      title: 'Тонирование оптики',
+      bullets: ['Защита от мелких камешков и гравия', 'Современный глянцевый вид оптики', 'Аккуратные кромки и подрезка'],
+      note: 'Опционально: полировка перед оклейкой.'
+    },
+    armor: {
+      title: 'Бронирование фар и кузова',
+      bullets: ['Защита от сколов и гравия', 'Защита при мелких ДТП', 'Защита от реагентов и УФ'],
+      note: 'Полиуретановая антигравийная пленка. Можно выбрать зоны: капот, бампер, крылья, стойки и т.д.'
+    },
+    ac: {
+      title: 'Заправка кондиционеров',
+      bullets: ['От 15 минут', 'Соблюдение регламентов', 'Бесплатная диагностика'],
+      note: 'Проверка утечек и давление. Рекомендации по обслуживанию системы.'
+    },
+  };
+
+  function openModal(key) {
+    const s = services[key];
+    if (!s) return;
+    modalTitle.textContent = s.title;
+    modalBody.innerHTML = `
+      <ul class="modal-bullets">
+        ${s.bullets.map(b => `<li>${escapeHtml(b)}</li>`).join('')}
+      </ul>
+      <div class="modal-note">${escapeHtml(s.note)}</div>
+      <div class="modal-cta">
+        <a class="btn primary" href="#contact" data-close-modal="1">Записаться</a>
+        <a class="btn ghost" href="tel:+73472661784">Позвонить</a>
+        <a class="btn outline" href="https://wa.me/79272361784" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    `;
+    modal.classList.add('open');
+    modalBackdrop.classList.add('open');
+    document.body.classList.add('no-scroll');
+  }
+  function closeModal() {
+    modal.classList.remove('open');
+    modalBackdrop.classList.remove('open');
+    document.body.classList.remove('no-scroll');
+  }
+  window.closeModal = closeModal;
+
+  function escapeHtml(str){
+    return String(str)
+      .replaceAll('&','&amp;')
+      .replaceAll('<','&lt;')
+      .replaceAll('>','&gt;')
+      .replaceAll('"','&quot;')
+      .replaceAll("'","&#039;");
+  }
+
+  $$('.service-card').forEach(card => {
+    card.addEventListener('click', () => openModal(card.dataset.service));
+    card.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(card.dataset.service); }
+    });
+  });
+
+  modalClose?.addEventListener('click', closeModal);
+  modalBackdrop?.addEventListener('click', closeModal);
+  modal?.addEventListener('click', (e) => {
+    const t = e.target;
+    if (t && t.matches('[data-close-modal="1"]')) closeModal();
+  });
+
+  // Before/After slider demo
+  $$('.ba').forEach(ba => {
+    const range = $('.ba-range', ba);
+    const after = $('.ba-after', ba);
+    const pct = $('.ba-pct', ba);
+    const set = () => {
+      const v = Number(range.value);
+      after.style.clipPath = `inset(0 0 0 ${v}%)`;
+      pct.textContent = `${100 - v}% / ${v}%`;
+    };
+    range.addEventListener('input', set, { passive: true });
+    set();
+  });
+
+  // Reviews carousel
+  const track = $('#reviewsTrack');
+  const dots = $$('#reviewsDots button');
+  let idx = 0;
+
+  function go(n){
+    idx = (n + dots.length) % dots.length;
+    track.style.transform = `translateX(${-idx * 100}%)`;
+    dots.forEach((d,i) => d.classList.toggle('on', i === idx));
+  }
+  $('#revPrev')?.addEventListener('click', () => go(idx - 1));
+  $('#revNext')?.addEventListener('click', () => go(idx + 1));
+  dots.forEach((d,i)=> d.addEventListener('click', () => go(i)));
+
+  // Fake form submit (demo)
+  const form = $('#demoForm');
+  const toast = $('#toast');
+  const toastMsg = $('#toastMsg');
+  let toastTimer = null;
+
+  function showToast(msg){
+    toastMsg.textContent = msg;
+    toast.classList.add('on');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(()=> toast.classList.remove('on'), 2600);
+  }
+
+  form?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const name = $('#fName').value.trim();
+    const phone = $('#fPhone').value.trim();
+    if (!name || phone.length < 6) {
+      showToast('Заполните имя и телефон (демо).');
+      return;
+    }
+    form.reset();
+    showToast('Заявка отправлена (демо). Мы перезвоним.');
+  });
+
+})();
+</script>
+
+</body>
+</html>
