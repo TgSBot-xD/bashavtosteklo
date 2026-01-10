@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import './globals.css';
+import { ThemeProvider } from '@/src/app';
 
 const keywordsMetadata = [
 	'Автостекло',
@@ -54,8 +55,17 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang="ru">
-			<body>{children}</body>
+		<html lang="ru" suppressHydrationWarning>
+			<body>
+				<ThemeProvider
+					attribute="class"
+					defaultTheme="system"
+					enableSystem
+					disableTransitionOnChange
+				>
+					{children}
+				</ThemeProvider>
+			</body>
 		</html>
 	);
 }
