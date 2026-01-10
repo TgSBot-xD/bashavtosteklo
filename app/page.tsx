@@ -1,4 +1,4 @@
-import { Header } from '@/src/shared/widget/header';
+import { Header } from '@/src/widget/header';
 
 export default function Home() {
 	return <Header />;
