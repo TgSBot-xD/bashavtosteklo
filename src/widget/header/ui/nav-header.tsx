@@ -1,15 +1,4 @@
-'use client';
-
-import { useIsMobile } from '@/src/shared/hooks';
-import {
-	NavigationMenu,
-	NavigationMenuContent,
-	NavigationMenuItem,
-	NavigationMenuLink,
-	NavigationMenuList,
-	NavigationMenuTrigger,
-} from '@/src/shared/ui';
-import { Menu } from 'lucide-react';
+import { Button } from '@/src/shared/ui';
 import Link from 'next/link';
 import React from 'react';
 
@@ -18,30 +7,26 @@ const navigationList = ['Услуги', 'Почему мы', 'Примеры', '
 function listNavigation() {
 	return navigationList.map((link: string, index: number): React.ReactElement => {
 		return (
-			<NavigationMenuLink asChild key={index}>
+			<Button
+				key={index}
+				className="bg-inherit hover:bg-foreground/2 hover:border hover:border-foreground/10 hover:rounded-full hover:px-6 "
+			>
 				<Link href="#link" title={link}>
 					{link}
 				</Link>
-			</NavigationMenuLink>
+			</Button>
 		);
 	});
 }
 
+// TODO [BAS-7]:
 export function NavigationHeader() {
-	const isMobile = useIsMobile();
-
 	return (
-		<NavigationMenu viewport={isMobile}>
-			{/* TODO [BAS-6]: Переделать показ контент части */}
-			<NavigationMenuList className="sm:block md:hidden">
-				<NavigationMenuItem>
-					<NavigationMenuTrigger>
-						<Menu />
-					</NavigationMenuTrigger>
-					<NavigationMenuContent>{listNavigation()}</NavigationMenuContent>
-				</NavigationMenuItem>
-			</NavigationMenuList>
-			<NavigationMenuList className="sm:hidden md:flex">{listNavigation()}</NavigationMenuList>
-		</NavigationMenu>
+		<nav className="flex items-center">
+			{/* TODO: [BAS-6] Переделать показ контент части */}
+			{/* FIXME: Убрать мигание при наведении на навигацию в Desctop режиме */}
+			{/* FIXME: Переделать бургер на Sheet окно в mobile */}
+			{listNavigation()}
+		</nav>
 	);
 }
