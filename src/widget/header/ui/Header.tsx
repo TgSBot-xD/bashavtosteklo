@@ -1,30 +1,25 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Brand } from './brand';
 import { ContactInfo } from './contact-info';
-import { DesctopNavigation, MobileNavigation } from './nav-header';
+import { DesktopNavigation, MobileNavigation } from './nav-header';
+import { cn } from '@/src/shared/lib';
 
 export function Header() {
 	const [isScrolled, setIsScrolled] = useState(false);
 
-	const prevScrolledRef = useRef<boolean>(false);
-	const rafRef = useRef<number | null>(null);
-
 	useEffect(() => {
 		const getScroll = () => {
-			const getScrolled = window.scrollY > 3;
-
-			if (getScrolled !== prevScrolledRef.current) {
-				prevScrolledRef.current = getScrolled;
-				setIsScrolled(getScrolled);
-			}
+			const hasScrollY = window.scrollY > 3;
+			setIsScrolled((prev) => (prev === hasScrollY ? prev : hasScrollY));
 		};
 
+		let rafId: number | null = null;
 		const onScroll = () => {
-			if (rafRef.current != null) return;
-			rafRef.current = requestAnimationFrame(() => {
-				rafRef.current = null;
+			if (rafId != null) return;
+			rafId = requestAnimationFrame(() => {
+				rafId = null;
 				getScroll();
 			});
 		};
@@ -33,23 +28,31 @@ export function Header() {
 		window.addEventListener('scroll', onScroll, { passive: true });
 		return () => {
 			window.removeEventListener('scroll', onScroll);
-			if (rafRef.current != null) cancelAnimationFrame(rafRef.current);
+			if (rafId != null) cancelAnimationFrame(rafId);
 		};
 	}, []);
 
 	return (
-		<header className="sticky top-0 z-1">
+		<header className="sticky top-0 z-50 w-full">
 			<div
-				className={`flex flex-row justify-around backdrop-blur-sm ${isScrolled ? 'border-b border-white/30' : ''}`}
+				className={cn(
+					'backdrop-blur-sm border-b',
+					isScrolled ? 'border-white/30' : 'border-transparent',
+				)}
 			>
-				<Brand />
-				<div className="hidden lg:flex">
-					<DesctopNavigation />
-				</div>
-				<div className="flex">
-					<ContactInfo />
-					<div className="flex lg:hidden">
-						<MobileNavigation />
+				<div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4">
+					<Brand />
+					<div className="hidden lg:flex">
+						<DesktopNavigation />
+					</div>
+					<div className="flex items-center gap-2">
+						{/* NOTE: Умышленно сделан разрыв */}
+						<div className="hidden md:flex">
+							<ContactInfo />
+						</div>
+						<div className="lg:hidden">
+							<MobileNavigation />
+						</div>
 					</div>
 				</div>
 			</div>

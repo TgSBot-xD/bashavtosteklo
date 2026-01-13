@@ -1,18 +1,15 @@
 import { Button } from '@/src/shared/ui';
 
-{
-	/* TODO: Сделать номер кликабельный с модальным окном на все часто использоуемые мессенджеры */
-}
-
+// TODO: Сделать номер кликабельный с модальным окном на все часто использоуемые мессенджеры
 export function ContactInfo() {
 	return (
-		<article className="items-center blur-non pr-4 flex flex-col md:flex-row sm:flex-col">
+		<section aria-label='Контакты' className="items-center pr-4 flex flex-col md:flex-row">
+			{/* TODO: [BAS-9] Перенести className в один из вариантов, а не перекрывать его */}
 			<Button
 				variant="default"
-				type="submit"
-				className=" bg-inherit rounded-full hover:bg-foreground/2 hover:outline-2 hover:outline-solid  hover:outline-foreground/20 hover:saturate-115"
+				className=" bg-inherit rounded-full hover:bg-foreground/5 hover:ring hover:ring-offset-0 hover:ring-white/20 hover:saturate-150"
 			>
-				+7 (927) 236-51-08
+				<span>+7 (927) 236 51 08</span>
 			</Button>
 			<Button
 				variant="secondary"
@@ -20,6 +17,6 @@ export function ContactInfo() {
 			>
 				Онлайн-запись
 			</Button>
-		</article>
+		</section>
 	);
 }
