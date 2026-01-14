@@ -6,12 +6,9 @@ import {
 	SheetTitle,
 	SheetTrigger,
 } from '@/src/shared/ui';
-import { Link, Menu } from 'lucide-react';
-
-interface NavigationItems {
-	label: string;
-	href: string;
-}
+import { Menu } from 'lucide-react';
+import { NavigationItems } from '../model';
+import Link from 'next/link';
 
 const navigationList: NavigationItems[] = [
 	{ label: 'Услуги', href: '#services' },
@@ -50,7 +47,8 @@ function ComposeNavigation() {
 		return (
 			<Button
 				key={href}
-				className="bg-inherit md:text-base sm:text-xl hover:bg-foreground/5 hover:border hover:border-foreground/10 hover:rounded-full hover:px-6 "
+				variant="link"
+				className="md:text-base sm:text-xl hover:px-6"
 				asChild
 			>
 				<Link href={href}>{label}</Link>

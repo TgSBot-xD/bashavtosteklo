@@ -21,3 +21,12 @@ export {
 	SheetTitle,
 	SheetDescription,
 } from './sheet';
+export {
+	Breadcrumb,
+	BreadcrumbList,
+	BreadcrumbItem,
+	BreadcrumbLink,
+	BreadcrumbPage,
+	BreadcrumbSeparator,
+	BreadcrumbEllipsis,
+} from './breadcrumb';
