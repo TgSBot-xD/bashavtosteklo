@@ -24,7 +24,7 @@ export function DesktopNavigation() {
 // TODO: [BAS-5] Сделать active при пересечении точки на сайте
 export function MobileNavigation() {
 	return (
-		<nav className="flex">
+		<nav className="flex max-w-full">
 			<Sheet>
 				<SheetTrigger
 					aria-label="Кнопка навигации"
@@ -33,7 +33,7 @@ export function MobileNavigation() {
 					<Menu />
 				</SheetTrigger>
 				<SheetContent side="bottom">
-					<SheetTitle className="items-center justify-center">О нас</SheetTitle>
+					<SheetTitle className="items-center justify-center"></SheetTitle>
 					<SheetHeader>{ComposeNavigation()}</SheetHeader>
 				</SheetContent>
 			</Sheet>
@@ -48,7 +48,7 @@ function ComposeNavigation() {
 			<Button
 				key={href}
 				variant="link"
-				className="md:text-base sm:text-xl hover:px-6"
+				className="max-w-full md:text-base sm:text-xl hover:px-6"
 				asChild
 			>
 				<Link href={href}>{label}</Link>

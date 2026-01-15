@@ -44,7 +44,7 @@ export function BreadCrumbs() {
 function ComposeBreadCrumbs() {
 	return breadcrumbsData.map(({ label, href }) => {
 		return (
-			<div className="flex items-center" key={href}>
+			<div className="flex items-center text-lg" key={href}>
 				<BreadcrumbItem>
 					<BreadcrumbLink asChild>
 						<Link href={href}>{label}</Link>

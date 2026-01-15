@@ -20,34 +20,42 @@ const listSecondaryInfo: HeroInfoItems[] = [
 
 export function HeroContent() {
 	return (
-		<section className="flex flex-col max-w-xl">
+		<section className="flex flex-col max-w-6xl w-full px-4 gap-6">
 			<BreadCrumbs />
-			<div>
-				<h1 className="text-6xl text-white text-wrap">Автосёкла и всё, что с ними связано.</h1>
-				<h3 className="text-wrap text-sm">
+			<div className="flex flex-col justify-center gap-6">
+				<h1 className="flex text-4xl text-white md:text-6xl">
+					Автостёкла и всё, что с ними связано.
+				</h1>
+				<h3 className=" flex text-wrap text-lg/7 max-w-xl md:text-xl">
 					Замена, ремонт сколов и трещин, тонировка стекол и оптики, бронирование плёнкой. Быстро,
 					аккуратно, с гарантией.
 				</h3>
 			</div>
-			<section>
-				<div>
-					<Button
-						variant="default"
-						className="text-background rounded-full py-3 h-max w-max text-md hover:saturate-120"
-					>
-						Позвонить
-					</Button>
-					<Button variant="link" className="ring ring-white/20 hover:ring-white/25">
-						Мессенджеры
-					</Button>
+			<section className="flex flex-col gap-8">
+				<div className="flex flex-col gap-6 items-center md:flex-row">
+					<div className="flex flex-row items-center gap-12 md:gap-6">
+						<Button
+							variant="default"
+							className="text-background rounded-full py-3 h-max w-max text-md hover:saturate-120 md:text-xl"
+						>
+							Позвонить
+						</Button>
+						<Button
+							variant="link"
+							className="py-6 ring ring-white/20 hover:ring-white/25 md:text-xl "
+						>
+							Мессенджеры
+						</Button>
+					</div>
 					<Button
 						variant="link"
-						className="text-accent hover:text-accent-foreground hover:ring-0 hover:bg-accent/0"
+						className="text-accent-foreground hover:text-accent-foreground hover:ring-0 hover:bg-accent/0 md:text-lg"
 					>
-						Смотреть услуги <MoveRight />
+						Смотреть услуги
+						<MoveRight />
 					</Button>
 				</div>
-				<div className="flex flex-row first:ml-0 last:mr-0">{CompostSecondaryInfo()}</div>
+				<div className="flex flex-col gap-4 md:flex-row">{CompostSecondaryInfo()}</div>
 			</section>
 		</section>
 	);
@@ -57,7 +65,7 @@ function CompostSecondaryInfo() {
 	return listSecondaryInfo.map(({ index, label }) => {
 		return (
 			<span
-				className="text-sm p-2 w-max mx-1 bg-gray-500/20 border rounded-full border-gray-500/40 first:ml-0 last:mr-0"
+				className="flex text-sm p-2 w-full items-center justify-center bg-gray-500/20 border rounded-full border-gray-500/40 md:text-lg md:w-max"
 				key={index}
 			>
 				{label}
