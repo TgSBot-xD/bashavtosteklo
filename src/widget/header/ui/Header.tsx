@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { Brand } from './brand';
 import { ContactInfo } from './contact-info';
 import { DesktopNavigation, MobileNavigation } from './nav-header';
-import { cn } from '@/src/shared/lib';
+import { cn } from 'shared/lib';
 
 export function Header() {
 	const [isScrolled, setIsScrolled] = useState(false);

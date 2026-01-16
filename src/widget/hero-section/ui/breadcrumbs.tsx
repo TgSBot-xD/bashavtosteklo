@@ -4,7 +4,7 @@ import {
 	BreadcrumbLink,
 	BreadcrumbList,
 	BreadcrumbSeparator,
-} from '@/src/shared/ui';
+} from 'shared/ui';
 import { Dot } from 'lucide-react';
 import Link from 'next/link';
 import { BreadCrumbsItem } from '../models';

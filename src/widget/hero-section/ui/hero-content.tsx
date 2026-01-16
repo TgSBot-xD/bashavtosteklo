@@ -1,4 +1,4 @@
-import { Button } from '@/src/shared/ui';
+import { Button } from 'shared/ui';
 import { BreadCrumbs } from './breadcrumbs';
 import { MoveRight } from 'lucide-react';
 import { HeroInfoItems } from '../models';

@@ -1,11 +1,4 @@
-import {
-	Button,
-	Sheet,
-	SheetContent,
-	SheetHeader,
-	SheetTitle,
-	SheetTrigger,
-} from '@/src/shared/ui';
+import { Button, Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from 'shared/ui';
 import { Menu } from 'lucide-react';
 import { NavigationItems } from '../model';
 import Link from 'next/link';

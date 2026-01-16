@@ -28,6 +28,7 @@ const eslintConfig = defineConfig([
 			'@eslintPrettier': eslintPrettier,
 		},
 		rules: {
+			'@sonar/no-implicit-dependencies': ['error'],
 			'@unicorn/better-regex': 'warn',
 			'@noSecrets/no-secrets': 'error',
 			'@boundaries/element-types': [

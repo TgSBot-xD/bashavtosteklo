@@ -1,4 +1,4 @@
-import { Button } from '@/src/shared/ui';
+import { Button } from 'shared/ui';
 
 // TODO: Сделать номер кликабельный с модальным окном на все часто использоуемые мессенджеры
 export function ContactInfo() {

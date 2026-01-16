@@ -1,5 +1,5 @@
-import { Header } from '@/src/widget/header';
-import { HeroSection } from '@/src/widget/hero-section';
+import { Header } from 'widget/header';
+import { HeroSection } from 'widget/hero-section';
 
 export default function Home() {
 	return (
