@@ -1,7 +1,8 @@
-import { Button, Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from 'shared/ui';
 import { Menu } from 'lucide-react';
-import { NavigationItems } from '../model';
 import Link from 'next/link';
+
+import { type NavigationItems } from '../model';
+import { Button, Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from 'shared/ui';
 
 const navigationList: NavigationItems[] = [
 	{ label: 'Услуги', href: '#services' },

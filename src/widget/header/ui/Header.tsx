@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+
 import { Brand } from './brand';
 import { ContactInfo } from './contact-info';
 import { DesktopNavigation, MobileNavigation } from './nav-header';

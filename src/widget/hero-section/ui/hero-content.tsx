@@ -1,7 +1,8 @@
-import { Button } from 'shared/ui';
-import { BreadCrumbs } from './breadcrumbs';
 import { MoveRight } from 'lucide-react';
-import { HeroInfoItems } from '../models';
+
+import { BreadCrumbs } from './breadcrumbs';
+import { type HeroInfoItems } from '../models';
+import { Button } from 'shared/ui';
 
 const listSecondaryInfo: HeroInfoItems[] = [
 	{

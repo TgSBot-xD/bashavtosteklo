@@ -1,5 +1,6 @@
-import { HoverCard, HoverCardContent, HoverCardTrigger } from 'shared/ui';
 import { Dot } from 'lucide-react';
+
+import { HoverCard, HoverCardContent, HoverCardTrigger } from 'shared/ui';
 
 export function Brand() {
 	return (

@@ -1,4 +1,4 @@
-import { HighlightsBonusItem, HighlightsListItem } from '../models';
+import { type HighlightsBonusItem, type HighlightsListItem } from '../models';
 
 const listHighlights: HighlightsListItem[] = [
 	{
