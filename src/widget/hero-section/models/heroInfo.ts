@@ -1,4 +1,4 @@
 export type HeroInfoItems = {
-	index: number;
-	label: string;
+  index: number;
+  label: string;
 };

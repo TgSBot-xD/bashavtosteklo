@@ -1,4 +1,4 @@
 export type NavigationItems = {
-	label: string;
-	href: string;
+  label: string;
+  href: string;
 };

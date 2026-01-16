@@ -1,10 +1,10 @@
 export type HighlightsListItem = {
-	index: string;
-	title: string;
-	description: string;
+  index: string;
+  title: string;
+  description: string;
 };
 
 export type HighlightsBonusItem = {
-	index: number;
-	label: string;
+  index: number;
+  label: string;
 };

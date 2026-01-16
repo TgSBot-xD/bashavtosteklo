@@ -2,6 +2,7 @@ import { Dot } from 'lucide-react';
 import Link from 'next/link';
 
 import { type BreadCrumbsItem } from '../models';
+
 import {
   Breadcrumb,
   BreadcrumbItem,
