@@ -1,35 +1,15 @@
-# Ignore build output directories
-.nuxt/
-dist/
-.next/
+.next
+out
+dist
+build
+node_modules
+coverage
 
-# Ignore node modules
-node_modules/
-
-# Ignore specific configuration files
-*.config.js
-
-# Ignore environment variables files
-.env
-.env.*
-
-# Ignore lock files
-yarn.lock
+*.min.*
+*.lock
+pnpm-lock.yaml
 package-lock.json
+yarn.lock
 
-# Ignore logs
-*.log
-
-# Ignore compiled files
-*.min.js
-*.min.css
-
-# Ignore specific file types
-*.png
-*.jpg
-*.jpeg
-*.gif
-*.svg
-
-# Ignore other generated files
-coverage/
+# генерируемое
+next-env.d.ts

@@ -21,3 +21,6 @@ jobs:
       - name: Eslint testing
         if: always()
         run: npm run lint
+      - name: Turbopack Build
+        if: always()
+        run: npm run build

@@ -23,10 +23,25 @@
       }
     ],
     "paths": {
-      "@/*": [
-        "./*"
+      "widget/*": [
+        "./src/widget/*"
+      ],
+      "shared/*": [
+        "./src/shared/*"
+      ],
+      "feature/*": [
+        "./src/feature/*"
+      ],
+      "entities/*": [
+        "./src/entities/*"
+      ],
+      "app/*": [
+        "./src/app/*"
       ]
-    }
+    },
+    "baseUrl": ".",
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitAny": true
   },
   "include": [
     "next-env.d.ts",
