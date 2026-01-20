@@ -18,7 +18,7 @@ const listSecondaryInfo: HeroInfoItems[] = [
     index: 3,
     label: 'Гарантия на работы',
   },
-];
+] as const;
 
 export function HeroContent() {
   return (

@@ -1,7 +1,11 @@
 {
   "compilerOptions": {
     "target": "ES2017",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -19,14 +23,25 @@
       }
     ],
     "paths": {
-      "widget/*": ["./src/widget/*"],
-      "shared/*": ["./src/shared/*"],
-      "feature/*": ["./src/feature/*"],
-      "entities/*": ["./src/entities/*"],
-      "app/*": ["./src/app/*"]
+      "widget/*": [
+        "./src/widget/*"
+      ],
+      "shared/*": [
+        "./src/shared/*"
+      ],
+      "feature/*": [
+        "./src/feature/*"
+      ],
+      "entities/*": [
+        "./src/entities/*"
+      ],
+      "app/*": [
+        "./src/app/*"
+      ]
     },
     "baseUrl": ".",
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitAny": true
   },
   "include": [
     "next-env.d.ts",
@@ -36,5 +51,8 @@
     ".next/dev/types/**/*.ts",
     "**/*.mts"
   ],
-  "exclude": ["node_modules", "public/layout/"]
+  "exclude": [
+    "node_modules",
+    "public/layout/"
+  ]
 }

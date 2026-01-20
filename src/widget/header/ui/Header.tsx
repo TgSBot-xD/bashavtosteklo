@@ -13,6 +13,7 @@ export function Header() {
 
   useEffect(() => {
     const getScroll = () => {
+      // @hasScrollY - проверку на скролл больше 3 специально сделана так
       const hasScrollY = window.scrollY > 3;
       setIsScrolled((prev) => (prev === hasScrollY ? prev : hasScrollY));
     };
@@ -49,10 +50,10 @@ export function Header() {
           </div>
           <div className="flex items-center gap-2">
             {/* NOTE: Умышленно сделан разрыв */}
-            <div className="hidden md:flex">
+            <div className="hidden xl:flex">
               <ContactInfo />
             </div>
-            <div className="lg:hidden">
+            <div className="xl:hidden">
               <MobileNavigation />
             </div>
           </div>

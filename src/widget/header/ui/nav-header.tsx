@@ -11,7 +11,7 @@ const navigationList: NavigationItems[] = [
   { label: 'Примеры', href: '#examples' },
   { label: 'Отзывы', href: '#reviews' },
   { label: 'Контакты', href: '#contacts' },
-];
+] as const;
 
 export function DesktopNavigation() {
   return <nav className="flex items-center">{ComposeNavigation()}</nav>;
@@ -22,14 +22,14 @@ export function MobileNavigation() {
     <nav className="flex max-w-full">
       <Sheet>
         <SheetTrigger
-          aria-label="Кнопка навигации"
+          aria-describedby="Навигация по сайтцу"
           className="flex p-2 hover:rounded-full hover:ring hover:ring-white/5 hover:ring-offset-1"
         >
           <Menu />
         </SheetTrigger>
         <SheetContent side="bottom">
           <SheetTitle className="items-center justify-center"></SheetTitle>
-          <SheetHeader>{ComposeNavigation()}</SheetHeader>
+          <SheetHeader className="md:gap-8">{ComposeNavigation()}</SheetHeader>
         </SheetContent>
       </Sheet>
     </nav>
@@ -43,10 +43,12 @@ function ComposeNavigation() {
       <Button
         key={href}
         variant="link"
-        className="max-w-full hover:px-6 sm:text-xl md:text-base"
+        className="max-w-full hover:px-6 sm:text-xl md:text-xl"
         asChild
       >
-        <Link href={href}>{label}</Link>
+        <Link aria-describedby={label} href={href}>
+          {label}
+        </Link>
       </Button>
     );
   });

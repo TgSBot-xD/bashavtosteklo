@@ -16,7 +16,7 @@ const listHighlights: HighlightsListItem[] = [
     title: 'Тонировка',
     description: 'Пленка США/Корея · гарантия 5–10 лет',
   },
-];
+] as const;
 
 const listHighlightsBonus: HighlightsBonusItem[] = [
   {
@@ -28,7 +28,7 @@ const listHighlightsBonus: HighlightsBonusItem[] = [
     label: 'Wi-Fi',
   },
   { index: 3, label: 'Печеньки' },
-];
+] as const;
 
 // TODO [BAS-12]: Сделать градиентную заливку для фона
 export function HighlightsBlock() {
@@ -50,7 +50,7 @@ export function ComposeHighlitsList() {
     return (
       <div
         key={index}
-        className="flex flex-row items-center gap-4 rounded-lg border border-white/30 p-2 md:border-none md:p-3 hover:md:ring hover:md:ring-white/50 hover:md:ring-offset-1"
+        className="flex flex-row items-center gap-4 rounded-lg border border-white/30 p-2 md:border-none md:p-3 hover:md:ring hover:md:ring-white/50"
       >
         <span className="flex rounded-lg border border-white/30 p-2 md:px-3 md:text-2xl">
           {index}
