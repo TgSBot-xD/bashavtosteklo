@@ -12,7 +12,7 @@ export function ContactInfo() {
           +7 (927) 236 51 08
         </Link>
       </Button>
-      <Button variant="contacts" className="md:text-lg lg:text-xl">
+      <Button data-testid="ref-form" variant="contacts" className="md:text-lg lg:text-xl">
         Онлайн-запись
       </Button>
     </section>

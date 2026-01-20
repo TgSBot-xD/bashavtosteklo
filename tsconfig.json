@@ -39,7 +39,7 @@
         "./src/app/*"
       ]
     },
-    "baseUrl": ".",
+    "baseUrl": "./",
     "forceConsistentCasingInFileNames": true,
     "noImplicitAny": true
   },
@@ -49,7 +49,8 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
-    "**/*.mts"
+    "**/*.mts",
+    "src/widget/header/tests/brand.test.tsx"
   ],
   "exclude": [
     "node_modules",

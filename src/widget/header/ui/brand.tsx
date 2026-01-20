@@ -6,7 +6,9 @@ export function Brand() {
   return (
     <div className="flex flex-col items-center blur-none md:flex-row">
       <div>
-        <span className="pr-4 text-sm md:text-2xl">БАШАВТОСТЕКЛО</span>
+        <span data-testid="hero" className="pr-4 text-sm md:text-2xl">
+          БАШАВТОСТЕКЛО
+        </span>
         <HoverCard>
           <HoverCardTrigger className="hidden items-center text-sm leading-none font-medium md:flex md:text-lg">
             Уфа <Dot /> Черниковка

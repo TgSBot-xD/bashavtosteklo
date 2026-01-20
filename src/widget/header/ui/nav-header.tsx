@@ -1,17 +1,9 @@
 import { Menu } from 'lucide-react';
 import Link from 'next/link';
 
-import { type NavigationItems } from '../model';
+import { navigationList } from '../config/nav-path';
 
 import { Button, Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from 'shared/ui';
-
-const navigationList: NavigationItems[] = [
-  { label: 'Услуги', href: '#services' },
-  { label: 'Почему мы', href: '#why' },
-  { label: 'Примеры', href: '#examples' },
-  { label: 'Отзывы', href: '#reviews' },
-  { label: 'Контакты', href: '#contacts' },
-] as const;
 
 export function DesktopNavigation() {
   return <nav className="flex items-center">{ComposeNavigation()}</nav>;
