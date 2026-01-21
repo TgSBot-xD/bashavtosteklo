@@ -1,24 +1,9 @@
 import { MoveRight } from 'lucide-react';
 
 import { BreadCrumbs } from './breadcrumbs';
-import { type HeroInfoItems } from '../models';
+import { listSecondaryInfo } from '../config/heroContentBreadcrumbs';
 
 import { Button } from 'shared/ui';
-
-const listSecondaryInfo: HeroInfoItems[] = [
-  {
-    index: 1,
-    label: 'ул. Дмитрия Донского, 50а',
-  },
-  {
-    index: 2,
-    label: 'Пн-ВС: 10:00-20:00',
-  },
-  {
-    index: 3,
-    label: 'Гарантия на работы',
-  },
-] as const;
 
 export function HeroContent() {
   return (
@@ -69,6 +54,7 @@ function CompostSecondaryInfo() {
       <span
         className="flex w-full items-center justify-center rounded-full border border-gray-500/40 bg-gray-500/20 p-2 text-sm md:w-max md:text-lg"
         key={index}
+        data-testid={label}
       >
         {label}
       </span>

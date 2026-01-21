@@ -6,7 +6,7 @@ on:
     branches: [master]
 
 jobs:
-  eslint-prettier-linting:
+  testing:
     runs-on: ubuntu-latest
     strategy:
       matrix:

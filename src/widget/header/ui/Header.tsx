@@ -38,7 +38,7 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 w-full">
       <div
-      data-testid='background'
+        data-testid="background"
         className={cn(
           'border-b backdrop-blur-sm',
           isScrolled ? 'border-white/30' : 'border-transparent',

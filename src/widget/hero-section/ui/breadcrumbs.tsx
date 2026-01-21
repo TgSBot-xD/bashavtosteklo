@@ -1,7 +1,7 @@
 import { Dot } from 'lucide-react';
 import Link from 'next/link';
 
-import { type BreadCrumbsItem } from '../models';
+import { breadcrumbsData } from '../config/breadcrumbsList';
 
 import {
   Breadcrumb,
@@ -10,25 +10,6 @@ import {
   BreadcrumbList,
   BreadcrumbSeparator,
 } from 'shared/ui';
-
-const breadcrumbsData: BreadCrumbsItem[] = [
-  {
-    label: 'Автостёкла',
-    href: '#Автостёкла',
-  },
-  {
-    label: 'Тонировка',
-    href: '#Тонировка',
-  },
-  {
-    label: 'Плёнки',
-    href: '#Плёнки',
-  },
-  {
-    label: 'Заправка кондиционеров',
-    href: '#Кондиционеры',
-  },
-];
 
 export function BreadCrumbs() {
   return (

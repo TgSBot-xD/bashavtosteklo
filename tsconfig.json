@@ -1,11 +1,7 @@
 {
   "compilerOptions": {
     "target": "ES2017",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -23,21 +19,11 @@
       }
     ],
     "paths": {
-      "widget/*": [
-        "./src/widget/*"
-      ],
-      "shared/*": [
-        "./src/shared/*"
-      ],
-      "feature/*": [
-        "./src/feature/*"
-      ],
-      "entities/*": [
-        "./src/entities/*"
-      ],
-      "app/*": [
-        "./src/app/*"
-      ]
+      "widget/*": ["./src/widget/*"],
+      "shared/*": ["./src/shared/*"],
+      "feature/*": ["./src/feature/*"],
+      "entities/*": ["./src/entities/*"],
+      "app/*": ["./src/app/*"]
     },
     "baseUrl": "./",
     "forceConsistentCasingInFileNames": true,
@@ -52,8 +38,5 @@
     "**/*.mts",
     "src/widget/header/tests/brand.test.tsx"
   ],
-  "exclude": [
-    "node_modules",
-    "public/layout/"
-  ]
+  "exclude": ["node_modules", "public/layout/"]
 }

@@ -1,34 +1,4 @@
-import { type HighlightsBonusItem, type HighlightsListItem } from '../models';
-
-const listHighlights: HighlightsListItem[] = [
-  {
-    index: '01',
-    title: 'Замена стёкол',
-    description: 'От 1 часа · гарантия 1 год · стекла напрямую с заводов',
-  },
-  {
-    index: '02',
-    title: 'Ремон',
-    description: 'От 10 минут · современный прозрачный полимер',
-  },
-  {
-    index: '03',
-    title: 'Тонировка',
-    description: 'Пленка США/Корея · гарантия 5–10 лет',
-  },
-] as const;
-
-const listHighlightsBonus: HighlightsBonusItem[] = [
-  {
-    index: 1,
-    label: 'чай/кофе',
-  },
-  {
-    index: 2,
-    label: 'Wi-Fi',
-  },
-  { index: 3, label: 'Печеньки' },
-] as const;
+import { listHighlights, listHighlightsBonus } from '../config/highlightsList';
 
 // TODO [BAS-12]: Сделать градиентную заливку для фона
 export function HighlightsBlock() {
@@ -36,8 +6,13 @@ export function HighlightsBlock() {
     <section className="max-w-full rounded-lg border p-4 md:w-full md:p-6">
       <div className="flex flex-col gap-8 lg:gap-4">
         <h4 className="text-lg md:text-2xl">Быстрые факты</h4>
-        <div className="flex w-full flex-col gap-4 md:w-max md:gap-6">{ComposeHighlitsList()}</div>
-        <div className="flex flex-row justify-between md:justify-start md:gap-4">
+        <div data-testid="highlits-list" className="flex w-full flex-col gap-4 md:w-max md:gap-6">
+          {ComposeHighlitsList()}
+        </div>
+        <div
+          data-testid="highlits-bonus"
+          className="flex flex-row justify-between md:justify-start md:gap-4"
+        >
           {ComposeHighlitsBonus()}
         </div>
       </div>
