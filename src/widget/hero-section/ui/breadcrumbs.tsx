@@ -1,7 +1,7 @@
 import { Dot } from 'lucide-react';
 import Link from 'next/link';
 
-import { breadcrumbsData } from '../config/breadcrumbsList';
+import { breadcrumbsItems } from '../config';
 
 import {
   Breadcrumb,
@@ -11,21 +11,21 @@ import {
   BreadcrumbSeparator,
 } from 'shared/ui';
 
-export function BreadCrumbs() {
+function Breadcrumbs() {
   return (
     <Breadcrumb>
       <BreadcrumbList className="items-center">
         <BreadcrumbSeparator>
           <Dot className="text-primary" />
         </BreadcrumbSeparator>
-        {ComposeBreadCrumbs()}
+        {renderBreadcrumbItems()}
       </BreadcrumbList>
     </Breadcrumb>
   );
 }
 
-function ComposeBreadCrumbs() {
-  return breadcrumbsData.map(({ label, href }) => {
+function renderBreadcrumbItems() {
+  return breadcrumbsItems.map(({ label, href }) => {
     return (
       <div className="flex items-center text-lg" key={href}>
         <BreadcrumbItem>
@@ -40,3 +40,5 @@ function ComposeBreadCrumbs() {
     );
   });
 }
+
+export { Breadcrumbs };

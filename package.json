@@ -10,9 +10,11 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "format": "prettier --write .",
-    "format:check": "prettier --check .",
+    "lint:all": "pnpm lint && pnpm format",
     "test": "jest",
-    "test:watch": "jest --watch"
+    "test:pw": "playwright test --config playwright.config.ts",
+    "test:pw:update": "npx playwright test --update-snapshots",
+    "test:all": "pnpm test && pnpm test:pw"
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.1.15",
@@ -29,6 +31,7 @@
     "tailwind-merge": "^3.4.0"
   },
   "devDependencies": {
+    "@playwright/test": "^1.57.0",
     "@tailwindcss/postcss": "^4.1.18",
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.9.1",

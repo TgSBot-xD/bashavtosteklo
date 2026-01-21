@@ -1,16 +1,16 @@
-import { HeroInfoItems } from '../models';
+import { HeroSecondaryInfoItem } from '../models';
 
-export const listSecondaryInfo: HeroInfoItems[] = [
+export const secondaryInfoItems: HeroSecondaryInfoItem[] = [
   {
-    index: 1,
+    id: 1,
     label: 'ул. Дмитрия Донского, 50а',
   },
   {
-    index: 2,
+    id: 2,
     label: 'Пн-ВС: 10:00-20:00',
   },
   {
-    index: 3,
+    id: 3,
     label: 'Гарантия на работы',
   },
 ] as const;

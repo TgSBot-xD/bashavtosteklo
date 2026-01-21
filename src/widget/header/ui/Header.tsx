@@ -36,7 +36,7 @@ export function Header() {
   }, []);
 
   return (
-    <header className="sticky top-0 z-50 w-full">
+    <header data-testid="header" className="sticky top-0 z-50 w-full">
       <div
         data-testid="background"
         className={cn(

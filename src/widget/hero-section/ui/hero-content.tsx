@@ -1,14 +1,14 @@
 import { MoveRight } from 'lucide-react';
 
-import { BreadCrumbs } from './breadcrumbs';
-import { listSecondaryInfo } from '../config/heroContentBreadcrumbs';
+import { Breadcrumbs } from './breadcrumbs';
+import { secondaryInfoItems } from '../config';
 
 import { Button } from 'shared/ui';
 
-export function HeroContent() {
+function HeroContent() {
   return (
     <section className="flex w-full max-w-6xl flex-col gap-6 px-4">
-      <BreadCrumbs />
+      <Breadcrumbs />
       <div className="flex flex-col justify-center gap-6">
         <h1 className="flex text-4xl text-white md:text-6xl">
           Автостёкла и всё, что с ними связано.
@@ -42,18 +42,18 @@ export function HeroContent() {
             <MoveRight />
           </Button>
         </div>
-        <div className="flex flex-col gap-4 md:flex-row">{CompostSecondaryInfo()}</div>
+        <div className="flex flex-col gap-4 md:flex-row">{renderSecondaryInfoItems()}</div>
       </section>
     </section>
   );
 }
 
-function CompostSecondaryInfo() {
-  return listSecondaryInfo.map(({ index, label }) => {
+function renderSecondaryInfoItems() {
+  return secondaryInfoItems.map(({ id, label }) => {
     return (
       <span
         className="flex w-full items-center justify-center rounded-full border border-gray-500/40 bg-gray-500/20 p-2 text-sm md:w-max md:text-lg"
-        key={index}
+        key={id}
         data-testid={label}
       >
         {label}
@@ -61,3 +61,5 @@ function CompostSecondaryInfo() {
     );
   });
 }
+
+export { HeroContent };

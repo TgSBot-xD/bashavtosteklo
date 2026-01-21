@@ -1,6 +1,6 @@
 import { BreadCrumbsItem } from '../models';
 
-export const breadcrumbsData: BreadCrumbsItem[] = [
+export const breadcrumbsItems: BreadCrumbsItem[] = [
   {
     label: 'Автостёкла',
     href: '#Автостёкла',
