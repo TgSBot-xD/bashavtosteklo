@@ -4,28 +4,28 @@ import { render, screen } from '@testing-library/react';
 import { highlightItems, highlightPerks } from 'widget/hero-section/config';
 import { HighlightsPanel } from 'widget/hero-section/ui';
 
-describe('should user highlits content', () => {
-  it('should highlits hero content', () => {
+describe('when highlights panel is rendered', () => {
+  it('should render highlight items', () => {
     render(<HighlightsPanel />);
 
     for (const { title, description, displayIndex } of highlightItems) {
-      const getTitleHighlight = screen.getByText(title);
-      const getDescriptionHighlight = screen.getByText(description);
-      const getInndexHighlight = screen.getByText(displayIndex);
+      const highlightTitle = screen.getByText(title);
+      const highlightDescription = screen.getByText(description);
+      const highlightIndex = screen.getByText(displayIndex);
 
-      expect(getTitleHighlight).toBeInTheDocument();
-      expect(getDescriptionHighlight).toBeInTheDocument();
-      expect(getInndexHighlight).toBeInTheDocument();
+      expect(highlightTitle).toBeInTheDocument();
+      expect(highlightDescription).toBeInTheDocument();
+      expect(highlightIndex).toBeInTheDocument();
     }
   });
 
-  it('should highlits bonus content', () => {
+  it('should render highlight perks', () => {
     render(<HighlightsPanel />);
 
     for (const { label } of highlightPerks) {
-      const getHighlitBonusContent = screen.getByText(label);
+      const perkLabel = screen.getByText(label);
 
-      expect(getHighlitBonusContent).toBeInTheDocument();
+      expect(perkLabel).toBeInTheDocument();
     }
   });
 });

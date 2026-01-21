@@ -1,1 +1,1 @@
-export type { NavigationItems } from './navigation';
+export type { NavigationItem } from './navigation.types';

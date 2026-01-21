@@ -8,30 +8,32 @@ import { DesktopNavigation, MobileNavigation } from './nav-header';
 
 import { cn } from 'shared/lib';
 
-export function Header() {
+function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
-    const getScroll = () => {
-      // @hasScrollY - проверку на скролл больше 3 специально сделана так
-      const hasScrollY = window.scrollY > 3;
-      setIsScrolled((prev) => (prev === hasScrollY ? prev : hasScrollY));
+    const updateScrollState = () => {
+      // Порог 3px нужен, что бы не вешать стили раньше времени
+      const isScrolledNow = window.scrollY > 3;
+      setIsScrolled((previousIsScrolled) =>
+        previousIsScrolled === isScrolledNow ? previousIsScrolled : isScrolledNow,
+      );
     };
 
-    let rafId: number | null = null;
-    const onScroll = () => {
-      if (rafId != null) return;
-      rafId = requestAnimationFrame(() => {
-        rafId = null;
-        getScroll();
+    let animationFrameId: number | null = null;
+    const handleScroll = () => {
+      if (animationFrameId != null) return;
+      animationFrameId = requestAnimationFrame(() => {
+        animationFrameId = null;
+        updateScrollState();
       });
     };
 
-    getScroll();
-    window.addEventListener('scroll', onScroll, { passive: true });
+    updateScrollState();
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => {
-      window.removeEventListener('scroll', onScroll);
-      if (rafId != null) cancelAnimationFrame(rafId);
+      window.removeEventListener('scroll', handleScroll);
+      if (animationFrameId != null) cancelAnimationFrame(animationFrameId);
     };
   }, []);
 
@@ -63,3 +65,5 @@ export function Header() {
     </header>
   );
 }
+
+export { Header };

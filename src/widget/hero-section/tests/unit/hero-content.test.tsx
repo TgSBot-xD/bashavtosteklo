@@ -4,11 +4,11 @@ import { render, screen } from '@testing-library/react';
 import { secondaryInfoItems } from 'widget/hero-section/config';
 import { HeroContent } from 'widget/hero-section/ui';
 
-it('should breadcrumbs on hero content', () => {
+it('should render secondary info items', () => {
   render(<HeroContent />);
 
-  for (const { label } of secondaryInfoItems) {
-    const getHeroBunusContent = screen.getByTestId(label);
-    expect(getHeroBunusContent).toBeInTheDocument();
+  for (const { id } of secondaryInfoItems) {
+    const secondaryInfoItem = screen.getByTestId(`secondary-info-${id}`);
+    expect(secondaryInfoItem).toBeInTheDocument();
   }
 });

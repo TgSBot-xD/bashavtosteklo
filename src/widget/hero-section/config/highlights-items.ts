@@ -8,13 +8,13 @@ export const highlightItems: HighlightItem[] = [
   },
   {
     displayIndex: '02',
-    title: 'Ремон',
+    title: 'Ремонт',
     description: 'От 10 минут · современный прозрачный полимер',
   },
   {
     displayIndex: '03',
     title: 'Тонировка',
-    description: 'Пленка США/Корея · гарантия 5–10 лет',
+    description: 'Плёнка США/Корея · гарантия 5–10 лет',
   },
 ] as const;
 

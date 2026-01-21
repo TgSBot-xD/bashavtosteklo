@@ -3,7 +3,10 @@ import { highlightItems, highlightPerks } from '../config';
 // TODO [BAS-12]: Сделать градиентную заливку для фона
 export function HighlightsPanel() {
   return (
-    <section className="max-w-full rounded-lg border p-4 md:w-full md:p-6">
+    <section
+      data-testid="highlights-panel"
+      className="max-w-full rounded-lg border p-4 md:w-full md:p-6"
+    >
       <div className="flex flex-col gap-8 lg:gap-4">
         <h4 className="text-lg md:text-2xl">Быстрые факты</h4>
         <div data-testid="highlights-list" className="flex w-full flex-col gap-4 md:w-max md:gap-6">

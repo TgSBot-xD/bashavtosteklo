@@ -1,7 +1,8 @@
 import { Dot } from 'lucide-react';
 import Link from 'next/link';
+import { Fragment } from 'react';
 
-import { breadcrumbsItems } from '../config';
+import { breadcrumbLinks } from '../config';
 
 import {
   Breadcrumb,
@@ -18,25 +19,28 @@ function Breadcrumbs() {
         <BreadcrumbSeparator>
           <Dot className="text-primary" />
         </BreadcrumbSeparator>
-        {renderBreadcrumbItems()}
+        {renderBreadcrumbLinks()}
       </BreadcrumbList>
     </Breadcrumb>
   );
 }
 
-function renderBreadcrumbItems() {
-  return breadcrumbsItems.map(({ label, href }) => {
+function renderBreadcrumbLinks() {
+  return breadcrumbLinks.map(({ label, href }, index) => {
+    const hasNextLink = index < breadcrumbLinks.length - 1;
     return (
-      <div className="flex items-center text-lg" key={href}>
-        <BreadcrumbItem>
+      <Fragment key={href}>
+        <BreadcrumbItem className="text-lg">
           <BreadcrumbLink asChild>
             <Link href={href}>{label}</Link>
           </BreadcrumbLink>
         </BreadcrumbItem>
-        <BreadcrumbSeparator>
-          <Dot />
-        </BreadcrumbSeparator>
-      </div>
+        {hasNextLink && (
+          <BreadcrumbSeparator>
+            <Dot />
+          </BreadcrumbSeparator>
+        )}
+      </Fragment>
     );
   });
 }

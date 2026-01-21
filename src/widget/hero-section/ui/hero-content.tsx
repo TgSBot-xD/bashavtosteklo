@@ -7,7 +7,7 @@ import { Button } from 'shared/ui';
 
 function HeroContent() {
   return (
-    <section className="flex w-full max-w-6xl flex-col gap-6 px-4">
+    <section data-testid="hero-content" className="flex w-full max-w-6xl flex-col gap-6 px-4">
       <Breadcrumbs />
       <div className="flex flex-col justify-center gap-6">
         <h1 className="flex text-4xl text-white md:text-6xl">
@@ -54,7 +54,7 @@ function renderSecondaryInfoItems() {
       <span
         className="flex w-full items-center justify-center rounded-full border border-gray-500/40 bg-gray-500/20 p-2 text-sm md:w-max md:text-lg"
         key={id}
-        data-testid={label}
+        data-testid={`secondary-info-${id}`}
       >
         {label}
       </span>

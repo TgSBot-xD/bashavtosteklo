@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { Button } from 'shared/ui';
 
 // TODO: Сделать номер кликабельный с модальным окном на все часто использоуемые мессенджеры
-export function ContactInfo() {
+function ContactInfo() {
   return (
     <section aria-label="Контакты" className="flex flex-col items-center pr-4 md:flex-row">
       {/* TODO: [BAS-9] Перенести className в один из вариантов, а не перекрывать его */}
@@ -18,3 +18,5 @@ export function ContactInfo() {
     </section>
   );
 }
+
+export { ContactInfo };

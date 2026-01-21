@@ -10,11 +10,10 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "format": "prettier --write .",
-    "lint:all": "pnpm lint && pnpm format",
     "test": "jest",
     "test:pw": "playwright test --config playwright.config.ts",
     "test:pw:update": "npx playwright test --update-snapshots",
-    "test:all": "pnpm test && pnpm test:pw"
+    "all": "pnpm lint && pnpm format && pnpm test && pnpm test:pw"
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.1.15",

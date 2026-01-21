@@ -1,4 +1,4 @@
-export type BreadCrumbsItem = {
+export type BreadcrumbLinkItem = {
   label: string;
   href: string;
 };
