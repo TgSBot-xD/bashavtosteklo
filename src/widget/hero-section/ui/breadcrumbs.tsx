@@ -15,12 +15,7 @@ import {
 function Breadcrumbs() {
   return (
     <Breadcrumb>
-      <BreadcrumbList className="items-center">
-        <BreadcrumbSeparator>
-          <Dot className="text-primary" />
-        </BreadcrumbSeparator>
-        {renderBreadcrumbLinks()}
-      </BreadcrumbList>
+      <BreadcrumbList className="items-center">{renderBreadcrumbLinks()}</BreadcrumbList>
     </Breadcrumb>
   );
 }
