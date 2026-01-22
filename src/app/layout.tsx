@@ -1,5 +1,4 @@
 import { type Metadata } from 'next';
-import { Open_Sans } from 'next/font/google';
 
 import './globals.css';
 import { ThemeProvider } from './_config/theme-provider';
@@ -51,8 +50,6 @@ export const metadata: Metadata = {
   },
 };
 
-const monoSpace = Open_Sans({ weight: ['300', '400', '700'], style: 'normal' });
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -60,7 +57,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru" suppressHydrationWarning>
-      <body className={`${monoSpace.className}`}>
+      <body className="bg-background-image font-sans">
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
