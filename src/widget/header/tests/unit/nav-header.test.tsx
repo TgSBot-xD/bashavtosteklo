@@ -1,11 +1,11 @@
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 
-import { navigationItems } from 'widget/header/config';
-import { DesktopNavigation } from 'widget/header/ui';
+import { navigationItems } from 'widget/header/config/nav-path';
+import { NavigationPanel } from 'widget/header/ui/navigation-panel/navigation-panel';
 
 it('should render navigation links', () => {
-  render(<DesktopNavigation />);
+  render(<NavigationPanel />);
 
   for (const { label, href } of navigationItems) {
     const navigationLink = screen.getByRole('link', { name: label });

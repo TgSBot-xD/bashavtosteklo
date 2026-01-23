@@ -1,10 +1,10 @@
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 
-import { ContactInfo } from 'widget/header/ui';
+import { Header } from 'widget/header/ui/header';
 
 it('should render telephone link', () => {
-  render(<ContactInfo />);
+  render(<Header />);
 
   const telephoneLink = screen.getByRole('link', { name: '+7 (927) 236 51 08' });
 

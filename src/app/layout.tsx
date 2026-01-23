@@ -57,7 +57,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru" suppressHydrationWarning>
-      <body className="bg-background-image font-sans">
+      <body className="bg-background-image dark:bg-background font-sans">
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

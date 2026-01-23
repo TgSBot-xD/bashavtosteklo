@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom';
 import { render, screen, fireEvent } from '@testing-library/react';
 
-import { Header } from 'widget/header/ui';
+import { Header } from 'widget/header/ui/header';
 
 function setWindowScrollY(scrollY: number) {
   Object.defineProperty(window, 'scrollY', { value: scrollY, configurable: true });
