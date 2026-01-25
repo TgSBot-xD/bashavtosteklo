@@ -7,7 +7,7 @@ import {
   NavigationMenuList,
 } from 'shared/ui';
 
-import { navigationItems } from 'widget/header/config/nav-path';
+import { navigationItems } from 'widget/header/configs/nav-path';
 
 function NavigationPanel() {
   return (

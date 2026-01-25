@@ -1,4 +1,4 @@
-import { highlightItems, highlightPerks } from '../../config';
+import { highlightItems, highlightPerks } from '../../configs';
 
 // TODO [BAS-12]: Сделать градиентную заливку для фона
 export function HighlightsPanel() {

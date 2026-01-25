@@ -2,7 +2,7 @@ import { Dot } from 'lucide-react';
 import Link from 'next/link';
 import { Fragment } from 'react';
 
-import { breadcrumbLinks } from '../../config';
+import { breadcrumbLinks } from '../../configs';
 
 import {
   Breadcrumb,

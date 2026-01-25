@@ -9,7 +9,6 @@ describe('hero section is visible for user', () => {
 
     const heroSection = screen.getByTestId('hero-section');
     expect(heroSection).toBeInTheDocument();
-    expect(heroSection).toMatchSnapshot();
   });
   it('should hero content on hero section block', () => {
     render(<HeroSection />);

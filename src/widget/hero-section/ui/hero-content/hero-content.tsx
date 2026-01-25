@@ -1,9 +1,9 @@
 import { MoveRight } from 'lucide-react';
 
 import { Breadcrumbs } from './breadcrumbs';
-import { secondaryInfoItems } from '../../config';
+import { secondaryInfoItems } from '../../configs';
 
-import { Button } from 'shared/ui';
+import { ButtonLink } from 'shared/ui';
 
 function HeroContent() {
   return (
@@ -21,26 +21,33 @@ function HeroContent() {
       <section className="flex flex-col gap-10 lg:gap-10">
         <div className="flex flex-col items-center gap-6 md:flex-row">
           <div className="flex flex-row items-center gap-12 md:gap-6">
-            <Button
+            <ButtonLink
+              href="tel:+79272365108"
               variant="default"
               className="text-background text-md h-max w-max cursor-alias rounded-full py-3 hover:saturate-150 md:text-base"
             >
               Позвонить
-            </Button>
-            <Button
+            </ButtonLink>
+
+            {/* TODO: После доработки сайта прикрутить правильные ссылки */}
+            <ButtonLink
               variant="link"
-              className="text-foreground/80 ring-foreground/40 dark:text-foreground/90 dark:ring-foreground/50 hover:dark:ring-foreground/60 hover:dark:text-foreground cursor-alias py-6 ring md:text-base"
+              className="text-foreground/80 ring-foreground/40 dark:text-foreground/90 dark:ring-foreground/50 hover:dark:ring-foreground/60 hover:dark:text-foreground cursor-alias py-6 ring md:text-base dark:bg-inherit"
+              href="#message"
             >
               Мессенджеры
-            </Button>
+            </ButtonLink>
           </div>
-          <Button
+
+          {/* TODO: После доработки сайта прикрутить правильные ссылки */}
+          <ButtonLink
             variant="link"
-            className="text-accent-foreground/80 hover:text-accent-foreground hover:bg-accent/0 hover:dark:text-accent-foreground cursor-pointer hover:ring-0 md:text-base"
+            className="text-accent-foreground/80 hover:text-accent-foreground hover:bg-accent/0 hover:dark:text-foreground dark:text-foreground/80 cursor-pointer hover:ring-0 dark:bg-inherit"
+            href="#"
           >
             Смотреть услуги
             <MoveRight />
-          </Button>
+          </ButtonLink>
         </div>
         <div className="flex flex-col gap-4 md:flex-row">{renderSecondaryInfoItems()}</div>
       </section>

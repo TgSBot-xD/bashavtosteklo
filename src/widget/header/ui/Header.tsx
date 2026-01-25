@@ -6,9 +6,7 @@ import { SheetNavigationPanel } from './navigation-panel/sheet-navigation-panel'
 import { Trademark } from './trademark';
 
 import { cn } from 'shared/lib';
-import { Divider } from 'shared/ui';
-
-import { ButtonLink } from 'feature/button-link';
+import { ButtonLink, Divider } from 'shared/ui';
 
 function Header() {
   const isScrolled = useScrolledDisplay();
@@ -24,7 +22,7 @@ function Header() {
         data-testid="background"
         className="flex w-full flex-row p-2 px-4 md:py-6 md:pb-4 lg:px-0 xl:m-auto xl:py-4"
       >
-        <div className="sm:max-w-3sx m-auto flex w-full justify-between md:items-center lg:max-w-4xl xl:max-w-7xl">
+        <div className="m-auto flex w-full justify-between md:items-center lg:max-w-4xl xl:max-w-7xl">
           <div className="flex xl:w-1/5">
             <Trademark />
           </div>
@@ -33,7 +31,7 @@ function Header() {
           </div>
           <div
             data-testid="company-contact"
-            className="lg:w1/3 flex items-center gap-8 xl:w-1/4 xl:justify-end xl:gap-2"
+            className="flex items-center gap-8 xl:w-1/4 xl:justify-end xl:gap-2"
           >
             <ButtonLink
               variant="link"

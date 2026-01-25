@@ -1,8 +1,10 @@
 import { Slot } from '@radix-ui/react-slot';
 import { cva, type VariantProps } from 'class-variance-authority';
+import Link from 'next/link';
 import * as React from 'react';
 
 import { cn } from 'shared/lib';
+import { ButtonLinkItems } from 'shared/models/button-link.types';
 
 const buttonVariants = cva(
   "focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive inline-flex shrink-0 items-center justify-center gap-2 rounded-md text-sm font-medium whitespace-nowrap transition-all outline-none focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
@@ -18,7 +20,7 @@ const buttonVariants = cva(
         secondary: 'bg-secondary text-secondary-foreground hover:bg-secondary/80',
         ghost:
           'hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50 text-background dark:text-background dark:bg-ring rounded-full hover:saturate-150',
-        link: 'text-primar hover:saturate-150',
+        link: 'text-primal hover:saturate-150',
       },
       size: {
         default: 'h-9 px-4 py-2 has-[>svg]:px-3',
@@ -59,4 +61,21 @@ function Button({
   );
 }
 
-export { Button, buttonVariants };
+function ButtonLink({ className, children, href, variant = 'default' }: ButtonLinkItems) {
+  return (
+    <Button
+      variant={variant}
+      className={cn(
+        `${variant === 'default' ? 'text-background' : 'text-foreground'} dark:text-background dark:bg-ring rounded-full hover:saturate-150`,
+        className,
+      )}
+      asChild
+    >
+      <Link href={href} className="cursor-pointer">
+        {children}
+      </Link>
+    </Button>
+  );
+}
+
+export { Button, buttonVariants, ButtonLink };

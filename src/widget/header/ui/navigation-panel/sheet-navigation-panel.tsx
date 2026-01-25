@@ -3,6 +3,7 @@ import { Menu, X } from 'lucide-react';
 import { renderNavigationList } from './navigation-panel';
 
 import {
+  ButtonLink,
   NavigationMenu,
   NavigationMenuList,
   Sheet,
@@ -13,8 +14,6 @@ import {
   SheetTitle,
   SheetTrigger,
 } from 'shared/ui';
-
-import { ButtonLink } from 'feature/button-link';
 
 function SheetNavigationPanel({
   sideOfSidebar,

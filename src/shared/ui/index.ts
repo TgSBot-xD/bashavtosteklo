@@ -1,5 +1,5 @@
 export { HoverCard, HoverCardTrigger, HoverCardContent } from './hover-card';
-export { Button } from './button';
+export { Button, ButtonLink } from './button';
 export {
   NavigationMenu,
   NavigationMenuList,

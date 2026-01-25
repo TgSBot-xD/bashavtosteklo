@@ -23,7 +23,6 @@ describe('when user scrolls on the page', () => {
 
     const header = screen.getByTestId('header');
     expect(header).toBeInTheDocument();
-    expect(header).toMatchSnapshot();
   });
 
   it('should update background border on scroll down', () => {

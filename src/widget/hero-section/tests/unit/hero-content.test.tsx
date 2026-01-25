@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 
-import { secondaryInfoItems } from 'widget/hero-section/config';
+import { secondaryInfoItems } from 'widget/hero-section/configs';
 import { HeroContent } from 'widget/hero-section/ui';
 
 it('should render secondary info items', () => {
