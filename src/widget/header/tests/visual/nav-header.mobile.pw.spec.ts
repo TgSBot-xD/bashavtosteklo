@@ -12,10 +12,10 @@ test('navigation mobile menu screenshot', async ({ page }) => {
 
     await page.goto('/', { waitUntil: 'networkidle' });
 
-    const navBarTriger = page.getByTestId('nav-mobile-triger');
+    const navBarTriger = page.getByTestId('header-sheet-mobile-trigger');
     await navBarTriger.click();
 
-    const navBarMenu = page.getByTestId('nav-mobile-menu');
+    const navBarMenu = page.getByTestId('header-sheet-mobile-content');
     await expect(navBarMenu).toHaveScreenshot(`nav-menu-${theme}.png`);
   }
 });

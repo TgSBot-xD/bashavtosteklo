@@ -14,7 +14,7 @@ describe('hero section is visible for user', () => {
   it('should hero content on hero section block', () => {
     render(<HeroSection />);
 
-    const heroContent = screen.getByTestId('hero-content');
+    const heroContent = screen.getByTestId('hero-section');
     expect(heroContent).toBeInTheDocument();
   });
   it('should highlights on hero section block', () => {

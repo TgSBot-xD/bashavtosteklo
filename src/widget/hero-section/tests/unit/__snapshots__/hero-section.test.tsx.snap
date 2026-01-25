@@ -1,290 +1,263 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`hero section is visible for user should hero section content 1`] = `
-<main
-  class="flex w-full flex-col items-center gap-12 lg:max-w-6xl lg:justify-between lg:gap-2 xl:max-w-7xl xl:flex-row"
+<article
+  class="flex w-full flex-col gap-4 lg:gap-8"
   data-testid="hero-section"
 >
-  <section
-    class="flex w-full max-w-6xl flex-col gap-6 px-4"
-    data-testid="hero-content"
+  <div
+    class="flex w-full flex-col items-center gap-2 md:gap-8 md:px-5 lg:m-auto lg:max-w-7xl lg:justify-between lg:gap-10 lg:px-0 xl:flex-row xl:gap-8"
   >
-    <nav
-      aria-label="breadcrumb"
-      data-slot="breadcrumb"
-    >
-      <ol
-        class="text-muted-foreground flex flex-wrap gap-1.5 text-sm break-words sm:gap-2.5 items-center"
-        data-slot="breadcrumb-list"
-      >
-        <li
-          aria-hidden="true"
-          class="[&>svg]:size-3.5"
-          data-slot="breadcrumb-separator"
-          role="presentation"
-        >
-          <svg
-            aria-hidden="true"
-            class="lucide lucide-dot text-primary"
-            fill="none"
-            height="24"
-            stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            viewBox="0 0 24 24"
-            width="24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <circle
-              cx="12.1"
-              cy="12.1"
-              r="1"
-            />
-          </svg>
-        </li>
-        <li
-          class="inline-flex items-center gap-1.5 text-lg"
-          data-slot="breadcrumb-item"
-        >
-          <a
-            class="hover:text-foreground transition-colors"
-            data-slot="breadcrumb-link"
-            href="#Автостёкла"
-          >
-            Автостёкла
-          </a>
-        </li>
-        <li
-          aria-hidden="true"
-          class="[&>svg]:size-3.5"
-          data-slot="breadcrumb-separator"
-          role="presentation"
-        >
-          <svg
-            aria-hidden="true"
-            class="lucide lucide-dot"
-            fill="none"
-            height="24"
-            stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            viewBox="0 0 24 24"
-            width="24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <circle
-              cx="12.1"
-              cy="12.1"
-              r="1"
-            />
-          </svg>
-        </li>
-        <li
-          class="inline-flex items-center gap-1.5 text-lg"
-          data-slot="breadcrumb-item"
-        >
-          <a
-            class="hover:text-foreground transition-colors"
-            data-slot="breadcrumb-link"
-            href="#Тонировка"
-          >
-            Тонировка
-          </a>
-        </li>
-        <li
-          aria-hidden="true"
-          class="[&>svg]:size-3.5"
-          data-slot="breadcrumb-separator"
-          role="presentation"
-        >
-          <svg
-            aria-hidden="true"
-            class="lucide lucide-dot"
-            fill="none"
-            height="24"
-            stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            viewBox="0 0 24 24"
-            width="24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <circle
-              cx="12.1"
-              cy="12.1"
-              r="1"
-            />
-          </svg>
-        </li>
-        <li
-          class="inline-flex items-center gap-1.5 text-lg"
-          data-slot="breadcrumb-item"
-        >
-          <a
-            class="hover:text-foreground transition-colors"
-            data-slot="breadcrumb-link"
-            href="#Плёнки"
-          >
-            Плёнки
-          </a>
-        </li>
-        <li
-          aria-hidden="true"
-          class="[&>svg]:size-3.5"
-          data-slot="breadcrumb-separator"
-          role="presentation"
-        >
-          <svg
-            aria-hidden="true"
-            class="lucide lucide-dot"
-            fill="none"
-            height="24"
-            stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            viewBox="0 0 24 24"
-            width="24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <circle
-              cx="12.1"
-              cy="12.1"
-              r="1"
-            />
-          </svg>
-        </li>
-        <li
-          class="inline-flex items-center gap-1.5 text-lg"
-          data-slot="breadcrumb-item"
-        >
-          <a
-            class="hover:text-foreground transition-colors"
-            data-slot="breadcrumb-link"
-            href="#Кондиционеры"
-          >
-            Заправка кондиционеров
-          </a>
-        </li>
-      </ol>
-    </nav>
-    <div
-      class="flex flex-col justify-center gap-6"
-    >
-      <h1
-        class="flex text-4xl text-white md:text-6xl"
-      >
-        Автостёкла и всё, что с ними связано.
-      </h1>
-      <h3
-        class="flex max-w-xl text-lg/7 text-wrap md:text-xl"
-      >
-        Замена, ремонт сколов и трещин, тонировка стекол и оптики, бронирование плёнкой. Быстро, аккуратно, с гарантией.
-      </h3>
-    </div>
     <section
-      class="flex flex-col gap-8"
+      class="flex w-full max-w-7xl flex-col gap-6 p-4 md:p-0 lg:self-end lg:pr-4"
     >
+      <nav
+        aria-label="breadcrumb"
+        data-slot="breadcrumb"
+      >
+        <ol
+          class="text-muted-foreground flex flex-wrap gap-1.5 text-sm break-words sm:gap-2.5 items-center"
+          data-slot="breadcrumb-list"
+        >
+          <li
+            class="inline-flex items-center gap-1.5 text-sm"
+            data-slot="breadcrumb-item"
+          >
+            <a
+              class="hover:text-foreground transition-colors font-medium"
+              data-slot="breadcrumb-link"
+              href="#Автостёкла"
+            >
+              АВТОСТЁКЛА
+            </a>
+          </li>
+          <li
+            aria-hidden="true"
+            class="[&>svg]:size-3.5"
+            data-slot="breadcrumb-separator"
+            role="presentation"
+          >
+            <svg
+              aria-hidden="true"
+              class="lucide lucide-dot"
+              fill="none"
+              height="24"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle
+                cx="12.1"
+                cy="12.1"
+                r="1"
+              />
+            </svg>
+          </li>
+          <li
+            class="inline-flex items-center gap-1.5 text-sm"
+            data-slot="breadcrumb-item"
+          >
+            <a
+              class="hover:text-foreground transition-colors font-medium"
+              data-slot="breadcrumb-link"
+              href="#Тонировка"
+            >
+              ТОНИРОВКА
+            </a>
+          </li>
+          <li
+            aria-hidden="true"
+            class="[&>svg]:size-3.5"
+            data-slot="breadcrumb-separator"
+            role="presentation"
+          >
+            <svg
+              aria-hidden="true"
+              class="lucide lucide-dot"
+              fill="none"
+              height="24"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle
+                cx="12.1"
+                cy="12.1"
+                r="1"
+              />
+            </svg>
+          </li>
+          <li
+            class="inline-flex items-center gap-1.5 text-sm"
+            data-slot="breadcrumb-item"
+          >
+            <a
+              class="hover:text-foreground transition-colors font-medium"
+              data-slot="breadcrumb-link"
+              href="#Плёнки"
+            >
+              ПЛЁНКИ
+            </a>
+          </li>
+          <li
+            aria-hidden="true"
+            class="[&>svg]:size-3.5"
+            data-slot="breadcrumb-separator"
+            role="presentation"
+          >
+            <svg
+              aria-hidden="true"
+              class="lucide lucide-dot"
+              fill="none"
+              height="24"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle
+                cx="12.1"
+                cy="12.1"
+                r="1"
+              />
+            </svg>
+          </li>
+          <li
+            class="inline-flex items-center gap-1.5 text-sm"
+            data-slot="breadcrumb-item"
+          >
+            <a
+              class="hover:text-foreground transition-colors font-medium"
+              data-slot="breadcrumb-link"
+              href="#Кондиционеры"
+            >
+              КОНДИЦИОНЕРЫ
+            </a>
+          </li>
+        </ol>
+      </nav>
       <div
-        class="flex flex-col items-center gap-6 md:flex-row"
+        class="flex flex-col justify-center gap-4"
+      >
+        <h1
+          class="text-foreground flex text-4xl font-bold md:text-3xl lg:text-5xl"
+        >
+          Автостёкла и всё, что с ними связано.
+        </h1>
+        <h3
+          class="flex max-w-xl text-base/6 text-wrap md:text-base lg:text-lg"
+        >
+          Замена, ремонт сколов и трещин, тонировка стекол и оптики, бронирование плёнкой. Быстро, аккуратно, с гарантией.
+        </h3>
+      </div>
+      <section
+        class="flex flex-col gap-10 lg:gap-10"
       >
         <div
-          class="flex flex-row items-center gap-12 md:gap-6"
+          class="flex flex-col items-center gap-6 md:flex-row"
         >
-          <button
-            class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive inline-flex shrink-0 items-center justify-center gap-2 font-medium whitespace-nowrap transition-all outline-none focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 bg-primary hover:bg-primary px-4 has-[>svg]:px-3 text-background text-md h-max w-max rounded-full py-3 hover:saturate-120 md:text-xl"
-            data-size="default"
-            data-slot="button"
-            data-variant="default"
+          <div
+            class="flex flex-row items-center gap-12 md:gap-6"
           >
-            Позвонить
-          </button>
+            <button
+              class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive inline-flex shrink-0 items-center justify-center gap-2 font-medium whitespace-nowrap transition-all outline-none focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 bg-primary hover:bg-primary/90 dark:text-background dark:bg-ring px-4 has-[>svg]:px-3 text-background text-md h-max w-max cursor-alias rounded-full py-3 hover:saturate-150 md:text-base"
+              data-size="default"
+              data-slot="button"
+              data-variant="default"
+            >
+              Позвонить
+            </button>
+            <button
+              class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive inline-flex shrink-0 items-center justify-center gap-2 rounded-md text-sm font-medium whitespace-nowrap transition-all outline-none focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 hover:saturate-150 h-9 px-4 has-[>svg]:px-3 text-foreground/80 ring-foreground/40 dark:text-foreground/90 dark:ring-foreground/50 hover:dark:ring-foreground/60 hover:dark:text-foreground cursor-alias py-6 ring md:text-base"
+              data-size="default"
+              data-slot="button"
+              data-variant="link"
+            >
+              Мессенджеры
+            </button>
+          </div>
           <button
-            class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive inline-flex shrink-0 items-center justify-center gap-2 text-sm font-medium whitespace-nowrap transition-all outline-none focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 hover:bg-foreground/5 rounded-full bg-inherit hover:ring hover:ring-offset-0 hover:saturate-150 h-9 px-4 has-[>svg]:px-3 py-6 ring ring-white/20 hover:ring-white/25 md:text-xl"
+            class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive inline-flex shrink-0 items-center justify-center gap-2 rounded-md text-sm font-medium whitespace-nowrap transition-all outline-none focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 hover:saturate-150 h-9 px-4 py-2 has-[>svg]:px-3 text-accent-foreground/80 hover:text-accent-foreground hover:bg-accent/0 hover:dark:text-accent-foreground cursor-pointer hover:ring-0 md:text-base"
             data-size="default"
             data-slot="button"
             data-variant="link"
           >
-            Мессенджеры
+            Смотреть услуги
+            <svg
+              aria-hidden="true"
+              class="lucide lucide-move-right"
+              fill="none"
+              height="24"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M18 8L22 12L18 16"
+              />
+              <path
+                d="M2 12H22"
+              />
+            </svg>
           </button>
         </div>
-        <button
-          class="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive inline-flex shrink-0 items-center justify-center gap-2 text-sm font-medium whitespace-nowrap transition-all outline-none focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 rounded-full bg-inherit hover:ring-white/20 hover:ring-offset-0 hover:saturate-150 h-9 px-4 py-2 has-[>svg]:px-3 text-accent-foreground hover:text-accent-foreground hover:bg-accent/0 hover:ring-0 md:text-lg"
-          data-size="default"
-          data-slot="button"
-          data-variant="link"
+        <div
+          class="flex flex-col gap-4 md:flex-row"
         >
-          Смотреть услуги
-          <svg
-            aria-hidden="true"
-            class="lucide lucide-move-right"
-            fill="none"
-            height="24"
-            stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            viewBox="0 0 24 24"
-            width="24"
-            xmlns="http://www.w3.org/2000/svg"
+          <span
+            class="flex w-full items-center justify-center rounded-full border border-gray-500/40 bg-gray-500/20 p-2 text-sm md:w-max md:text-base"
+            data-testid="secondary-info-1"
           >
-            <path
-              d="M18 8L22 12L18 16"
-            />
-            <path
-              d="M2 12H22"
-            />
-          </svg>
-        </button>
-      </div>
-      <div
-        class="flex flex-col gap-4 md:flex-row"
-      >
-        <span
-          class="flex w-full items-center justify-center rounded-full border border-gray-500/40 bg-gray-500/20 p-2 text-sm md:w-max md:text-lg"
-          data-testid="secondary-info-1"
-        >
-          ул. Дмитрия Донского, 50а
-        </span>
-        <span
-          class="flex w-full items-center justify-center rounded-full border border-gray-500/40 bg-gray-500/20 p-2 text-sm md:w-max md:text-lg"
-          data-testid="secondary-info-2"
-        >
-          Пн-ВС: 10:00-20:00
-        </span>
-        <span
-          class="flex w-full items-center justify-center rounded-full border border-gray-500/40 bg-gray-500/20 p-2 text-sm md:w-max md:text-lg"
-          data-testid="secondary-info-3"
-        >
-          Гарантия на работы
-        </span>
-      </div>
+            ул. Дмитрия Донского, 50а
+          </span>
+          <span
+            class="flex w-full items-center justify-center rounded-full border border-gray-500/40 bg-gray-500/20 p-2 text-sm md:w-max md:text-base"
+            data-testid="secondary-info-2"
+          >
+            Пн-ВС: 10:00-20:00
+          </span>
+          <span
+            class="flex w-full items-center justify-center rounded-full border border-gray-500/40 bg-gray-500/20 p-2 text-sm md:w-max md:text-base"
+            data-testid="secondary-info-3"
+          >
+            Гарантия на работы
+          </span>
+        </div>
+      </section>
     </section>
-  </section>
-  <section
-    class="max-w-full rounded-lg border p-4 md:w-full md:p-6"
-    data-testid="highlights-panel"
-  >
-    <div
-      class="flex flex-col gap-8 lg:gap-4"
+    <section
+      class="ring-foreground/10 bg-card m-4 flex flex-col gap-4 rounded-lg p-4 ring md:m-0 md:w-full md:justify-start md:gap-8 lg:gap-4"
+      data-testid="highlights-panel"
     >
       <h4
-        class="text-lg md:text-2xl"
+        class="text-foreground/70 text-sm/8 font-normal tracking-wider"
       >
-        Быстрые факты
+        БЫСТРЫЕ ФАКТЫ
       </h4>
       <div
-        class="flex w-full flex-col gap-4 md:w-max md:gap-6"
+        class="flex flex-col gap-6 pl-6 lg:gap-2"
         data-testid="highlights-list"
       >
         <div
-          class="flex flex-row items-center gap-4 rounded-lg border border-white/30 p-2 md:border-none md:p-3 hover:md:ring hover:md:ring-white/50"
+          class="hover:lg:ring-foreground/15 dark:hover:lg:bg-foreground/5 flex flex-row gap-4 lg:p-4 hover:lg:rounded-sm hover:lg:ring"
         >
           <span
-            class="flex rounded-lg border border-white/30 p-2 md:px-3 md:text-2xl"
+            class="text-foreground/80 ring-foreground/20 text-md self-start rounded-sm p-2 px-3 ring xl:text-lg"
           >
             01
           </span>
@@ -292,22 +265,22 @@ exports[`hero section is visible for user should hero section content 1`] = `
             class="flex flex-col"
           >
             <span
-              class="text-lg text-white md:text-xl"
+              class="text-foreground text-base font-semibold tracking-wide xl:text-lg"
             >
               Замена стёкол
             </span>
             <span
-              class="text-sm whitespace-pre-line md:text-lg"
+              class="text-foreground/80 text-sm tracking-wide xl:text-base"
             >
               От 1 часа · гарантия 1 год · стекла напрямую с заводов
             </span>
           </div>
         </div>
         <div
-          class="flex flex-row items-center gap-4 rounded-lg border border-white/30 p-2 md:border-none md:p-3 hover:md:ring hover:md:ring-white/50"
+          class="hover:lg:ring-foreground/15 dark:hover:lg:bg-foreground/5 flex flex-row gap-4 lg:p-4 hover:lg:rounded-sm hover:lg:ring"
         >
           <span
-            class="flex rounded-lg border border-white/30 p-2 md:px-3 md:text-2xl"
+            class="text-foreground/80 ring-foreground/20 text-md self-start rounded-sm p-2 px-3 ring xl:text-lg"
           >
             02
           </span>
@@ -315,22 +288,22 @@ exports[`hero section is visible for user should hero section content 1`] = `
             class="flex flex-col"
           >
             <span
-              class="text-lg text-white md:text-xl"
+              class="text-foreground text-base font-semibold tracking-wide xl:text-lg"
             >
               Ремонт
             </span>
             <span
-              class="text-sm whitespace-pre-line md:text-lg"
+              class="text-foreground/80 text-sm tracking-wide xl:text-base"
             >
               От 10 минут · современный прозрачный полимер
             </span>
           </div>
         </div>
         <div
-          class="flex flex-row items-center gap-4 rounded-lg border border-white/30 p-2 md:border-none md:p-3 hover:md:ring hover:md:ring-white/50"
+          class="hover:lg:ring-foreground/15 dark:hover:lg:bg-foreground/5 flex flex-row gap-4 lg:p-4 hover:lg:rounded-sm hover:lg:ring"
         >
           <span
-            class="flex rounded-lg border border-white/30 p-2 md:px-3 md:text-2xl"
+            class="text-foreground/80 ring-foreground/20 text-md self-start rounded-sm p-2 px-3 ring xl:text-lg"
           >
             03
           </span>
@@ -338,12 +311,12 @@ exports[`hero section is visible for user should hero section content 1`] = `
             class="flex flex-col"
           >
             <span
-              class="text-lg text-white md:text-xl"
+              class="text-foreground text-base font-semibold tracking-wide xl:text-lg"
             >
               Тонировка
             </span>
             <span
-              class="text-sm whitespace-pre-line md:text-lg"
+              class="text-foreground/80 text-sm tracking-wide xl:text-base"
             >
               Плёнка США/Корея · гарантия 5–10 лет
             </span>
@@ -351,38 +324,42 @@ exports[`hero section is visible for user should hero section content 1`] = `
         </div>
       </div>
       <div
-        class="flex flex-row justify-between md:justify-start md:gap-4"
+        class="flex flex-row justify-between md:justify-start md:gap-6"
         data-testid="highlights-perks"
       >
         <div
-          class="h-max w-max rounded-full border border-white/20 bg-gray-600/60 p-2 px-4 text-gray-400/80 md:text-lg"
+          class="ring-foreground/20 text-foreground/70 rounded-md p-2 px-3 ring"
         >
-          <div
-            class="flex"
+          <span
+            class="text-sm xl:text-base"
           >
             чай/кофе
-          </div>
+          </span>
         </div>
         <div
-          class="h-max w-max rounded-full border border-white/20 bg-gray-600/60 p-2 px-4 text-gray-400/80 md:text-lg"
+          class="ring-foreground/20 text-foreground/70 rounded-md p-2 px-3 ring"
         >
-          <div
-            class="flex"
+          <span
+            class="text-sm xl:text-base"
           >
             Wi-Fi
-          </div>
+          </span>
         </div>
         <div
-          class="h-max w-max rounded-full border border-white/20 bg-gray-600/60 p-2 px-4 text-gray-400/80 md:text-lg"
+          class="ring-foreground/20 text-foreground/70 rounded-md p-2 px-3 ring"
         >
-          <div
-            class="flex"
+          <span
+            class="text-sm xl:text-base"
           >
             Печеньки
-          </div>
+          </span>
         </div>
       </div>
-    </div>
-  </section>
-</main>
+    </section>
+  </div>
+  <div
+    class="via-foreground/20 h-px w-full bg-linear-to-r from-transparent to-transparent undefined"
+    data-testid="divider"
+  />
+</article>
 `;

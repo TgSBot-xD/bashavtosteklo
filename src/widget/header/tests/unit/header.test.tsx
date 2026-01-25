@@ -30,25 +30,25 @@ describe('when user scrolls on the page', () => {
     setWindowScrollY(0);
     render(<Header />);
 
-    const background = screen.getByTestId('background');
-    expect(background.className).toContain('border-transparent');
+    expect(screen.getByTestId('header').className).not.toContain('backdrop-blur-sm');
 
     setWindowScrollY(4);
     fireEvent.scroll(window);
-    expect(background.className).toContain('border-white/30');
+    expect(screen.getByTestId('header').className).toContain('backdrop-blur-sm');
+    expect(screen.getByTestId('divider')).toBeInTheDocument();
   });
 
   it('should update background border on scroll up', () => {
     setWindowScrollY(10);
     render(<Header />);
 
-    const background = screen.getByTestId('background');
-    expect(background.className).toContain('border-white/30');
+    expect(screen.getByTestId('header').className).toContain('backdrop-blur-sm');
+    expect(screen.getByTestId('divider')).toBeInTheDocument();
 
     setWindowScrollY(0);
     fireEvent.scroll(window);
 
-    expect(background.className).toContain('border-transparent');
+    expect(screen.getByTestId('header').className).not.toContain('backdrop-blur-sm');
   });
 
   afterEach(() => {

@@ -11,8 +11,9 @@
     "lint:fix": "eslint . --fix",
     "format": "prettier --write .",
     "test": "jest",
+    "test:up": "jest -u",
     "test:pw": "playwright test --config playwright.config.ts",
-    "test:pw:update": "npx playwright test --update-snapshots",
+    "test:pw:up": "npx playwright test --update-snapshots",
     "all": "pnpm lint && pnpm format && pnpm test && pnpm test:pw"
   },
   "dependencies": {

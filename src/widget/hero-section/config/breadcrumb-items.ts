@@ -2,19 +2,19 @@ import { BreadcrumbLinkItem } from '../models';
 
 export const breadcrumbLinks: BreadcrumbLinkItem[] = [
   {
-    label: 'Автостёкла',
+    label: 'АВТОСТЁКЛА',
     href: '#Автостёкла',
   },
   {
-    label: 'Тонировка',
+    label: 'ТОНИРОВКА',
     href: '#Тонировка',
   },
   {
-    label: 'Плёнки',
+    label: 'ПЛЁНКИ',
     href: '#Плёнки',
   },
   {
-    label: 'Заправка кондиционеров',
+    label: 'КОНДИЦИОНЕРЫ',
     href: '#Кондиционеры',
   },
 ] as const;

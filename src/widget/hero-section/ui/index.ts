@@ -1,4 +1,4 @@
-export { Breadcrumbs } from './breadcrumbs';
-export { HeroContent } from './hero-content';
+export { Breadcrumbs } from './hero-content/breadcrumbs';
+export { HeroContent } from './hero-content/hero-content';
 export { HeroSection } from './hero-section';
-export { HighlightsPanel } from './highlights-panel';
+export { HighlightsPanel } from './highlights-panel/highlights-panel';

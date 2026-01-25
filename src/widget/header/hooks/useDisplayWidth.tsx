@@ -14,4 +14,4 @@ function useDisplayWidth() {
   return getDisplayWidth;
 }
 
-export {useDisplayWidth}
+export { useDisplayWidth };

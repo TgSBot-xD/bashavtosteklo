@@ -13,7 +13,8 @@ import {
   SheetTitle,
   SheetTrigger,
 } from 'shared/ui';
-import { ButtonLink } from 'shared/ui/button-link';
+
+import { ButtonLink } from 'feature/button-link';
 
 function SheetNavigationPanel({
   sideOfSidebar,
@@ -23,10 +24,18 @@ function SheetNavigationPanel({
   return (
     <div className="flex items-center xl:hidden">
       <Sheet>
-        <SheetTrigger className="border-foreground/20 h-max rounded-sm border p-3">
+        <SheetTrigger
+          data-testid="header-sheet-mobile-trigger"
+          className="border-foreground/20 h-max rounded-sm border p-3"
+        >
           <Menu className="h-auto w-5" />
         </SheetTrigger>
-        <SheetContent showCloseButton={false} side={sideOfSidebar} className="flex">
+        <SheetContent
+          data-testid="header-sheet-mobile-content"
+          showCloseButton={false}
+          side={sideOfSidebar}
+          className="flex"
+        >
           <SheetHeader>
             <SheetTitle asChild>
               <div>

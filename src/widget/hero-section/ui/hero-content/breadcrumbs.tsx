@@ -2,7 +2,7 @@ import { Dot } from 'lucide-react';
 import Link from 'next/link';
 import { Fragment } from 'react';
 
-import { breadcrumbLinks } from '../config';
+import { breadcrumbLinks } from '../../config';
 
 import {
   Breadcrumb,
@@ -25,8 +25,8 @@ function renderBreadcrumbLinks() {
     const hasNextLink = index < breadcrumbLinks.length - 1;
     return (
       <Fragment key={href}>
-        <BreadcrumbItem className="text-lg">
-          <BreadcrumbLink asChild>
+        <BreadcrumbItem className="text-sm">
+          <BreadcrumbLink className="font-medium" asChild>
             <Link href={href}>{label}</Link>
           </BreadcrumbLink>
         </BreadcrumbItem>

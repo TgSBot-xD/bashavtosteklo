@@ -16,7 +16,7 @@ test('hero block screenshot', async ({ page }) => {
       content: `[data-testid="header"]{display:none !important; }`,
     });
 
-    const hero = page.getByTestId('hero-content');
+    const hero = page.getByTestId('hero-section');
 
     await expect(hero).toHaveScreenshot(`hero-section-${theme}.png`);
   }

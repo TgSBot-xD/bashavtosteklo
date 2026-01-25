@@ -30,3 +30,4 @@ export {
   BreadcrumbSeparator,
   BreadcrumbEllipsis,
 } from './breadcrumb';
+export { Divider } from './divider';

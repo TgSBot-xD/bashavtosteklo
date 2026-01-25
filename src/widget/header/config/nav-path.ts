@@ -1,4 +1,4 @@
-import { NavigationItem } from "../model/navigation.types";
+import { NavigationItem } from '../model/navigation.types';
 
 const navigationItems: NavigationItem[] = [
   { id: 1, label: 'Услуги', href: '#services' },
