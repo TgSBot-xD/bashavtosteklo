@@ -2,15 +2,15 @@
 
 exports[`when user scrolls on the page should header is visible 1`] = `
 <header
-  class="sticky top-0 z-50 flex w-full flex-col lg:max-w-7xl xl:m-auto"
+  class="sticky top-0 z-50 flex w-full max-w-full flex-col"
   data-testid="header"
 >
   <div
-    class="flex w-full flex-row p-2 px-4 md:py-6 xl:py-4"
+    class="flex w-full flex-row p-2 px-4 md:py-6 md:pb-4 lg:px-0 xl:m-auto xl:py-4"
     data-testid="background"
   >
     <div
-      class="flex w-full justify-between md:items-center xl:m-auto xl:max-w-7xl"
+      class="sm:max-w-3sx m-auto flex w-full justify-between md:items-center lg:max-w-4xl xl:max-w-7xl"
     >
       <div
         class="flex xl:w-1/5"

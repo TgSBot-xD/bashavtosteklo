@@ -17,11 +17,14 @@ function Header() {
     <header
       data-testid="header"
       className={cn(
-        `sticky top-0 z-50 flex w-full flex-col lg:max-w-7xl ${isScrolled ? 'backdrop-blur-sm' : ''} xl:m-auto`,
+        `sticky top-0 z-50 flex w-full max-w-full flex-col ${isScrolled ? 'backdrop-blur-sm' : ''} `,
       )}
     >
-      <div data-testid="background" className="flex w-full flex-row p-2 px-4 md:py-6 xl:py-4">
-        <div className="flex w-full justify-between md:items-center xl:m-auto xl:max-w-7xl">
+      <div
+        data-testid="background"
+        className="flex w-full flex-row p-2 px-4 md:py-6 md:pb-4 lg:px-0 xl:m-auto xl:py-4"
+      >
+        <div className="sm:max-w-3sx m-auto flex w-full justify-between md:items-center lg:max-w-4xl xl:max-w-7xl">
           <div className="flex xl:w-1/5">
             <Trademark />
           </div>

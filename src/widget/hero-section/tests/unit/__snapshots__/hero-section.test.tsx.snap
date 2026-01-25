@@ -6,7 +6,7 @@ exports[`hero section is visible for user should hero section content 1`] = `
   data-testid="hero-section"
 >
   <div
-    class="flex w-full flex-col items-center gap-2 md:gap-8 md:px-5 lg:m-auto lg:max-w-7xl lg:justify-between lg:gap-10 lg:px-0 xl:flex-row xl:gap-8"
+    class="lg: flex w-full flex-col items-center gap-2 md:gap-8 md:px-5 lg:m-auto lg:max-w-4xl lg:gap-10 lg:p-0 xl:m-auto xl:max-w-7xl xl:flex-row xl:gap-8 xl:px-0"
   >
     <section
       class="flex w-full max-w-7xl flex-col gap-6 p-4 md:p-0 lg:self-end lg:pr-4"
@@ -151,7 +151,7 @@ exports[`hero section is visible for user should hero section content 1`] = `
         class="flex flex-col justify-center gap-4"
       >
         <h1
-          class="text-foreground flex text-4xl font-bold md:text-3xl lg:text-5xl"
+          class="text-foreground flex text-4xl font-bold md:text-4xl lg:text-6xl"
         >
           Автостёкла и всё, что с ними связано.
         </h1>

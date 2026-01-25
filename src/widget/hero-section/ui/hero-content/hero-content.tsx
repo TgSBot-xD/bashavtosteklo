@@ -10,7 +10,7 @@ function HeroContent() {
     <section className="flex w-full max-w-7xl flex-col gap-6 p-4 md:p-0 lg:self-end lg:pr-4">
       <Breadcrumbs />
       <div className="flex flex-col justify-center gap-4">
-        <h1 className="text-foreground flex text-4xl font-bold md:text-3xl lg:text-5xl">
+        <h1 className="text-foreground flex text-4xl font-bold md:text-4xl lg:text-6xl">
           Автостёкла и всё, что с ними связано.
         </h1>
         <h3 className="flex max-w-xl text-base/6 text-wrap md:text-base lg:text-lg">
