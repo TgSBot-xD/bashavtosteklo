@@ -39,30 +39,61 @@ export default defineConfig({
   /* Configure projects for major browsers */
   projects: [
     {
-      name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
+      name: 'chromium-dark',
+      use: { ...devices['Desktop Chrome'], colorScheme: 'dark' },
       testIgnore: '**/*.mobile.pw.spec.ts',
     },
     {
-      name: 'firefox',
-      use: { ...devices['Desktop Firefox'] },
+      name: 'chromium-light',
+      use: { ...devices['Desktop Chrome'], colorScheme: 'light' },
       testIgnore: '**/*.mobile.pw.spec.ts',
     },
     {
-      name: 'webkit',
-      use: { ...devices['Desktop Safari'] },
+      name: 'firefox-dark',
+      use: { ...devices['Desktop Firefox'], colorScheme: 'dark' },
+      testIgnore: '**/*.mobile.pw.spec.ts',
+    },
+    {
+      name: 'firefox-light',
+      use: { ...devices['Desktop Firefox'], colorScheme: 'light' },
+      testIgnore: '**/*.mobile.pw.spec.ts',
+    },
+    {
+      name: 'webkit-dark',
+      use: { ...devices['Desktop Safari'], colorScheme: 'dark' },
+      testIgnore: '**/*.mobile.pw.spec.ts',
+    },
+    {
+      name: 'webkit-light',
+      use: { ...devices['Desktop Safari'], colorScheme: 'light' },
       testIgnore: '**/*.mobile.pw.spec.ts',
     },
 
     {
-      name: 'Mobile Chrome',
-      use: { ...devices['Pixel 5'] },
+      name: 'Mobile Chrome-dark',
+      use: { ...devices['Pixel 5'], colorScheme: 'dark' },
       testIgnore: '**/*.descktop.pw.spec.ts',
     },
     {
-      name: 'Mobile Safari',
-      use: { ...devices['iPhone 12'] },
+      name: 'Mobile Chrome-light',
+      use: { ...devices['Pixel 5'], colorScheme: 'light' },
       testIgnore: '**/*.descktop.pw.spec.ts',
+    },
+    {
+      name: 'webkit-iphone-light',
+      use: {
+        ...devices['iPhone 13'],
+        browserName: 'webkit',
+        colorScheme: 'light',
+      },
+    },
+    {
+      name: 'webkit-iphone-dark',
+      use: {
+        ...devices['iPhone 13'],
+        browserName: 'webkit',
+        colorScheme: 'dark',
+      },
     },
   ],
 

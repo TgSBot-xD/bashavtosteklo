@@ -1,21 +1,11 @@
 import { test, expect } from '@playwright/test';
 
-const themes = ['light', 'dark'] as const;
-
 test('navigation mobile menu screenshot', async ({ page }) => {
-  for (const theme of themes) {
-    await page.emulateMedia({ colorScheme: theme });
-    await page.addInitScript((theme: 'light' | 'dark') => {
-      localStorage.setItem('theme', theme);
-      document.documentElement.classList.toggle('dark', theme === 'dark');
-    }, theme);
+  await page.goto('/', { waitUntil: 'networkidle' });
 
-    await page.goto('/', { waitUntil: 'networkidle' });
+  const navBarTriger = page.getByTestId('header-sheet-mobile-trigger');
+  await navBarTriger.click();
 
-    const navBarTriger = page.getByTestId('header-sheet-mobile-trigger');
-    await navBarTriger.click();
-
-    const navBarMenu = page.getByTestId('header-sheet-mobile-content');
-    await expect(navBarMenu).toHaveScreenshot(`nav-menu-${theme}.png`);
-  }
+  const navBarMenu = page.getByTestId('header-sheet-mobile-content');
+  await expect(navBarMenu).toHaveScreenshot(`nav-menu.png`);
 });
