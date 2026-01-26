@@ -4,18 +4,18 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import { Header } from 'src/widgets/header/ui/header';
 
 function setWindowScrollY(scrollY: number) {
-  Object.defineProperty(window, 'scrollY', { value: scrollY, configurable: true });
+  Object.defineProperty(globalThis, 'scrollY', { value: scrollY, configurable: true });
 }
 
 describe('when user scrolls on the page', () => {
   beforeEach(() => {
     jest
-      .spyOn(global, 'requestAnimationFrame')
+      .spyOn(globalThis, 'requestAnimationFrame')
       .mockImplementation((frameRequestCallback: FrameRequestCallback) => {
         frameRequestCallback(0);
         return 1;
       });
-    jest.spyOn(global, 'cancelAnimationFrame').mockImplementation(() => {});
+    jest.spyOn(globalThis, 'cancelAnimationFrame').mockImplementation(() => {});
   });
 
   it('should header is visible', () => {

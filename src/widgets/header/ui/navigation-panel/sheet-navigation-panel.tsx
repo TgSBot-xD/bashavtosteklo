@@ -20,12 +20,12 @@ import {
 function SheetNavigationPanel({
   sideOfSidebar,
 }: {
-  sideOfSidebar: 'right' | 'bottom' | 'left' | 'top';
+  readonly sideOfSidebar: 'right' | 'bottom' | 'left' | 'top';
 }) {
-  const [getSheetPanel, setSheetPanel] = useState(false);
+  const [sheetPanel, setSheetPanel] = useState(false);
 
   const setStatusSheetPanel = (event: React.MouseEvent<HTMLAnchorElement | HTMLButtonElement>) => {
-    if (getSheetPanel) {
+    if (sheetPanel) {
       setSheetPanel(false);
       event.preventDefault();
     } else {
@@ -54,7 +54,7 @@ function SheetNavigationPanel({
 
   return (
     <div className="flex items-center xl:hidden">
-      <Sheet open={getSheetPanel} onOpenChange={setSheetPanel}>
+      <Sheet open={sheetPanel} onOpenChange={setSheetPanel}>
         <SheetTrigger
           data-testid="header-sheet-mobile-trigger"
           className="border-foreground/20 h-max rounded-sm border p-3"
