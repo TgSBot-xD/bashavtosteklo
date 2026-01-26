@@ -19,7 +19,7 @@
       }
     ],
     "paths": {
-      "widget/*": ["./src/widget/*"],
+      "widget/*": ["src/widgets/*"],
       "shared/*": ["./src/shared/*"],
       "feature/*": ["./src/feature/*"],
       "entities/*": ["./src/entities/*"],
@@ -36,7 +36,7 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "**/*.mts",
-    "src/widget/header/tests/brand.test.tsx"
+    "src/widgets/header/tests/brand.test.tsx"
   ],
   "exclude": ["node_modules", "public/layout/"]
 }
