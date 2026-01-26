@@ -37,7 +37,7 @@ function Header() {
             <ButtonLink
               variant="link"
               href="tel:+79272365108"
-              className="dark:text-foreground/80 hover:ring-foreground/20 dark:hover:text-foreground hidden hover:no-underline hover:ring lg:flex xl:text-base dark:bg-inherit dark:hover:ring-0"
+              className="dark:text-foreground/80 text-foreground/80 hover:ring-foreground/20 hidden hover:no-underline hover:ring lg:flex xl:text-base dark:hover:ring-0"
             >
               +7 (927) 236 51 08
             </ButtonLink>

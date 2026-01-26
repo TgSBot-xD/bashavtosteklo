@@ -1,8 +1,9 @@
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 
-import { breadcrumbLinks } from 'src/widgets/hero-section/configs';
 import { Breadcrumbs } from 'src/widgets/hero-section/ui';
+
+import { BreadcrumbLinkItem } from 'widget/hero-section/models';
 
 it('should render breadcrumb links', () => {
   render(<Breadcrumbs />);
@@ -12,3 +13,22 @@ it('should render breadcrumb links', () => {
     expect(breadcrumbLink).toHaveAttribute('href', href);
   }
 });
+
+const breadcrumbLinks: BreadcrumbLinkItem[] = [
+  {
+    label: 'АВТОСТЁКЛА',
+    href: '#Автостёкла',
+  },
+  {
+    label: 'ТОНИРОВКА',
+    href: '#Тонировка',
+  },
+  {
+    label: 'ПЛЁНКИ',
+    href: '#Плёнки',
+  },
+  {
+    label: 'КОНДИЦИОНЕРЫ',
+    href: '#Кондиционеры',
+  },
+];

@@ -18,18 +18,12 @@ describe('when user scrolls on the page', () => {
     jest.spyOn(globalThis, 'cancelAnimationFrame').mockImplementation(() => {});
   });
 
-  it('should header is visible', () => {
-    render(<Header />);
-
-    const header = screen.getByTestId('header');
-    expect(header).toBeInTheDocument();
-  });
-
   it('should update background border on scroll down', () => {
     setWindowScrollY(0);
     render(<Header />);
 
     expect(screen.getByTestId('header').className).not.toContain('backdrop-blur-sm');
+    expect(screen.queryByTestId('divider')).toBeInTheDocument();
 
     setWindowScrollY(4);
     fireEvent.scroll(window);

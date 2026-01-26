@@ -12,7 +12,7 @@ const contactItems: CompanyContactItems[] = [
     id: 2,
     href: 'tel:+79272365108',
     variant: 'secondary',
-    className: 'dark:bg-secondary/40 dark:text-foreground/90',
+    className: 'dark:bg-secondary/40 dark:text-foreground/90 lg:hidden',
     children: 'Позвонить',
   },
   {
