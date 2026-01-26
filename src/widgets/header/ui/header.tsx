@@ -16,7 +16,7 @@ function Header() {
     <header
       data-testid="header"
       className={cn(
-        `sticky top-0 z-50 flex w-full max-w-full flex-col ${isScrolled ? 'backdrop-blur-sm' : ''} `,
+        `sticky top-0 z-50 mb-32 flex w-full max-w-full flex-col ${isScrolled ? 'backdrop-blur-sm' : ''} `,
       )}
     >
       <div
