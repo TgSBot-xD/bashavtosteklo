@@ -1,4 +1,24 @@
-import { ServicesItems } from '../models/services-items.types';
+import '@testing-library/jest-dom';
+import { render, screen } from '@testing-library/react';
+
+import { ServicesItems } from 'widget/services/models/services-items.types';
+import { Services } from 'widget/services/ui/services';
+
+it('should render highlight items', () => {
+  render(<Services />);
+
+  for (const { title, label, workingHours } of servicesList) {
+    const servicesTitle = screen.getByText(title);
+    const servicesLabelOne = screen.getByText(label[0]);
+    const servicesLabelTwo = screen.getByText(label[1]);
+    const servicesWorkingHours = screen.getByText(workingHours);
+
+    expect(servicesTitle).toBeInTheDocument();
+    expect(servicesLabelOne).toBeInTheDocument();
+    expect(servicesLabelTwo).toBeInTheDocument();
+    expect(servicesWorkingHours).toBeInTheDocument();
+  }
+});
 
 const servicesList: ServicesItems[] = [
   {
@@ -60,5 +80,3 @@ const servicesList: ServicesItems[] = [
     workingHours: 'от 15 минут',
   },
 ];
-
-export { servicesList };
