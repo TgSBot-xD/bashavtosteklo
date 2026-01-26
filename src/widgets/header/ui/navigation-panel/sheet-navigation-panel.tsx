@@ -75,7 +75,7 @@ function SheetNavigationPanel({
               </div>
             </SheetTitle>
           </SheetHeader>
-          <SheetFooter data-state="close" className="flex items-center gap-10 md:gap-10">
+          <SheetFooter className="flex items-center gap-10 md:gap-10">
             {/* Отвечает за навигацию на панели Меню */}
             <NavigationMenu>
               <NavigationMenuList className="flex flex-col gap-2 md:gap-4">
@@ -87,7 +87,11 @@ function SheetNavigationPanel({
             <div className="flex w-full flex-col gap-4">{renderContactCompany()}</div>
 
             {/* Отвечает за кнопку закрытия на панели */}
-            <SheetClose asChild className="flex self-end">
+            <SheetClose
+              data-testid="header-sheet-mobile-close-button"
+              asChild
+              className="flex self-end"
+            >
               <X />
             </SheetClose>
           </SheetFooter>

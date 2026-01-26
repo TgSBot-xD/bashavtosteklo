@@ -10,3 +10,10 @@ it('should render telephone link', () => {
 
   expect(telephoneLink).toHaveAttribute('href', 'tel:+79272365108');
 });
+
+it('should render link to form', () => {
+  render(<Header />);
+  const linkToForm = screen.getByRole('link', { name: 'Онлайн-запись' });
+
+  expect(linkToForm).toHaveAttribute('href', '#form');
+});

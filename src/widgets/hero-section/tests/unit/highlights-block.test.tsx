@@ -1,8 +1,9 @@
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 
-import { highlightItems, highlightPerks } from 'src/widgets/hero-section/configs';
 import { HighlightsPanel } from 'src/widgets/hero-section/ui';
+
+import { HighlightItem, HighlightPerk } from 'widget/hero-section/models';
 
 describe('when highlights panel is rendered', () => {
   it('should render highlight items', () => {
@@ -29,3 +30,33 @@ describe('when highlights panel is rendered', () => {
     }
   });
 });
+
+const highlightItems: HighlightItem[] = [
+  {
+    displayIndex: '01',
+    title: 'Замена стёкол',
+    description: 'От 1 часа · гарантия 1 год · стекла напрямую с заводов',
+  },
+  {
+    displayIndex: '02',
+    title: 'Ремонт',
+    description: 'От 10 минут · современный прозрачный полимер',
+  },
+  {
+    displayIndex: '03',
+    title: 'Тонировка',
+    description: 'Плёнка США/Корея · гарантия 5–10 лет',
+  },
+];
+
+const highlightPerks: HighlightPerk[] = [
+  {
+    id: 1,
+    label: 'чай/кофе',
+  },
+  {
+    id: 2,
+    label: 'Wi-Fi',
+  },
+  { id: 3, label: 'Печеньки' },
+];
