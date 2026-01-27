@@ -6,6 +6,7 @@ function renderServicesList() {
   return servicesList.map(({ id, title, label, workingHours }) => {
     return (
       <div
+        data-testid={id}
         key={id}
         aria-label={title}
         className="bg-card hover:ring-ring/40 dark:ring-foreground/20 ring-foreground/10 dark:hover:ring-primary/40 flex flex-col rounded-xl p-4 ring transition-all"

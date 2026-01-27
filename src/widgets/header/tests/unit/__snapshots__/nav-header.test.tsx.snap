@@ -1,0 +1,86 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`should render navigation links 1`] = `
+<li
+  class="relative"
+  data-slot="navigation-menu-item"
+  data-testid="1"
+>
+  <a
+    class="data-[active=true]:focus:bg-accent data-[active=true]:hover:bg-accent data-[active=true]:bg-accent/50 data-[active=true]:text-accent-foreground hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus-visible:ring-ring/50 [&_svg:not([class*='text-'])]:text-muted-foreground flex flex-col gap-1 rounded-sm p-2 text-sm transition-all outline-none focus-visible:ring-[3px] focus-visible:outline-1 [&_svg:not([class*='size-'])]:size-4 xl:hover:ring-foreground/20 text-nowrap hover:bg-inherit xl:hover:px-4 xl:hover:ring xl:hover:ring-offset-0 dark:hover:px-2 dark:hover:ring-0 text-base md:text-lg lg:text-base"
+    data-radix-collection-item=""
+    data-slot="navigation-menu-link"
+    href="#services"
+  >
+    Услуги
+  </a>
+</li>
+`;
+
+exports[`should render navigation links 2`] = `
+<li
+  class="relative"
+  data-slot="navigation-menu-item"
+  data-testid="2"
+>
+  <a
+    class="data-[active=true]:focus:bg-accent data-[active=true]:hover:bg-accent data-[active=true]:bg-accent/50 data-[active=true]:text-accent-foreground hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus-visible:ring-ring/50 [&_svg:not([class*='text-'])]:text-muted-foreground flex flex-col gap-1 rounded-sm p-2 text-sm transition-all outline-none focus-visible:ring-[3px] focus-visible:outline-1 [&_svg:not([class*='size-'])]:size-4 xl:hover:ring-foreground/20 text-nowrap hover:bg-inherit xl:hover:px-4 xl:hover:ring xl:hover:ring-offset-0 dark:hover:px-2 dark:hover:ring-0 text-base md:text-lg lg:text-base"
+    data-radix-collection-item=""
+    data-slot="navigation-menu-link"
+    href="#why"
+  >
+    Почему мы
+  </a>
+</li>
+`;
+
+exports[`should render navigation links 3`] = `
+<li
+  class="relative"
+  data-slot="navigation-menu-item"
+  data-testid="3"
+>
+  <a
+    class="data-[active=true]:focus:bg-accent data-[active=true]:hover:bg-accent data-[active=true]:bg-accent/50 data-[active=true]:text-accent-foreground hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus-visible:ring-ring/50 [&_svg:not([class*='text-'])]:text-muted-foreground flex flex-col gap-1 rounded-sm p-2 text-sm transition-all outline-none focus-visible:ring-[3px] focus-visible:outline-1 [&_svg:not([class*='size-'])]:size-4 xl:hover:ring-foreground/20 text-nowrap hover:bg-inherit xl:hover:px-4 xl:hover:ring xl:hover:ring-offset-0 dark:hover:px-2 dark:hover:ring-0 text-base md:text-lg lg:text-base"
+    data-radix-collection-item=""
+    data-slot="navigation-menu-link"
+    href="#examples"
+  >
+    Примеры
+  </a>
+</li>
+`;
+
+exports[`should render navigation links 4`] = `
+<li
+  class="relative"
+  data-slot="navigation-menu-item"
+  data-testid="4"
+>
+  <a
+    class="data-[active=true]:focus:bg-accent data-[active=true]:hover:bg-accent data-[active=true]:bg-accent/50 data-[active=true]:text-accent-foreground hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus-visible:ring-ring/50 [&_svg:not([class*='text-'])]:text-muted-foreground flex flex-col gap-1 rounded-sm p-2 text-sm transition-all outline-none focus-visible:ring-[3px] focus-visible:outline-1 [&_svg:not([class*='size-'])]:size-4 xl:hover:ring-foreground/20 text-nowrap hover:bg-inherit xl:hover:px-4 xl:hover:ring xl:hover:ring-offset-0 dark:hover:px-2 dark:hover:ring-0 text-base md:text-lg lg:text-base"
+    data-radix-collection-item=""
+    data-slot="navigation-menu-link"
+    href="#reviews"
+  >
+    Отзывы
+  </a>
+</li>
+`;
+
+exports[`should render navigation links 5`] = `
+<li
+  class="relative"
+  data-slot="navigation-menu-item"
+  data-testid="5"
+>
+  <a
+    class="data-[active=true]:focus:bg-accent data-[active=true]:hover:bg-accent data-[active=true]:bg-accent/50 data-[active=true]:text-accent-foreground hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus-visible:ring-ring/50 [&_svg:not([class*='text-'])]:text-muted-foreground flex flex-col gap-1 rounded-sm p-2 text-sm transition-all outline-none focus-visible:ring-[3px] focus-visible:outline-1 [&_svg:not([class*='size-'])]:size-4 xl:hover:ring-foreground/20 text-nowrap hover:bg-inherit xl:hover:px-4 xl:hover:ring xl:hover:ring-offset-0 dark:hover:px-2 dark:hover:ring-0 text-base md:text-lg lg:text-base"
+    data-radix-collection-item=""
+    data-slot="navigation-menu-link"
+    href="#contacts"
+  >
+    Контакты
+  </a>
+</li>
+`;

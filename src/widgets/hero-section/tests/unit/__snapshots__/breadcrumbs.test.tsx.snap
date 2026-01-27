@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`should render breadcrumb links 1`] = `
+<li
+  class="inline-flex items-center gap-1.5 text-sm"
+  data-slot="breadcrumb-item"
+  data-testid="1"
+>
+  <a
+    class="hover:text-foreground transition-colors font-medium"
+    data-slot="breadcrumb-link"
+    href="#Автостёкла"
+  >
+    АВТОСТЁКЛА
+  </a>
+</li>
+`;
+
+exports[`should render breadcrumb links 2`] = `
+<li
+  class="inline-flex items-center gap-1.5 text-sm"
+  data-slot="breadcrumb-item"
+  data-testid="2"
+>
+  <a
+    class="hover:text-foreground transition-colors font-medium"
+    data-slot="breadcrumb-link"
+    href="#Тонировка"
+  >
+    ТОНИРОВКА
+  </a>
+</li>
+`;
+
+exports[`should render breadcrumb links 3`] = `
+<li
+  class="inline-flex items-center gap-1.5 text-sm"
+  data-slot="breadcrumb-item"
+  data-testid="3"
+>
+  <a
+    class="hover:text-foreground transition-colors font-medium"
+    data-slot="breadcrumb-link"
+    href="#Плёнки"
+  >
+    ПЛЁНКИ
+  </a>
+</li>
+`;
+
+exports[`should render breadcrumb links 4`] = `
+<li
+  class="inline-flex items-center gap-1.5 text-sm"
+  data-slot="breadcrumb-item"
+  data-testid="4"
+>
+  <a
+    class="hover:text-foreground transition-colors font-medium"
+    data-slot="breadcrumb-link"
+    href="#Кондиционеры"
+  >
+    КОНДИЦИОНЕРЫ
+  </a>
+</li>
+`;

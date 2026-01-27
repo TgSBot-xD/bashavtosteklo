@@ -3,21 +3,16 @@ import { render, screen } from '@testing-library/react';
 
 import { NavigationPanel } from 'src/widgets/header/ui/navigation-panel/navigation-panel';
 
-import { NavigationItem } from 'widget/header/models/navigation.types';
+import { navigationItems } from 'widget/header/configs/nav-path';
 
 it('should render navigation links', () => {
   render(<NavigationPanel />);
 
-  for (const { label, href } of navigationItems) {
+  for (const { label, href, id } of navigationItems) {
     const navigationLink = screen.getByRole('link', { name: label });
+    const navigationItem = screen.getByTestId(id);
+
     expect(navigationLink).toHaveAttribute('href', href);
+    expect(navigationItem).toMatchSnapshot();
   }
 });
-
-const navigationItems: NavigationItem[] = [
-  { id: 1, label: 'Услуги', href: '#services' },
-  { id: 2, label: 'Почему мы', href: '#why' },
-  { id: 3, label: 'Примеры', href: '#examples' },
-  { id: 4, label: 'Отзывы', href: '#reviews' },
-  { id: 5, label: 'Контакты', href: '#contacts' },
-];
