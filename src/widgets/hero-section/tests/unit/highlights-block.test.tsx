@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react';
 
 import { HighlightsPanel } from 'src/widgets/hero-section/ui';
 
-import { HighlightItem, HighlightPerk } from 'widget/hero-section/models';
+import { highlightItems, highlightPerks } from 'widget/hero-section/configs';
 
 describe('when highlights panel is rendered', () => {
   it('should render highlight items', () => {
@@ -13,50 +13,24 @@ describe('when highlights panel is rendered', () => {
       const highlightTitle = screen.getByText(title);
       const highlightDescription = screen.getByText(description);
       const highlightIndex = screen.getByText(displayIndex);
+      const highlightItem = screen.getByTestId(displayIndex);
 
       expect(highlightTitle).toBeInTheDocument();
       expect(highlightDescription).toBeInTheDocument();
       expect(highlightIndex).toBeInTheDocument();
+      expect(highlightItem).toMatchSnapshot();
     }
   });
 
   it('should render highlight perks', () => {
     render(<HighlightsPanel />);
 
-    for (const { label } of highlightPerks) {
-      const perkLabel = screen.getByText(label);
+    for (const { label, id } of highlightPerks) {
+      const highlightPerkLabel = screen.getByText(label);
+      const highlightPerkItem = screen.getByTestId(id);
 
-      expect(perkLabel).toBeInTheDocument();
+      expect(highlightPerkLabel).toBeInTheDocument();
+      expect(highlightPerkItem).toMatchSnapshot();
     }
   });
 });
-
-const highlightItems: HighlightItem[] = [
-  {
-    displayIndex: '01',
-    title: 'Замена стёкол',
-    description: 'От 1 часа · гарантия 1 год · стекла напрямую с заводов',
-  },
-  {
-    displayIndex: '02',
-    title: 'Ремонт',
-    description: 'От 10 минут · современный прозрачный полимер',
-  },
-  {
-    displayIndex: '03',
-    title: 'Тонировка',
-    description: 'Плёнка США/Корея · гарантия 5–10 лет',
-  },
-];
-
-const highlightPerks: HighlightPerk[] = [
-  {
-    id: 1,
-    label: 'чай/кофе',
-  },
-  {
-    id: 2,
-    label: 'Wi-Fi',
-  },
-  { id: 3, label: 'Печеньки' },
-];

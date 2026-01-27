@@ -21,11 +21,11 @@ function Breadcrumbs() {
 }
 
 function renderBreadcrumbLinks() {
-  return breadcrumbLinks.map(({ label, href }, index) => {
+  return breadcrumbLinks.map(({ label, href, id }, index) => {
     const hasNextLink = index < breadcrumbLinks.length - 1;
     return (
       <Fragment key={href}>
-        <BreadcrumbItem className="text-sm">
+        <BreadcrumbItem data-testid={id} className="text-sm">
           <BreadcrumbLink className="font-medium" asChild>
             <Link href={href}>{label}</Link>
           </BreadcrumbLink>

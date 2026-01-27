@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`should render secondary info items 1`] = `
+<span
+  class="flex w-full items-center justify-center rounded-full border border-gray-500/40 bg-gray-500/20 p-2 text-sm md:w-max md:text-base"
+  data-testid="secondary-info-1"
+>
+  ул. Дмитрия Донского, 50а
+</span>
+`;
+
+exports[`should render secondary info items 2`] = `
+<span
+  class="flex w-full items-center justify-center rounded-full border border-gray-500/40 bg-gray-500/20 p-2 text-sm md:w-max md:text-base"
+  data-testid="secondary-info-2"
+>
+  Пн-ВС: 10:00-20:00
+</span>
+`;
+
+exports[`should render secondary info items 3`] = `
+<span
+  class="flex w-full items-center justify-center rounded-full border border-gray-500/40 bg-gray-500/20 p-2 text-sm md:w-max md:text-base"
+  data-testid="secondary-info-3"
+>
+  Гарантия на работы
+</span>
+`;

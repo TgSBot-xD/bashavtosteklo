@@ -1,4 +1,5 @@
 export type HighlightItem = {
+  id: number;
   displayIndex: string;
   title: string;
   description: string;

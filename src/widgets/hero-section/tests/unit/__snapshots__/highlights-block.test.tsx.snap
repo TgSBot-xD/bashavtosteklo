@@ -1,0 +1,121 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`when highlights panel is rendered should render highlight items 1`] = `
+<div
+  class="hover:lg:ring-foreground/15 dark:hover:lg:bg-foreground/5 flex flex-row gap-4 lg:p-4 hover:lg:rounded-sm hover:lg:ring"
+  data-testid="01"
+>
+  <span
+    class="text-foreground/80 ring-foreground/20 self-start rounded-sm p-2 px-3 text-base ring xl:text-lg"
+  >
+    01
+  </span>
+  <div
+    class="flex flex-col"
+  >
+    <span
+      class="text-foreground text-base font-semibold tracking-wide xl:text-lg"
+    >
+      Замена стёкол
+    </span>
+    <span
+      class="text-foreground/80 text-sm tracking-wide xl:text-base"
+    >
+      От 1 часа · гарантия 1 год · стекла напрямую с заводов
+    </span>
+  </div>
+</div>
+`;
+
+exports[`when highlights panel is rendered should render highlight items 2`] = `
+<div
+  class="hover:lg:ring-foreground/15 dark:hover:lg:bg-foreground/5 flex flex-row gap-4 lg:p-4 hover:lg:rounded-sm hover:lg:ring"
+  data-testid="02"
+>
+  <span
+    class="text-foreground/80 ring-foreground/20 self-start rounded-sm p-2 px-3 text-base ring xl:text-lg"
+  >
+    02
+  </span>
+  <div
+    class="flex flex-col"
+  >
+    <span
+      class="text-foreground text-base font-semibold tracking-wide xl:text-lg"
+    >
+      Ремонт
+    </span>
+    <span
+      class="text-foreground/80 text-sm tracking-wide xl:text-base"
+    >
+      От 10 минут · современный прозрачный полимер
+    </span>
+  </div>
+</div>
+`;
+
+exports[`when highlights panel is rendered should render highlight items 3`] = `
+<div
+  class="hover:lg:ring-foreground/15 dark:hover:lg:bg-foreground/5 flex flex-row gap-4 lg:p-4 hover:lg:rounded-sm hover:lg:ring"
+  data-testid="03"
+>
+  <span
+    class="text-foreground/80 ring-foreground/20 self-start rounded-sm p-2 px-3 text-base ring xl:text-lg"
+  >
+    03
+  </span>
+  <div
+    class="flex flex-col"
+  >
+    <span
+      class="text-foreground text-base font-semibold tracking-wide xl:text-lg"
+    >
+      Тонировка
+    </span>
+    <span
+      class="text-foreground/80 text-sm tracking-wide xl:text-base"
+    >
+      Плёнка США/Корея · гарантия 5–10 лет
+    </span>
+  </div>
+</div>
+`;
+
+exports[`when highlights panel is rendered should render highlight perks 1`] = `
+<div
+  class="ring-foreground/20 text-foreground/70 rounded-md p-2 px-3 ring"
+  data-testid="1"
+>
+  <span
+    class="text-sm xl:text-base"
+  >
+    чай/кофе
+  </span>
+</div>
+`;
+
+exports[`when highlights panel is rendered should render highlight perks 2`] = `
+<div
+  class="ring-foreground/20 text-foreground/70 rounded-md p-2 px-3 ring"
+  data-testid="2"
+>
+  <span
+    class="text-sm xl:text-base"
+  >
+    Wi-Fi
+  </span>
+</div>
+`;
+
+exports[`when highlights panel is rendered should render highlight perks 3`] = `
+<div
+  class="ring-foreground/20 text-foreground/70 rounded-md p-2 px-3 ring"
+  data-testid="3"
+>
+  <span
+    class="text-sm xl:text-base"
+  >
+    Печеньки
+  </span>
+</div>
+`;

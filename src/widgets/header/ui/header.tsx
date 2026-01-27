@@ -1,10 +1,9 @@
 'use client';
 
-import { useEffect, useState } from 'react';
-
 import { NavigationPanel } from './navigation-panel/navigation-panel';
 import { SheetNavigationPanel } from './navigation-panel/sheet-navigation-panel';
 import { Trademark } from './trademark';
+import { useScrolledDisplay } from '../configs/hooks/useScrlledDisplay';
 
 import { cn } from 'shared/lib';
 import { ButtonLink, Divider } from 'shared/ui';
@@ -16,7 +15,7 @@ function Header() {
     <header
       data-testid="header"
       className={cn(
-        `sticky top-0 z-50 flex w-full max-w-full flex-col ${isScrolled ? 'backdrop-blur-sm' : ''} `,
+        `sticky top-0 z-50 mb-32 flex w-full max-w-full flex-col ${isScrolled ? 'backdrop-blur-sm' : ''} `,
       )}
     >
       <div
@@ -51,37 +50,6 @@ function Header() {
       <Divider className={cn(`${isScrolled ? 'flex' : 'hidden'}`)} />
     </header>
   );
-}
-
-function useScrolledDisplay() {
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  useEffect(() => {
-    const updateScrollState = () => {
-      // Порог 3px нужен, что бы не вешать стили раньше времени
-      const isScrolledNow = window.scrollY > 3;
-      setIsScrolled((previousIsScrolled) =>
-        previousIsScrolled === isScrolledNow ? previousIsScrolled : isScrolledNow,
-      );
-    };
-
-    let animationFrameId: number | null = null;
-    const handleScroll = () => {
-      if (animationFrameId != null) return;
-      animationFrameId = requestAnimationFrame(() => {
-        animationFrameId = null;
-        updateScrollState();
-      });
-    };
-
-    updateScrollState();
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-      if (animationFrameId != null) cancelAnimationFrame(animationFrameId);
-    };
-  }, []);
-  return isScrolled;
 }
 
 export { Header };

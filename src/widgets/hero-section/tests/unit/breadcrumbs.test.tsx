@@ -3,32 +3,16 @@ import { render, screen } from '@testing-library/react';
 
 import { Breadcrumbs } from 'src/widgets/hero-section/ui';
 
-import { BreadcrumbLinkItem } from 'widget/hero-section/models';
+import { breadcrumbLinks } from 'widget/hero-section/configs';
 
 it('should render breadcrumb links', () => {
   render(<Breadcrumbs />);
 
-  for (const { label, href } of breadcrumbLinks) {
+  for (const { label, href, id } of breadcrumbLinks) {
     const breadcrumbLink = screen.getByRole('link', { name: label });
+    const breadcrumbItem = screen.getByTestId(id);
+
     expect(breadcrumbLink).toHaveAttribute('href', href);
+    expect(breadcrumbItem).toMatchSnapshot();
   }
 });
-
-const breadcrumbLinks: BreadcrumbLinkItem[] = [
-  {
-    label: 'АВТОСТЁКЛА',
-    href: '#Автостёкла',
-  },
-  {
-    label: 'ТОНИРОВКА',
-    href: '#Тонировка',
-  },
-  {
-    label: 'ПЛЁНКИ',
-    href: '#Плёнки',
-  },
-  {
-    label: 'КОНДИЦИОНЕРЫ',
-    href: '#Кондиционеры',
-  },
-];

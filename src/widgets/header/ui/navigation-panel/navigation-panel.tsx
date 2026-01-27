@@ -29,7 +29,7 @@ function NavigationPanel() {
 function renderNavigationList(onClick?: React.MouseEventHandler<HTMLAnchorElement>) {
   return navigationItems.map(({ label, id, href }) => {
     return (
-      <NavigationMenuItem key={id}>
+      <NavigationMenuItem data-testid={id} key={id}>
         <NavigationMenuLink
           className="xl:hover:ring-foreground/20 text-nowrap hover:bg-inherit xl:hover:px-4 xl:hover:ring xl:hover:ring-offset-0 dark:hover:px-2 dark:hover:ring-0"
           onClick={onClick}

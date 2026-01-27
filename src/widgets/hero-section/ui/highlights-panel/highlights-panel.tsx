@@ -25,6 +25,7 @@ function renderHighlightItems() {
   return highlightItems.map(({ displayIndex, title, description }) => {
     return (
       <div
+        data-testid={displayIndex}
         key={displayIndex}
         className="hover:lg:ring-foreground/15 dark:hover:lg:bg-foreground/5 flex flex-row gap-4 lg:p-4 hover:lg:rounded-sm hover:lg:ring"
       >
@@ -47,7 +48,11 @@ function renderHighlightItems() {
 function renderHighlightPerks() {
   return highlightPerks.map(({ id, label }) => {
     return (
-      <div key={id} className="ring-foreground/20 text-foreground/70 rounded-md p-2 px-3 ring">
+      <div
+        data-testid={id}
+        key={id}
+        className="ring-foreground/20 text-foreground/70 rounded-md p-2 px-3 ring"
+      >
         <span className="text-sm xl:text-base">{label}</span>
       </div>
     );
