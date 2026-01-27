@@ -8,7 +8,7 @@ function Services() {
       data-testid="services"
       className="flex w-full flex-col gap-6 p-4 lg:mb-12 lg:max-w-4xl lg:p-0 xl:max-w-7xl"
     >
-      <div className="flex w-max flex-col">
+      <div className="flex w-max flex-col gap-2">
         <h4 className="text-2xl font-bold">Услуги</h4>
         <Divider />
       </div>
