@@ -1,5 +1,5 @@
 import { HeroContent } from './hero-content/hero-content';
-import { HighlightsPanel } from './highlights-panel/highlights-panel';
+import { HighlightsPanel } from './highlight-panel/highlights-panel';
 
 import { Divider } from 'shared/ui';
 

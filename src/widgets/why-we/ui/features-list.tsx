@@ -7,12 +7,14 @@ import toyota from 'public/why-we/toyota.webp';
 
 function FeaturesList() {
   return (
-    <div className="ring-foreground/10 bg-card/80 dark:ring-foreground/15 flex flex-col gap-4 rounded-sm p-4 shadow-xl/20 ring lg:justify-between">
-      <div className="grid aspect-video grid-cols-2 gap-2">
+    <div
+      data-testid="features"
+      className="ring-foreground/10 bg-card/80 dark:ring-foreground/15 flex flex-col gap-4 rounded-sm p-4 shadow-xl/20 ring lg:justify-between"
+    >
+      <div data-testid="features-list-image" className="grid aspect-video grid-cols-2 gap-2">
         <div className="relative">
           <Image src={gelick} alt="Пример работы" fill className="rounded-l-lg object-cover" />
         </div>
-
         <div className="grid grid-rows-2 gap-2">
           <div className="relative rounded-md">
             <Image

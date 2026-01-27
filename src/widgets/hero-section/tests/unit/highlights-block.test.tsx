@@ -2,7 +2,7 @@ import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 
 import { highlightItems, highlightPerks } from 'widget/hero-section/configs';
-import { HighlightsPanel } from 'widget/hero-section/ui/highlights-panel/highlights-panel';
+import { HighlightsPanel } from 'widget/hero-section/ui/highlight-panel/highlights-panel';
 
 describe('when highlights panel is rendered', () => {
   it('should render highlight items', () => {

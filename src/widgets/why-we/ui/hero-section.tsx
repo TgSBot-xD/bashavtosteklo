@@ -1,5 +1,5 @@
 import { FeaturesList } from './features-list';
-import { WhyUsList } from './why-us-list';
+import { WhyUsList } from './why-us';
 
 import { Divider } from 'shared/ui';
 

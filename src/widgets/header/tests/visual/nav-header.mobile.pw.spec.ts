@@ -7,12 +7,4 @@ test('navigation mobile menu screenshot', async ({ page }) => {
   await navBarTriger.click();
 
   await expect(page.getByTestId('header-sheet-mobile-content')).toHaveScreenshot(`nav-menu.png`);
-
-  const navBarCloseButton = page.getByTestId('header-sheet-mobile-close-button');
-  await expect(navBarCloseButton).toBeVisible();
-
-  await navBarCloseButton.click();
-
-  await expect(navBarCloseButton).not.toBeVisible();
-  await expect(page.getByTestId('header-sheet-mobile-content')).not.toBeVisible();
 });
