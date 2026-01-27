@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 
-import { HeroSection } from 'src/widgets/hero-section/ui';
+import { HeroSection } from 'widget/hero-section/ui/hero-section';
 
 describe('hero section is visible for user', () => {
   it('should hero content on hero section block', () => {

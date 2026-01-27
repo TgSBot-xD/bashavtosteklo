@@ -5,7 +5,7 @@ export function HighlightsPanel() {
   return (
     <section
       data-testid="highlights-panel"
-      className="ring-foreground/10 bg-card m-4 flex flex-col gap-4 rounded-lg p-4 ring md:m-0 md:w-full md:justify-start md:gap-8 lg:gap-4"
+      className="ring-foreground/10 bg-card m-4 flex flex-col gap-4 rounded-lg p-4 shadow-xl/20 ring md:m-0 md:w-full md:justify-start md:gap-8 lg:gap-4"
     >
       <h4 className="text-foreground/70 text-sm/8 font-normal tracking-wider">БЫСТРЫЕ ФАКТЫ</h4>
       <div data-testid="highlights-list" className="flex flex-col gap-6 pl-6 lg:gap-2">
