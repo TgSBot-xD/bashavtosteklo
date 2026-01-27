@@ -1,1 +1,1 @@
-export { WhyUsList } from './ui/why-us-list';
+export { WhyWeSection } from './ui/hero-section';

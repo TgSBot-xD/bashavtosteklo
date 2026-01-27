@@ -1,4 +1,5 @@
 import { FeaturesList } from './features-list';
+import { WhyUsList } from './why-us-list';
 
 import { Divider } from 'shared/ui';
 
@@ -11,7 +12,7 @@ function WhyWeSection() {
       </div>
       <div>
         <FeaturesList />
-        <div></div>
+        <WhyUsList />
       </div>
     </section>
   );

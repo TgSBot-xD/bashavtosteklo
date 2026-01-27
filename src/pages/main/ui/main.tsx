@@ -1,7 +1,7 @@
 import { Header } from 'widget/header';
 import { HeroSection } from 'widget/hero-section';
 import { Services } from 'widget/services';
-import { WhyUsList } from 'widget/why-we';
+import { WhyWeSection } from 'widget/why-we';
 
 function MainPage() {
   return (
@@ -9,7 +9,7 @@ function MainPage() {
       <Header />
       <HeroSection />
       <Services />
-      <WhyUsList />
+      <WhyWeSection />
     </div>
   );
 }
