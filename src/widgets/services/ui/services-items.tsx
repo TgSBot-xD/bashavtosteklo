@@ -9,7 +9,7 @@ function renderServicesList() {
         data-testid={id}
         key={id}
         aria-label={title}
-        className="bg-card hover:ring-ring/40 dark:ring-foreground/20 ring-foreground/10 dark:hover:ring-primary/40 flex flex-col rounded-xl p-4 ring transition-all"
+        className="bg-card hover:ring-ring/40 dark:ring-foreground/20 ring-foreground/10 dark:hover:ring-primary/40 flex flex-col rounded-xl p-4 shadow-lg/20 ring transition-all"
       >
         <div className="flex flex-col gap-4">
           <div className="flex items-center justify-between">

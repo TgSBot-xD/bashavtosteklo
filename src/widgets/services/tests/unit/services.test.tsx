@@ -4,7 +4,7 @@ import { render, screen } from '@testing-library/react';
 import { servicesList } from 'widget/services/config/services-items';
 import { Services } from 'widget/services/ui/services';
 
-it('should render highlight items', () => {
+it('should render services items', () => {
   render(<Services />);
 
   for (const { title, label, workingHours, id } of servicesList) {

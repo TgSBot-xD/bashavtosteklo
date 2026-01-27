@@ -1,9 +1,8 @@
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 
-import { Breadcrumbs } from 'src/widgets/hero-section/ui';
-
 import { breadcrumbLinks } from 'widget/hero-section/configs';
+import { Breadcrumbs } from 'widget/hero-section/ui/hero-content/breadcrumbs';
 
 it('should render breadcrumb links', () => {
   render(<Breadcrumbs />);

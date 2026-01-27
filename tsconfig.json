@@ -23,7 +23,8 @@
       "shared/*": ["./src/shared/*"],
       "feature/*": ["./src/feature/*"],
       "entities/*": ["./src/entities/*"],
-      "app/*": ["./src/app/*"]
+      "app/*": ["src/app/*"],
+      "public/*": ["./public/*"]
     },
     "baseUrl": "./",
     "forceConsistentCasingInFileNames": true,

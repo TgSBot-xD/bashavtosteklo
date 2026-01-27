@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`should render feature 1`] = `
+<div
+  class="bg-card/60 ring-foreground/10 text-foreground/90 w-max rounded-full p-2 text-sm ring backdrop-blur-lg"
+  data-testid="1"
+>
+  чай и кофе
+</div>
+`;
+
+exports[`should render feature 2`] = `
+<div
+  class="bg-card/60 ring-foreground/10 text-foreground/90 w-max rounded-full p-2 text-sm ring backdrop-blur-lg"
+  data-testid="2"
+>
+  Wi-Fi
+</div>
+`;
