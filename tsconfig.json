@@ -19,11 +19,11 @@
       }
     ],
     "paths": {
-      "widget/*": ["src/widgets/*"],
-      "shared/*": ["./src/shared/*"],
-      "feature/*": ["./src/feature/*"],
+      "pages/*": ["./src/pages/*"],
+      "features/*": ["./src/features/*"],
       "entities/*": ["./src/entities/*"],
-      "app/*": ["src/app/*"],
+      "shared/*": ["./src/shared/*"],
+      "app/*": ["./src/app/*"],
       "public/*": ["./public/*"]
     },
     "baseUrl": "./",
@@ -36,8 +36,7 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
-    "**/*.mts",
-    "src/widgets/header/tests/brand.test.tsx"
+    "**/*.mts"
   ],
   "exclude": ["node_modules", "public/layout/"]
 }
