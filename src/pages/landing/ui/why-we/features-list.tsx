@@ -11,7 +11,7 @@ export function FeaturesList() {
       data-testid="features"
       className="ring-foreground/10 bg-card/80 dark:ring-foreground/15 flex flex-col gap-4 rounded-sm p-4 shadow-xl/20 ring lg:justify-between"
     >
-      <div data-testid="features-list-image" className="grid aspect-[4/3] grid-cols-2 gap-2">
+      <div data-testid="features-list-image" className="grid aspect-video grid-cols-2 gap-2">
         <div className="relative">
           <Image src={gelick} alt="Пример работы" fill className="rounded-l-lg object-cover" />
         </div>
