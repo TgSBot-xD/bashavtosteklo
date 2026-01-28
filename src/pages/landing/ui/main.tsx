@@ -1,3 +1,4 @@
+import { ExamplesWork } from './examples-work/examples-work';
 import { Header } from './header/header';
 import { HeroSection } from './hero-section/hero-section';
 import { Services } from './services/services';
@@ -10,6 +11,7 @@ export function MainPage() {
       <HeroSection />
       <Services />
       <WhyWeSection />
+      <ExamplesWork />
     </div>
   );
 }
