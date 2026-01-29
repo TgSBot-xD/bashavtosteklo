@@ -28,7 +28,7 @@ test.describe('landing page visual regression', () => {
   test('why-us screenshot', async ({ page }) => {
     await expect(page.getByTestId('why-us')).toHaveScreenshot('why-us.png');
   });
-  test('examples work screenshot', async ({page}) => {
-    await expect(page.getByTestId('examples-work')).toHaveScreenshot('examples-work.png')
-  })
+  test('examples work screenshot', async ({ page }) => {
+    await expect(page.getByTestId('examples-work')).toHaveScreenshot('examples-work.png');
+  });
 });

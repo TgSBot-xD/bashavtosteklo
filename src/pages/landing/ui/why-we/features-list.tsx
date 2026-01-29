@@ -13,7 +13,13 @@ export function FeaturesList() {
     >
       <div data-testid="features-list-image" className="grid aspect-video grid-cols-2 gap-2">
         <div className="relative">
-          <Image src={gelick} alt="Пример работы" fill className="rounded-l-lg object-cover" />
+          <Image
+            src={gelick}
+            alt="Пример работы"
+            fill
+            sizes="(max-width: 768px) 50vw, 33vw"
+            className="rounded-l-lg object-cover"
+          />
         </div>
         <div className="grid grid-rows-2 gap-2">
           <div className="relative rounded-md">
@@ -21,6 +27,7 @@ export function FeaturesList() {
               src={maybach}
               alt="Пример работы"
               fill
+              sizes="(max-width: 768px) 25vw, 17vw"
               className="rounded-t-lg rounded-tl-none object-cover"
             />
           </div>
@@ -30,6 +37,7 @@ export function FeaturesList() {
               src={toyota}
               alt="Пример работы"
               fill
+              sizes="(max-width: 768px) 25vw, 17vw"
               className="rounded-r-lg rounded-tr-none object-cover"
             />
           </div>
@@ -54,7 +62,7 @@ function renderFeaturesItems() {
       <div
         key={id}
         data-testid={id}
-        className="bg-card/60 ring-foreground/10 text-foreground/90 w-max rounded-full p-2 text-sm ring backdrop-blur-lg"
+        className="bg-card ring-foreground/10 text-foreground/90 w-max rounded-full p-2 text-sm ring"
       >
         {label}
       </div>

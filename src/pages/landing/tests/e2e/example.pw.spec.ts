@@ -7,7 +7,7 @@ test('change photo in example block', async ({ page }) => {
 
   for (const id of EXAMPLE_IDS) {
     const examplesImage = page.getByTestId(`examples-image-${id}`);
-    const examplesTriggerButton = page.getByTestId(`examples-triger-${id}`);
+    const examplesTriggerButton = page.getByTestId(`examples-trigger-${id}`);
 
     await examplesTriggerButton.click();
     await expect(examplesImage).toBeVisible();

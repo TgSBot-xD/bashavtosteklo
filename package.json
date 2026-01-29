@@ -3,6 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "packageManager": "pnpm@10.28.0",
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "Firefox ESR",
+    "not dead",
+    "not op_mini all"
+  ],
   "scripts": {
     "dev": "next dev",
     "build": "next build",

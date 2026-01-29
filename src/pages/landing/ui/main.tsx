@@ -6,12 +6,14 @@ import { WhyWeSection } from './why-we/hero-section';
 
 export function MainPage() {
   return (
-    <div className="relative flex flex-col items-center">
+    <div className="flex min-h-screen flex-col gap-32">
       <Header />
-      <HeroSection />
-      <Services />
-      <WhyWeSection />
-      <ExamplesWork />
+      <main className="relative flex flex-col items-center gap-24">
+        <HeroSection />
+        <Services />
+        <WhyWeSection />
+        <ExamplesWork />
+      </main>
     </div>
   );
 }

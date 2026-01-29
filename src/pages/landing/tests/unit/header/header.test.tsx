@@ -1,5 +1,6 @@
 import '@testing-library/jest-dom';
 import { fireEvent, render, screen } from '@testing-library/react';
+
 import { Header } from 'pages/landing/ui/header/header';
 
 function setWindowScrollY(scrollY: number) {

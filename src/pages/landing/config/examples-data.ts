@@ -1,9 +1,8 @@
+import { ExampleWorkItem } from '../models/types';
 import booking from 'public/examples-work/booking.webp';
 import chipRepair from 'public/examples-work/chip-repair.webp';
 import placingTheWindshield from 'public/examples-work/placing-the-windshield.webp';
 import tinting from 'public/examples-work/tinting.webp';
-
-import { ExampleWorkItem } from '../models/types';
 
 export const examplesData: ExampleWorkItem[] = [
   {
