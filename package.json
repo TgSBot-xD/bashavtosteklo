@@ -21,8 +21,8 @@
     "FSD:fix": "npx steiger --fix ./src",
     "test": "jest",
     "test:up": "jest -u ",
-    "test:pw": "npx playwright test --headed",
-    "test:pw:up": "npx playwright test --update-snapshots --headed",
+    "test:pw": "npx playwright test",
+    "test:pw:up": "npx playwright test --update-snapshots",
     "all": "pnpm FSD && pnpm format && pnpm lint && pnpm test && pnpm test:pw"
   },
   "dependencies": {

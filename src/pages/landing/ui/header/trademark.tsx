@@ -14,7 +14,7 @@ export function Trademark() {
       </h2>
       <HoverCard>
         <HoverCardTrigger
-          data-testid="header-hover-triger"
+          data-testid="header-hover-trigger"
           className="text-accent-foreground/80 dark:text-accent-foreground/70 flex cursor-crosshair flex-row items-center text-xs font-normal md:text-sm xl:text-xs"
         >
           <span>Уфа</span>

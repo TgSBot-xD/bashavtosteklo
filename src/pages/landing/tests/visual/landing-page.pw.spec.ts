@@ -21,7 +21,7 @@ test.describe('landing page visual regression', () => {
     await expect(page.getByTestId('services')).toHaveScreenshot('services.png');
   });
 
-  test('features scrinshot', async ({ page }) => {
+  test('features screenshot', async ({ page }) => {
     await expect(page.getByTestId('features')).toHaveScreenshot('features.png');
   });
 
