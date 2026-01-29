@@ -15,7 +15,7 @@ export function NavigationPanel() {
     <section
       data-testid="navigation-panel"
       aria-label="Навигация для Компютера"
-      className="hidden xl:flex xl:self-center"
+      className="-top-1/2xl:self-center hidden 2xl:flex"
     >
       <NavigationMenu>
         <NavigationMenuList className="dark:text-foreground/80 gap-3">

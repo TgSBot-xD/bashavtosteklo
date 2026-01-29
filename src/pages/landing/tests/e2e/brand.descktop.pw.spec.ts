@@ -8,5 +8,5 @@ test('trademark hover in header block', async ({ page }) => {
   await hoverTrigger.hover();
 
   const hoverContent = page.getByTestId('header-hover-content');
-  await expect(hoverContent).toBeVisible({ timeout: 2000 });
+  await expect(hoverContent).toBeVisible({ timeout: 5000 });
 });

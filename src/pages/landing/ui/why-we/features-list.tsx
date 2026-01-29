@@ -1,9 +1,9 @@
 import Image from 'next/image';
+
+import { featureList } from '../../config/why-we-data';
 import gelick from 'public/why-we/gelick.webp';
 import maybach from 'public/why-we/maybach.webp';
 import toyota from 'public/why-we/toyota.webp';
-
-import { featureList } from '../../config/why-we-data';
 
 export function FeaturesList() {
   return (

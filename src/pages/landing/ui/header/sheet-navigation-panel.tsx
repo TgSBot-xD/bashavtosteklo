@@ -53,7 +53,7 @@ export function SheetNavigationPanel({
   };
 
   return (
-    <div className="flex items-center xl:hidden">
+    <div className="flex items-center 2xl:hidden">
       <Sheet open={sheetPanel} onOpenChange={setSheetPanel}>
         <SheetTrigger
           data-testid="header-sheet-mobile-trigger"
