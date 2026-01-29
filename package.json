@@ -3,6 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "packageManager": "pnpm@10.28.0",
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "Firefox ESR",
+    "not dead",
+    "not op_mini all"
+  ],
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -16,7 +23,7 @@
     "test:up": "jest -u ",
     "test:pw": "npx playwright test --headed",
     "test:pw:up": "npx playwright test --update-snapshots --headed",
-    "all": "pnpm FSD && pnpm lint && pnpm format && pnpm test && pnpm test:pw"
+    "all": "pnpm FSD && pnpm format && pnpm lint && pnpm test && pnpm test:pw"
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.1.15",

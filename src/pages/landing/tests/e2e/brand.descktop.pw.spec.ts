@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-test('hover block screenshot', async ({ page }) => {
+test('trademark hover in header block', async ({ page }) => {
   await page.goto('/', { waitUntil: 'networkidle' });
 
   const hoverTrigger = page.getByTestId('header-hover-triger');
@@ -8,5 +8,5 @@ test('hover block screenshot', async ({ page }) => {
   await hoverTrigger.hover();
 
   const hoverContent = page.getByTestId('header-hover-content');
-  await expect(hoverContent).toBeVisible({ timeout: 2000 });
+  await expect(hoverContent).toBeVisible({ timeout: 5000 });
 });

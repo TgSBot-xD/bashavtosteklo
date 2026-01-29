@@ -58,3 +58,18 @@ export interface CompanyContactItem extends ButtonLinkItems {
   className?: string;
   children: React.ReactNode;
 }
+
+// Examples Work Types
+export type ImageData = {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+};
+
+export type ExampleWorkItem = {
+  id: number;
+  title: string;
+  description: string;
+  image: ImageData;
+};
