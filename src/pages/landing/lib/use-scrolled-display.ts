@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 
-function useScrolledDisplay(threshold: number = 3): boolean {
+function useScrolledDisplay(threshold: number = 10): boolean {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
