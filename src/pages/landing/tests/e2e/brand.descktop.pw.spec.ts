@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-test('hover block screenshot', async ({ page }) => {
+test('trademark hover in header block', async ({ page }) => {
   await page.goto('/', { waitUntil: 'networkidle' });
 
   const hoverTrigger = page.getByTestId('header-hover-triger');
