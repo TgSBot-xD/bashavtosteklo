@@ -1,4 +1,5 @@
 import { type Metadata } from 'next';
+import favIcon from '../public/favicon.ico';
 
 import './globals.css';
 
@@ -58,6 +59,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru" suppressHydrationWarning>
+      <link rel="icon" href={favIcon.src} sizes="any" />
       <body className="dark:bg-background font-sans">
         <ThemeProvider
           attribute="class"

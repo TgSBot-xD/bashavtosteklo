@@ -26,6 +26,7 @@
     "all": "pnpm FSD && pnpm format && pnpm lint && pnpm test && pnpm test:pw"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "@radix-ui/react-dialog": "^1.1.15",
     "@radix-ui/react-hover-card": "^1.1.15",
     "@radix-ui/react-label": "^2.1.8",

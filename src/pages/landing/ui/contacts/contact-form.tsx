@@ -1,5 +1,7 @@
 'use client';
 
+import emailjs from '@emailjs/browser';
+import { useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 
 import { serviceOptions } from 'pages/landing/config/contact-data';
@@ -28,6 +30,9 @@ function formatPhoneNumber(value: string): string {
 }
 
 export function ContactForm() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+
   const {
     register,
     handleSubmit,
@@ -43,10 +48,29 @@ export function ContactForm() {
     },
   });
 
-  const onSubmit = (data: ContactFormData) => {
-    // eslint-disable-next-line no-console
-    console.log('Form submitted:', data);
-    reset();
+  const onSubmit = async (data: ContactFormData) => {
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+
+    try {
+      await emailjs.send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+        {
+          title: data.service,
+          name: data.name,
+          message: `Телефон: +7 ${data.phone}\nУслуга: ${data.service}\nКомментарий: ${data.comment || 'Не указан'}`,
+        },
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!,
+      );
+
+      setSubmitStatus('success');
+      reset();
+    } catch {
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -158,8 +182,17 @@ export function ContactForm() {
       </div>
 
       <div className="mt-4">
-        <Button type="submit">Отправить</Button>
+        <Button type="submit" disabled={isSubmitting}>
+          {isSubmitting ? 'Отправка...' : 'Отправить'}
+        </Button>
       </div>
+
+      {submitStatus === 'success' && (
+        <p className="mt-3 text-sm text-green-600">Заявка успешно отправлена!</p>
+      )}
+      {submitStatus === 'error' && (
+        <p className="mt-3 text-sm text-red-600">Ошибка отправки. Попробуйте позже.</p>
+      )}
     </form>
   );
 }
