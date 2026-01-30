@@ -40,3 +40,16 @@ export {
   PaginationNext,
   PaginationEllipsis,
 } from './pagination';
+export { Input } from './input';
+export { Label } from './label';
+export { Textarea } from './textarea';
+export {
+  Select,
+  SelectGroup,
+  SelectValue,
+  SelectTrigger,
+  SelectContent,
+  SelectLabel,
+  SelectItem,
+  SelectSeparator,
+} from './select';

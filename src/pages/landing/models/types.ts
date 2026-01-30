@@ -86,3 +86,11 @@ export interface PaginationReviewsProps {
   totalPages: number;
   onPageChange: (page: number) => void;
 }
+
+// Contact Form Types
+export interface ContactFormData {
+  name: string;
+  phone: string;
+  service: string;
+  comment: string;
+}

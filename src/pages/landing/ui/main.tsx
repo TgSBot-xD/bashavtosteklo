@@ -1,3 +1,4 @@
+import { Contacts } from './contacts/contacts';
 import { ExamplesWork } from './examples-work/examples-work';
 import { Header } from './header/header';
 import { HeroSection } from './hero-section/hero-section';
@@ -15,6 +16,7 @@ export function MainPage() {
         <WhyWeSection />
         <ExamplesWork />
         <Reviews />
+        <Contacts />
       </main>
     </div>
   );
