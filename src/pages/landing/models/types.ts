@@ -94,3 +94,9 @@ export interface ContactFormData {
   service: string;
   comment: string;
 }
+
+export type ContactInfoItem = {
+  id: number;
+  title: string;
+  description: React.ReactNode;
+};

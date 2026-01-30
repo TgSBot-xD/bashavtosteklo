@@ -2,7 +2,7 @@
 
 import { Controller, useForm } from 'react-hook-form';
 
-import { serviceOptions } from 'pages/landing/config/contact-form-data';
+import { serviceOptions } from 'pages/landing/config/contact-data';
 import { ContactFormData } from 'pages/landing/models/types';
 
 import {
@@ -32,6 +32,7 @@ export function ContactForm() {
     register,
     handleSubmit,
     control,
+    reset,
     formState: { errors },
   } = useForm<ContactFormData>({
     defaultValues: {
@@ -45,30 +46,41 @@ export function ContactForm() {
   const onSubmit = (data: ContactFormData) => {
     // eslint-disable-next-line no-console
     console.log('Form submitted:', data);
+    reset();
   };
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <div>
-        <div>
-          <Label htmlFor="fName">Имя</Label>
+      <div className="flex flex-col">
+        <div className="mt-2 flex flex-col">
+          <Label
+            htmlFor="formName"
+            className="text-foreground/60 dark:text-foreground/80 mb-2 flex text-sm"
+          >
+            Имя
+          </Label>
           <Input
-            id="fName"
+            id="formName"
             type="text"
             autoComplete="name"
             placeholder="Например, Данил"
             aria-invalid={errors.name ? 'true' : 'false'}
             {...register('name', {
               required: 'Введите имя',
-              minLength: { value: 2, message: 'Минимум 2 символа' },
+              minLength: { value: 3, message: 'Минимум 3 символа' },
               maxLength: { value: 50, message: 'Максимум 50 символов' },
             })}
           />
           {errors.name && <span role="alert">{errors.name.message}</span>}
         </div>
 
-        <div>
-          <Label htmlFor="fPhone">Телефон</Label>
+        <div className="mt-2 flex flex-col">
+          <Label
+            htmlFor="formPhone"
+            className="text-foreground/60 dark:text-foreground/80 mb-2 text-sm"
+          >
+            Телефон
+          </Label>
           <Controller
             name="phone"
             control={control}
@@ -83,7 +95,7 @@ export function ContactForm() {
                   +7
                 </span>
                 <Input
-                  id="fPhone"
+                  id="formPhone"
                   type="tel"
                   inputMode="tel"
                   autoComplete="tel"
@@ -100,18 +112,23 @@ export function ContactForm() {
         </div>
       </div>
 
-      <div>
-        <Label htmlFor="fService">Услуга</Label>
+      <div className="mt-2 flex flex-col">
+        <Label
+          htmlFor="formService"
+          className="text-foreground/60 dark:text-foreground/80 mb-2 text-sm"
+        >
+          Услуга
+        </Label>
         <Controller
           name="service"
           control={control}
           rules={{ required: 'Выберите услугу' }}
           render={({ field }) => (
             <Select onValueChange={field.onChange} defaultValue={field.value}>
-              <SelectTrigger id="fService">
+              <SelectTrigger id="formService " className="dark:bg-inherit">
                 <SelectValue placeholder="Выберите услугу" />
               </SelectTrigger>
-              <SelectContent>
+              <SelectContent className="bg-background dark:bg-background">
                 {serviceOptions.map((option) => (
                   <SelectItem key={option} value={option}>
                     {option}
@@ -124,10 +141,12 @@ export function ContactForm() {
         {errors.service && <span role="alert">{errors.service.message}</span>}
       </div>
 
-      <div>
-        <Label htmlFor="fNote">Комментарий</Label>
+      <div className="mt-4 flex flex-col">
+        <Label htmlFor="formNote" className="text-foreground/60 mb-2 text-sm">
+          Комментарий
+        </Label>
         <Textarea
-          id="fNote"
+          id="formNote"
           rows={3}
           placeholder="Марка/модель, что нужно сделать, удобное время"
           aria-invalid={errors.comment ? 'true' : 'false'}
@@ -138,7 +157,7 @@ export function ContactForm() {
         {errors.comment && <span role="alert">{errors.comment.message}</span>}
       </div>
 
-      <div>
+      <div className="mt-4">
         <Button type="submit">Отправить</Button>
       </div>
     </form>

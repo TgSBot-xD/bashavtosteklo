@@ -1,5 +1,4 @@
+// Временно не работает
 export function ContactMap() {
-  return <div>
-    Буду на сервере
-  </div>;
+  return <div>Буду на сервере</div>;
 }
