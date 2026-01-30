@@ -1,5 +1,6 @@
 import { Contacts } from './contacts/contacts';
 import { ExamplesWork } from './examples-work/examples-work';
+import { Footer } from './footer/footer';
 import { Header } from './header/header';
 import { HeroSection } from './hero-section/hero-section';
 import { Reviews } from './reviews/reviews';
@@ -17,6 +18,7 @@ export function MainPage() {
         <ExamplesWork />
         <Reviews />
         <Contacts />
+        <Footer />
       </main>
     </div>
   );

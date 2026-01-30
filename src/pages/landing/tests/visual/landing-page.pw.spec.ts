@@ -50,4 +50,10 @@ test.describe('landing page visual regression', () => {
     await reviews.scrollIntoViewIfNeeded();
     await expect(reviews).toHaveScreenshot('reviews.png');
   });
+
+  test('footer block screenshot', async ({ page }) => {
+    const reviews = page.getByTestId('footer');
+    await reviews.scrollIntoViewIfNeeded();
+    await expect(reviews).toHaveScreenshot('footer.png');
+  });
 });
