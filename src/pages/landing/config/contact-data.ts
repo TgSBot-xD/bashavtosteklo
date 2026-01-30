@@ -24,7 +24,7 @@ export const contactInfoData: ContactInfoItem[] = [
   {
     id: 3,
     title: 'Телефон',
-    description: '+7 (927) 236-17-84',
+    description: '+7 (927) 236-51-08',
   },
   {
     id: 4,

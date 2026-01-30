@@ -53,6 +53,7 @@ export function ExamplesWork() {
 
   return (
     <section
+      id="examples"
       data-testid="examples-work"
       className="flex w-full flex-col gap-6 px-4 lg:max-w-4xl lg:px-0 xl:max-w-5xl 2xl:max-w-7xl"
     >

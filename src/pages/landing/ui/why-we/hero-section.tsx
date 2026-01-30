@@ -5,7 +5,10 @@ import { Divider } from 'shared/ui';
 
 export function WhyWeSection() {
   return (
-    <section className="scroll flex flex-col gap-4 px-4 lg:max-w-4xl lg:px-0 xl:max-w-5xl 2xl:max-w-7xl">
+    <section
+      id="why"
+      className="scroll flex flex-col gap-4 px-4 lg:max-w-4xl lg:px-0 xl:max-w-5xl 2xl:max-w-7xl"
+    >
       <div className="flex w-max flex-col gap-2">
         <h4 className="text-2xl font-bold">Почему мы</h4>
         <Divider />

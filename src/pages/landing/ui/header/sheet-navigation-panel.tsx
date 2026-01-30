@@ -1,8 +1,8 @@
 import { Menu, X } from 'lucide-react';
-import React, { Fragment, useState } from 'react';
+import React, { useState } from 'react';
 
 import { renderNavigationList } from './navigation-panel';
-import { contactItems } from '../../config/header-data';
+import { MessengersButton } from '../messengers-dialog';
 
 import {
   ButtonLink,
@@ -24,32 +24,13 @@ export function SheetNavigationPanel({
 }) {
   const [sheetPanel, setSheetPanel] = useState(false);
 
-  const setStatusSheetPanel = (event: React.MouseEvent<HTMLAnchorElement | HTMLButtonElement>) => {
-    if (sheetPanel) {
-      setSheetPanel(false);
-      event.preventDefault();
-    } else {
-      setSheetPanel(true);
-      event.preventDefault();
-    }
+  const closeSheet = () => {
+    setSheetPanel(false);
   };
 
-  const renderContactCompany = () => {
-    return contactItems.map(({ children, href, className, variant, id }) => {
-      return (
-        <Fragment key={id}>
-          <ButtonLink
-            variant={variant}
-            href={href}
-            className={className}
-            type="button"
-            onClick={(event: React.MouseEvent<HTMLButtonElement>) => setStatusSheetPanel(event)}
-          >
-            {children}
-          </ButtonLink>
-        </Fragment>
-      );
-    });
+  const handleNavClick = (event: React.MouseEvent<HTMLAnchorElement | HTMLButtonElement>) => {
+    closeSheet();
+    event.preventDefault();
   };
 
   return (
@@ -79,12 +60,36 @@ export function SheetNavigationPanel({
             {/* Отвечает за навигацию на панели Меню */}
             <NavigationMenu>
               <NavigationMenuList className="flex flex-col gap-2 md:gap-4">
-                {renderNavigationList(setStatusSheetPanel)}
+                {renderNavigationList(handleNavClick)}
               </NavigationMenuList>
             </NavigationMenu>
 
             {/* Отвечает за контакты компании на панели Меню */}
-            <div className="flex w-full flex-col gap-4">{renderContactCompany()}</div>
+            <div className="flex w-full flex-col gap-4">
+              <ButtonLink
+                variant="default"
+                href="#form"
+                className="w-full p-6 md:hidden"
+                onClick={closeSheet}
+              >
+                Онлайн-запись
+              </ButtonLink>
+              <ButtonLink
+                variant="secondary"
+                href="tel:+79272365108"
+                className="dark:bg-secondary/40 dark:text-foreground/90 lg:hidden"
+                onClick={closeSheet}
+              >
+                Позвонить
+              </ButtonLink>
+              <MessengersButton
+                variant="secondary"
+                className="dark:bg-secondary/40 dark:text-foreground/90"
+                onDialogOpenChange={(open) => !open && closeSheet()}
+              >
+                Мессенджеры
+              </MessengersButton>
+            </div>
 
             {/* Отвечает за кнопку закрытия на панели */}
             <SheetClose

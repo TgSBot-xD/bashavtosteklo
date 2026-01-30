@@ -1,4 +1,4 @@
-import { CompanyContactItem, NavigationItem } from '../models/types';
+import { NavigationItem } from '../models/types';
 
 export const navigationItems: NavigationItem[] = [
   { id: 1, label: 'Услуги', href: '#services' },
@@ -7,27 +7,3 @@ export const navigationItems: NavigationItem[] = [
   { id: 4, label: 'Отзывы', href: '#reviews' },
   { id: 5, label: 'Контакты', href: '#contacts' },
 ] as const;
-
-export const contactItems: CompanyContactItem[] = [
-  {
-    id: 1,
-    href: '#form',
-    variant: 'default',
-    className: 'w-full p-6 md:hidden',
-    children: 'Онлайн-запись',
-  },
-  {
-    id: 2,
-    href: 'tel:+79272365108',
-    variant: 'secondary',
-    className: 'dark:bg-secondary/40 dark:text-foreground/90 lg:hidden',
-    children: 'Позвонить',
-  },
-  {
-    id: 3,
-    href: 'tel:+79272365108',
-    variant: 'secondary',
-    className: 'dark:bg-secondary/40 dark:text-foreground/90',
-    children: 'Мессенджеры',
-  },
-];

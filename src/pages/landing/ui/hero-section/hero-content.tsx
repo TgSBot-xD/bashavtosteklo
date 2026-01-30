@@ -2,6 +2,7 @@ import { MoveRight } from 'lucide-react';
 
 import { Breadcrumbs } from './breadcrumbs';
 import { secondaryInfoItems } from '../../config/hero-data';
+import { MessengersButton } from '../messengers-dialog';
 
 import { ButtonLink } from 'shared/ui';
 
@@ -32,18 +33,15 @@ export function HeroContent() {
               Позвонить
             </ButtonLink>
 
-            {/* TODO: После доработки сайта прикрутить правильные ссылки */}
-            <ButtonLink
+            <MessengersButton
               variant="secondary"
-              className="dark:ring-foreground/50 hover:dark:ring-foreground/50 hover:dark:text-foreground cursor-alias py-6"
-              href="#message"
+              className="dark:ring-foreground/50 hover:dark:ring-foreground/50 hover:dark:text-foreground cursor-pointer py-6"
             >
               Мессенджеры
-            </ButtonLink>
+            </MessengersButton>
           </div>
 
-          {/* TODO: После доработки сайта прикрутить правильные ссылки */}
-          <ButtonLink variant="link" className="" href="#">
+          <ButtonLink variant="link" href="#services">
             Смотреть услуги
             <MoveRight />
           </ButtonLink>

@@ -53,3 +53,13 @@ export {
   SelectItem,
   SelectSeparator,
 } from './select';
+export {
+  Dialog,
+  DialogTrigger,
+  DialogClose,
+  DialogContent,
+  DialogHeader,
+  DialogFooter,
+  DialogTitle,
+  DialogDescription,
+} from './dialog';

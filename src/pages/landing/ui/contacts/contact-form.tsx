@@ -74,7 +74,7 @@ export function ContactForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <form id="form" onSubmit={handleSubmit(onSubmit)}>
       <div className="flex flex-col">
         <div className="mt-2 flex flex-col">
           <Label

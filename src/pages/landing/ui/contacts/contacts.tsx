@@ -5,7 +5,7 @@ import { contactInfoData } from 'pages/landing/config/contact-data';
 
 export function Contacts() {
   return (
-    <section data-testid="contacts" className="flex flex-col gap-4 px-4">
+    <section id="contacts" data-testid="contacts" className="flex flex-col gap-4 px-4">
       <div className="flex w-max flex-col gap-2">
         <h5 className="text-foreground text-2xl font-bold">Контакты и запись</h5>
         <Divider />
