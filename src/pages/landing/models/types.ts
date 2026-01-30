@@ -73,3 +73,16 @@ export type ExampleWorkItem = {
   description: string;
   image: ImageData;
 };
+
+// Reviews Section Types
+export type ReviewItem = {
+  id: number;
+  title: string;
+  review: string;
+};
+
+export interface PaginationReviewsProps {
+  currentPage: number;
+  totalPages: number;
+  onPageChange: (page: number) => void;
+}

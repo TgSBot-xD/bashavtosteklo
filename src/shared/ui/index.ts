@@ -31,3 +31,12 @@ export {
   BreadcrumbEllipsis,
 } from './breadcrumb';
 export { Divider } from './divider';
+export {
+  Pagination,
+  PaginationContent,
+  PaginationLink,
+  PaginationItem,
+  PaginationPrevious,
+  PaginationNext,
+  PaginationEllipsis,
+} from './pagination';

@@ -7,6 +7,10 @@ test.describe('landing page visual regression', () => {
       content: `
         [data-testid="header"] { display: none !important; }
         [data-nextjs-toast] { display: none !important; }
+        [data-nextjs-dev-overlay] { display: none !important; }
+        [data-nextjs-dialog-overlay] { display: none !important; }
+        button[data-nextjs-data-runtime-error-collapsed-action] { display: none !important; }
+        nextjs-portal { display: none !important; }
       `,
     });
   });
@@ -18,17 +22,32 @@ test.describe('landing page visual regression', () => {
   });
 
   test('services screenshot', async ({ page }) => {
-    await expect(page.getByTestId('services')).toHaveScreenshot('services.png');
+    const services = page.getByTestId('services');
+    await services.scrollIntoViewIfNeeded();
+    await expect(services).toHaveScreenshot('services.png');
   });
 
   test('features screenshot', async ({ page }) => {
-    await expect(page.getByTestId('features')).toHaveScreenshot('features.png');
+    const features = page.getByTestId('features');
+    await features.scrollIntoViewIfNeeded();
+    await expect(features).toHaveScreenshot('features.png');
   });
 
   test('why-us screenshot', async ({ page }) => {
-    await expect(page.getByTestId('why-us')).toHaveScreenshot('why-us.png');
+    const whyUs = page.getByTestId('why-us');
+    await whyUs.scrollIntoViewIfNeeded();
+    await expect(whyUs).toHaveScreenshot('why-us.png');
   });
+
   test('examples work screenshot', async ({ page }) => {
-    await expect(page.getByTestId('examples-work')).toHaveScreenshot('examples-work.png');
+    const examplesWork = page.getByTestId('examples-work');
+    await examplesWork.scrollIntoViewIfNeeded();
+    await expect(examplesWork).toHaveScreenshot('examples-work.png');
+  });
+
+  test('reviews block screenshot', async ({ page }) => {
+    const reviews = page.getByTestId('reviews');
+    await reviews.scrollIntoViewIfNeeded();
+    await expect(reviews).toHaveScreenshot('reviews.png');
   });
 });
