@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 
 import { renderNavigationList } from './navigation-panel';
 import { MessengersButton } from '../messengers-dialog';
+import { SectionId } from '../../lib/use-active-section';
 
 import {
   ButtonLink,
@@ -17,11 +18,12 @@ import {
   SheetTrigger,
 } from 'shared/ui';
 
-export function SheetNavigationPanel({
-  sideOfSidebar,
-}: {
+interface SheetNavigationPanelProps {
   readonly sideOfSidebar: 'right' | 'bottom' | 'left' | 'top';
-}) {
+  readonly activeSection?: SectionId | null;
+}
+
+export function SheetNavigationPanel({ sideOfSidebar, activeSection }: SheetNavigationPanelProps) {
   const [sheetPanel, setSheetPanel] = useState(false);
 
   const closeSheet = () => {
@@ -60,7 +62,7 @@ export function SheetNavigationPanel({
             {/* Отвечает за навигацию на панели Меню */}
             <NavigationMenu>
               <NavigationMenuList className="flex flex-col gap-2 md:gap-4">
-                {renderNavigationList(handleNavClick)}
+                {renderNavigationList({ onClick: handleNavClick, activeSection })}
               </NavigationMenuList>
             </NavigationMenu>
 

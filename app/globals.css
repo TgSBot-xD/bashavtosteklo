@@ -152,6 +152,12 @@
   html {
     scroll-behavior: smooth;
   }
+  section[id] {
+    scroll-margin-top: 100px;
+  }
+  form[id] {
+    scroll-margin-top: 100px;
+  }
   body {
     @apply text-foreground;
     background-color: var(--background);

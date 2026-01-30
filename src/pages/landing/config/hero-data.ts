@@ -9,22 +9,22 @@ export const breadcrumbLinks: BreadcrumbLinkItem[] = [
   {
     id: 1,
     label: 'АВТОСТЁКЛА',
-    href: '#Автостёкла',
+    href: '#services',
   },
   {
     id: 2,
     label: 'ТОНИРОВКА',
-    href: '#Тонировка',
+    href: '#services',
   },
   {
     id: 3,
     label: 'ПЛЁНКИ',
-    href: '#Плёнки',
+    href: '#services',
   },
   {
     id: 4,
     label: 'КОНДИЦИОНЕРЫ',
-    href: '#Кондиционеры',
+    href: '#services',
   },
 ] as const;
 
