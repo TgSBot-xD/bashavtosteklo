@@ -19,6 +19,7 @@ export function FeaturesList() {
             fill
             sizes="(max-width: 768px) 50vw, 33vw"
             className="rounded-l-lg object-cover"
+            placeholder="blur"
           />
         </div>
         <div className="grid grid-rows-2 gap-2">
@@ -29,6 +30,7 @@ export function FeaturesList() {
               fill
               sizes="(max-width: 768px) 25vw, 17vw"
               className="rounded-t-lg rounded-tl-none object-cover"
+              placeholder="blur"
             />
           </div>
 
@@ -39,6 +41,7 @@ export function FeaturesList() {
               fill
               sizes="(max-width: 768px) 25vw, 17vw"
               className="rounded-r-lg rounded-tr-none object-cover"
+              placeholder="blur"
             />
           </div>
         </div>
