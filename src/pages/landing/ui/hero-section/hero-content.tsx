@@ -16,10 +16,10 @@ export function HeroContent() {
         <h1 className="text-foreground flex text-4xl font-bold md:text-4xl lg:text-6xl">
           Автостёкла и всё, что с ними связано.
         </h1>
-        <h3 className="flex max-w-xl text-base/6 text-wrap md:text-base lg:text-lg">
+        <p className="flex max-w-xl text-base/6 text-wrap md:text-base lg:text-lg">
           Замена, ремонт сколов и трещин, тонировка стекол и оптики, бронирование плёнкой. Быстро,
           аккуратно, с гарантией.
-        </h3>
+        </p>
       </div>
       <section className="flex flex-col gap-10 lg:gap-10">
         <div className="flex flex-col items-center gap-6 md:flex-row">

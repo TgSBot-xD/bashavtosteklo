@@ -11,7 +11,7 @@ export const examplesData: ExampleWorkItem[] = [
     description: 'Подбор по VIN · герметик по регламенту · выдача с гарантией.',
     image: {
       src: placingTheWindshield.src,
-      alt: 'Замена лобового стекла',
+      alt: 'Процесс замены лобового стекла автомобиля в сервисе Башавтостекло',
       width: placingTheWindshield.width,
       height: placingTheWindshield.height,
     },
@@ -22,7 +22,7 @@ export const examplesData: ExampleWorkItem[] = [
     description: 'Полимерная заливка · “невидимый” результат, если позволяет зона.',
     image: {
       src: chipRepair.src,
-      alt: 'Ремонт сколов',
+      alt: 'Ремонт скола на лобовом стекле полимерной заливкой',
       width: chipRepair.width,
       height: chipRepair.height,
     },
@@ -33,7 +33,7 @@ export const examplesData: ExampleWorkItem[] = [
     description: 'Плёнка США/Корея · ровные кромки · аккуратная усадка.',
     image: {
       src: tinting.src,
-      alt: 'Тонировка стёкл',
+      alt: 'Тонировка боковых стёкол автомобиля плёнкой',
       width: tinting.width,
       height: tinting.height,
     },
@@ -44,7 +44,7 @@ export const examplesData: ExampleWorkItem[] = [
     description: 'Антигравий · защита от пескоструя · внешний вид “как новый”.',
     image: {
       src: booking.src,
-      alt: 'Бронирование кузова и фар',
+      alt: 'Бронирование фар и кузова автомобиля защитной плёнкой',
       width: booking.width,
       height: booking.height,
     },

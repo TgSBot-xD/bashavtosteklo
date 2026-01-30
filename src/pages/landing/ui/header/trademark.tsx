@@ -9,9 +9,9 @@ export function Trademark() {
       aria-label="Наименование компании"
       className="xl:items-items-center flex flex-col gap-1 md:flex-row md:items-center md:gap-6 xl:gap-8"
     >
-      <h2 className="text-foreground text-sm font-semibold tracking-wider md:text-base">
+      <span className="text-foreground text-sm font-semibold tracking-wider md:text-base">
         БАШАВТОСТЕКЛО
-      </h2>
+      </span>
       <HoverCard>
         <HoverCardTrigger
           data-testid="header-hover-trigger"
