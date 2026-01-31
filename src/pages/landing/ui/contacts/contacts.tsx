@@ -22,7 +22,7 @@ export function Contacts() {
       </div>
 
       <div className="flex w-full flex-col gap-4 shadow-2xl/20 md:grid md:grid-cols-2">
-        <div className="bg-card ring-foreground/20 flex flex-col rounded-lg p-4 shadow-2xl">
+        <div className="bg-card flex flex-col rounded-lg p-4 shadow-2xl">
           {renderContactInfo()}
           <ContactForm />
         </div>
