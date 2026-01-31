@@ -7,7 +7,10 @@ const YANDEX_MAPS_URL = `https://yandex.ru/maps/?pt=${COORDINATES[1]},${COORDINA
 
 export function ContactMap() {
   return (
-    <div data-testid='contacts-map' className="bg-card ring-foreground/20 flex flex-col gap-4 rounded-lg p-4 shadow-2xl/20">
+    <div
+      data-testid="contacts-map"
+      className="bg-card ring-foreground/20 flex flex-col gap-4 rounded-lg p-4 shadow-2xl/20"
+    >
       {/* Карта */}
       <div className="relative min-h-75 flex-1">
         <YMaps query={{ lang: 'ru_RU', apikey: process.env.NEXT_PUBLIC_YANDEX_MAPS_API_KEY }}>

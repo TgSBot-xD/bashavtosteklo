@@ -3,6 +3,8 @@
 import { Controller } from 'react-hook-form';
 
 import { serviceOptions } from 'pages/landing/config/contact-data';
+import { useContactForm } from 'pages/landing/lib/use-contact-form';
+
 import { formatPhoneNumber } from 'shared/lib';
 import {
   Button,
@@ -15,7 +17,6 @@ import {
   SelectValue,
   Textarea,
 } from 'shared/ui';
-import { useContactForm } from 'pages/landing/lib/use-contact-form';
 
 export function ContactForm() {
   const { form, isSubmitting, submitStatus, onSubmit } = useContactForm({

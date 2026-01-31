@@ -4,6 +4,7 @@ import { useState } from 'react';
 
 import { renderNavigationList } from './navigation-panel';
 import { SectionId } from '../../lib/use-active-section';
+import { MessengersDialog } from '../messengers-dialog';
 
 import {
   ButtonLink,
@@ -17,7 +18,6 @@ import {
   SheetTitle,
   SheetTrigger,
 } from 'shared/ui';
-import { MessengersDialog } from '../messengers-dialog';
 
 interface SheetNavigationPanelProps {
   readonly sideOfSidebar: 'right' | 'bottom' | 'left' | 'top';

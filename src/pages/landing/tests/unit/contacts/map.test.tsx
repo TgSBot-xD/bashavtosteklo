@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 
-import { ContactMap } from 'pages/landing/ui/contacts/map';
+import { ContactMap } from '../../../ui/contacts/map';
 
 jest.mock('@pbe/react-yandex-maps', () => ({
   YMaps: ({ children }: { children: React.ReactNode }) => <div data-testid="ymaps">{children}</div>,

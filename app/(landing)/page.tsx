@@ -7,9 +7,9 @@ export default function Home() {
       tagID={106549409}
       router="app"
       initParameters={{
-        webvisor: true,
+        webvisor: false,
         clickmap: true,
-        ecommerce: '"dataLayer',
+        ecommerce: 'dataLayer',
         accurateTrackBounce: true,
         trackLinks: true,
       }}

@@ -2,17 +2,18 @@
 
 import { Suspense } from 'react';
 
-import { contactInfoData } from 'pages/landing/config/contact-data';
-import { Divider } from 'shared/ui';
-
 import { ContactForm } from './contact-form';
 import { ContactMap } from './map';
 import { SkeletonMapContacts } from './skeleton-map';
+import { contactInfoData } from 'pages/landing/config/contact-data';
+
+import { Divider } from 'shared/ui';
 
 export function Contacts() {
   return (
     <section
       id="contacts"
+      data-testid="contacts"
       className="flex w-full flex-col gap-4 px-4 lg:max-w-4xl lg:px-0 xl:max-w-5xl 2xl:max-w-7xl"
     >
       <div className="flex w-max flex-col gap-2">

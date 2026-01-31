@@ -2,9 +2,9 @@ import { MoveRight } from 'lucide-react';
 
 import { Breadcrumbs } from './breadcrumbs';
 import { secondaryInfoItems } from '../../config/hero-data';
+import { MessengersDialog } from '../messengers-dialog';
 
 import { ButtonLink } from 'shared/ui';
-import { MessengersDialog } from '../messengers-dialog';
 
 export function HeroContent() {
   return (
