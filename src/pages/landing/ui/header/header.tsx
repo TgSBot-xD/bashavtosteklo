@@ -3,6 +3,7 @@
 import { NavigationPanel } from './navigation-panel';
 import { SheetNavigationPanel } from './sheet-navigation-panel';
 import { Trademark } from './trademark';
+import { useActiveSection } from '../../lib/use-active-section';
 import { useScrolledDisplay } from '../../lib/use-scrolled-display';
 
 import { cn } from 'shared/lib';
@@ -10,6 +11,7 @@ import { ButtonLink, Divider } from 'shared/ui';
 
 export function Header() {
   const isScrolled = useScrolledDisplay();
+  const activeSection = useActiveSection();
 
   return (
     <header
@@ -27,7 +29,7 @@ export function Header() {
             <Trademark />
           </div>
           <div className="flex self-center xl:w-1/3">
-            <NavigationPanel />
+            <NavigationPanel activeSection={activeSection} />
           </div>
           <div
             data-testid="company-contact"
@@ -43,7 +45,7 @@ export function Header() {
             <ButtonLink href="#form" className="hidden md:flex lg:p-5 xl:text-base">
               Онлайн-запись
             </ButtonLink>
-            <SheetNavigationPanel sideOfSidebar="right" />
+            <SheetNavigationPanel sideOfSidebar="right" activeSection={activeSection} />
           </div>
         </div>
       </div>

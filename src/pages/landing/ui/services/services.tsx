@@ -5,6 +5,7 @@ import { Divider } from 'shared/ui';
 function Services() {
   return (
     <section
+      id="services"
       data-testid="services"
       className="flex w-full flex-col gap-6 px-4 lg:max-w-4xl lg:p-0 xl:max-w-5xl 2xl:max-w-7xl"
     >

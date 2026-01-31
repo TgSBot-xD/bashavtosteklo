@@ -69,6 +69,8 @@ function ButtonLink({
   variant = 'default',
   ...props
 }: React.ComponentProps<'button'> & ButtonLinkItems) {
+  const isAnchor = href.startsWith('#');
+
   return (
     <Button
       variant={variant}
@@ -76,9 +78,15 @@ function ButtonLink({
       {...props}
       asChild
     >
-      <Link href={href} className="cursor-pointer">
-        {children}
-      </Link>
+      {isAnchor ? (
+        <a href={href} className="cursor-pointer">
+          {children}
+        </a>
+      ) : (
+        <Link href={href} className="cursor-pointer">
+          {children}
+        </Link>
+      )}
     </Button>
   );
 }

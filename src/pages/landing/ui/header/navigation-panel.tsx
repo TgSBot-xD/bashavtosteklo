@@ -2,7 +2,9 @@ import Link from 'next/link';
 import React from 'react';
 
 import { navigationItems } from '../../config/header-data';
+import { SectionId } from '../../lib/use-active-section';
 
+import { cn } from 'shared/lib';
 import {
   NavigationMenu,
   NavigationMenuItem,
@@ -10,7 +12,16 @@ import {
   NavigationMenuList,
 } from 'shared/ui';
 
-export function NavigationPanel() {
+interface NavigationPanelProps {
+  readonly activeSection?: SectionId | null;
+}
+
+interface RenderNavigationListOptions {
+  onClick?: React.MouseEventHandler<HTMLAnchorElement>;
+  activeSection?: SectionId | null;
+}
+
+export function NavigationPanel({ activeSection }: NavigationPanelProps) {
   return (
     <section
       data-testid="navigation-panel"
@@ -19,19 +30,29 @@ export function NavigationPanel() {
     >
       <NavigationMenu>
         <NavigationMenuList className="dark:text-foreground/80 gap-3">
-          {renderNavigationList()}
+          {renderNavigationList({ activeSection })}
         </NavigationMenuList>
       </NavigationMenu>
     </section>
   );
 }
 
-export function renderNavigationList(onClick?: React.MouseEventHandler<HTMLAnchorElement>) {
+export function renderNavigationList(options: RenderNavigationListOptions = {}) {
+  const { onClick, activeSection } = options;
+
   return navigationItems.map(({ label, id, href }) => {
+    const sectionId = href.replace('#', '');
+    const isActive = activeSection === sectionId;
+
     return (
       <NavigationMenuItem data-testid={id} key={id}>
         <NavigationMenuLink
-          className="xl:hover:ring-foreground/20 text-nowrap hover:bg-inherit xl:hover:px-4 xl:hover:ring xl:hover:ring-offset-0 dark:hover:px-2 dark:hover:ring-0"
+          className={cn(
+            'focus:text-primary text-nowrap hover:bg-inherit xl:hover:px-4 xl:hover:ring xl:hover:ring-offset-0 dark:hover:px-2 dark:hover:ring-0 dark:focus:bg-inherit',
+            isActive
+              ? 'text-primary dark:text-primary font-semibold'
+              : 'xl:hover:ring-foreground/20',
+          )}
           onClick={onClick}
           asChild
         >

@@ -1,4 +1,5 @@
 import { type Metadata } from 'next';
+import favIcon from '../public/favicon.ico';
 
 import './globals.css';
 
@@ -10,15 +11,22 @@ const keywordsMetadata = [
   'Замена стёкл на авто',
   'Ремонт стёкл на авто',
   'Тонировка на авто',
+  'Замена лобового стекла',
+  'Ремонт сколов',
+  'Тонировка Уфа',
+  'Автостекло Уфа',
 ];
+
+const siteDescription =
+  'Башавтостекло — замена, ремонт сколов и трещин, тонировка стёкол и оптики, бронирование плёнкой. Быстро, аккуратно, с гарантией. Работаем в Уфе.';
 
 export const metadata: Metadata = {
   generator: 'Next.js',
   title: {
     template: '%s - Башавтостекло',
-    default: 'Башавтостекло',
+    default: 'Башавтостекло — замена и ремонт автостёкол в Уфе',
   },
-  description: 'Сайт компании Башавтостекло',
+  description: siteDescription,
   keywords: keywordsMetadata,
   authors: [{ name: 'Vladislav' }],
   creator: 'Soldatenko Daniil',
@@ -35,6 +43,28 @@ export const metadata: Metadata = {
     languages: {
       'ru-RU': '/ru',
     },
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'ru_RU',
+    url: 'https://башавтостекло.рф',
+    siteName: 'Башавтостекло',
+    title: 'Башавтостекло — замена и ремонт автостёкол в Уфе',
+    description: siteDescription,
+    images: [
+      {
+        url: '/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Башавтостекло — замена и ремонт автостёкол',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Башавтостекло — замена и ремонт автостёкол в Уфе',
+    description: siteDescription,
+    images: ['/og-image.jpg'],
   },
   robots: {
     index: true,
@@ -58,6 +88,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru" suppressHydrationWarning>
+      <head>
+        <link rel="icon" href={favIcon.src} sizes="any" />
+      </head>
       <body className="dark:bg-background font-sans">
         <ThemeProvider
           attribute="class"
@@ -65,6 +98,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+
           {children}
         </ThemeProvider>
       </body>

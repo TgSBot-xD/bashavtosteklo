@@ -86,3 +86,17 @@ export interface PaginationReviewsProps {
   totalPages: number;
   onPageChange: (page: number) => void;
 }
+
+// Contact Form Types
+export interface ContactFormData {
+  name: string;
+  phone: string;
+  service: string;
+  comment: string;
+}
+
+export type ContactInfoItem = {
+  id: number;
+  title: string;
+  description: React.ReactNode;
+};

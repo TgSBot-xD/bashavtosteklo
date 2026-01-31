@@ -1,8 +1,8 @@
 import { Menu, X } from 'lucide-react';
-import React, { Fragment, useState } from 'react';
+import { useState } from 'react';
 
 import { renderNavigationList } from './navigation-panel';
-import { contactItems } from '../../config/header-data';
+import { SectionId } from '../../lib/use-active-section';
 
 import {
   ButtonLink,
@@ -16,40 +16,22 @@ import {
   SheetTitle,
   SheetTrigger,
 } from 'shared/ui';
+import { MessengersDialog } from '../messengers-dialog';
 
-export function SheetNavigationPanel({
-  sideOfSidebar,
-}: {
+interface SheetNavigationPanelProps {
   readonly sideOfSidebar: 'right' | 'bottom' | 'left' | 'top';
-}) {
+  readonly activeSection?: SectionId | null;
+}
+
+export function SheetNavigationPanel({ sideOfSidebar, activeSection }: SheetNavigationPanelProps) {
   const [sheetPanel, setSheetPanel] = useState(false);
 
-  const setStatusSheetPanel = (event: React.MouseEvent<HTMLAnchorElement | HTMLButtonElement>) => {
-    if (sheetPanel) {
-      setSheetPanel(false);
-      event.preventDefault();
-    } else {
-      setSheetPanel(true);
-      event.preventDefault();
-    }
+  const closeSheet = () => {
+    setSheetPanel(false);
   };
 
-  const renderContactCompany = () => {
-    return contactItems.map(({ children, href, className, variant, id }) => {
-      return (
-        <Fragment key={id}>
-          <ButtonLink
-            variant={variant}
-            href={href}
-            className={className}
-            type="button"
-            onClick={(event: React.MouseEvent<HTMLButtonElement>) => setStatusSheetPanel(event)}
-          >
-            {children}
-          </ButtonLink>
-        </Fragment>
-      );
-    });
+  const handleNavClick = () => {
+    closeSheet();
   };
 
   return (
@@ -69,22 +51,37 @@ export function SheetNavigationPanel({
         >
           <SheetHeader>
             <SheetTitle asChild>
-              <div>
-                <h4>БАШАВТОСТЕКЛО</h4>
-                <p>Меню</p>
-              </div>
+              <h4>БАШАВТОСТЕКЛО</h4>
             </SheetTitle>
           </SheetHeader>
           <SheetFooter className="flex items-center gap-10 md:gap-10">
             {/* Отвечает за навигацию на панели Меню */}
             <NavigationMenu>
               <NavigationMenuList className="flex flex-col gap-2 md:gap-4">
-                {renderNavigationList(setStatusSheetPanel)}
+                {renderNavigationList({ onClick: handleNavClick, activeSection })}
               </NavigationMenuList>
             </NavigationMenu>
 
             {/* Отвечает за контакты компании на панели Меню */}
-            <div className="flex w-full flex-col gap-4">{renderContactCompany()}</div>
+            <div className="flex w-full flex-col gap-4">
+              <ButtonLink
+                variant="default"
+                href="#form"
+                className="w-full p-6 md:hidden"
+                onClick={closeSheet}
+              >
+                Онлайн-запись
+              </ButtonLink>
+              <ButtonLink
+                variant="secondary"
+                href="tel:+79272365108"
+                className="dark:bg-secondary/40 dark:text-foreground/90 lg:hidden"
+                onClick={closeSheet}
+              >
+                Позвонить
+              </ButtonLink>
+              <MessengersDialog />
+            </div>
 
             {/* Отвечает за кнопку закрытия на панели */}
             <SheetClose

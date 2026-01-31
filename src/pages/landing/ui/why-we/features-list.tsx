@@ -15,30 +15,33 @@ export function FeaturesList() {
         <div className="relative">
           <Image
             src={gelick}
-            alt="Пример работы"
+            alt="Замена лобового стекла на Mercedes-Benz G-Class"
             fill
             sizes="(max-width: 768px) 50vw, 33vw"
             className="rounded-l-lg object-cover"
+            placeholder="blur"
           />
         </div>
         <div className="grid grid-rows-2 gap-2">
           <div className="relative rounded-md">
             <Image
               src={maybach}
-              alt="Пример работы"
+              alt="Тонировка стёкол на Mercedes-Maybach"
               fill
               sizes="(max-width: 768px) 25vw, 17vw"
               className="rounded-t-lg rounded-tl-none object-cover"
+              placeholder="blur"
             />
           </div>
 
           <div className="relative">
             <Image
               src={toyota}
-              alt="Пример работы"
+              alt="Ремонт автостекла на Toyota"
               fill
               sizes="(max-width: 768px) 25vw, 17vw"
               className="rounded-r-lg rounded-tr-none object-cover"
+              placeholder="blur"
             />
           </div>
         </div>

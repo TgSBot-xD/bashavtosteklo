@@ -4,6 +4,7 @@ import { Breadcrumbs } from './breadcrumbs';
 import { secondaryInfoItems } from '../../config/hero-data';
 
 import { ButtonLink } from 'shared/ui';
+import { MessengersDialog } from '../messengers-dialog';
 
 export function HeroContent() {
   return (
@@ -16,10 +17,10 @@ export function HeroContent() {
         <h1 className="text-foreground flex text-4xl font-bold md:text-4xl lg:text-6xl">
           Автостёкла и всё, что с ними связано.
         </h1>
-        <h3 className="flex max-w-xl text-base/6 text-wrap md:text-base lg:text-lg">
+        <p className="flex max-w-xl text-base/6 text-wrap md:text-base lg:text-lg">
           Замена, ремонт сколов и трещин, тонировка стекол и оптики, бронирование плёнкой. Быстро,
           аккуратно, с гарантией.
-        </h3>
+        </p>
       </div>
       <section className="flex flex-col gap-10 lg:gap-10">
         <div className="flex flex-col items-center gap-6 md:flex-row">
@@ -32,18 +33,10 @@ export function HeroContent() {
               Позвонить
             </ButtonLink>
 
-            {/* TODO: После доработки сайта прикрутить правильные ссылки */}
-            <ButtonLink
-              variant="secondary"
-              className="dark:ring-foreground/50 hover:dark:ring-foreground/50 hover:dark:text-foreground cursor-alias py-6"
-              href="#message"
-            >
-              Мессенджеры
-            </ButtonLink>
+            <MessengersDialog />
           </div>
 
-          {/* TODO: После доработки сайта прикрутить правильные ссылки */}
-          <ButtonLink variant="link" className="" href="#">
+          <ButtonLink variant="link" href="#services">
             Смотреть услуги
             <MoveRight />
           </ButtonLink>
