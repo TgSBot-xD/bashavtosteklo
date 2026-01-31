@@ -29,7 +29,7 @@ export function MessengersDialog() {
 
   return (
     <Dialog onOpenChange={handleOpenChange}>
-      <DialogTrigger className="ring-foreground/30 text-foreground/80 hover:text-foreground hover:ring-foreground/60 cursor-pointer rounded-full p-2 px-3 ring transition-all">
+      <DialogTrigger className="ring-foreground/20 text-foreground hover:text-foreground hover:ring-foreground/60 dark:bg-secondary/40 dark:text-foreground/90 cursor-pointer rounded-full p-2 px-3 font-sans tracking-tight ring transition-all">
         Мессенджеры
       </DialogTrigger>
       <DialogContent>
