@@ -1,4 +1,5 @@
 import { Menu, X } from 'lucide-react';
+import { useMetrica } from 'next-yandex-metrica';
 import { useState } from 'react';
 
 import { renderNavigationList } from './navigation-panel';
@@ -24,19 +25,37 @@ interface SheetNavigationPanelProps {
 }
 
 export function SheetNavigationPanel({ sideOfSidebar, activeSection }: SheetNavigationPanelProps) {
+  const { reachGoal } = useMetrica();
   const [sheetPanel, setSheetPanel] = useState(false);
 
   const closeSheet = () => {
     setSheetPanel(false);
   };
 
+  const handleSheetOpenChange = (open: boolean) => {
+    setSheetPanel(open);
+    if (open) {
+      reachGoal('mobile_menu_open');
+    }
+  };
+
   const handleNavClick = () => {
+    closeSheet();
+  };
+
+  const handleOnlineBookingClick = () => {
+    reachGoal('online_booking_click', { location: 'mobile_menu' });
+    closeSheet();
+  };
+
+  const handlePhoneClick = () => {
+    reachGoal('phone_click', { location: 'mobile_menu' });
     closeSheet();
   };
 
   return (
     <div className="flex items-center 2xl:hidden">
-      <Sheet open={sheetPanel} onOpenChange={setSheetPanel}>
+      <Sheet open={sheetPanel} onOpenChange={handleSheetOpenChange}>
         <SheetTrigger
           data-testid="header-sheet-mobile-trigger"
           className="border-foreground/20 h-max rounded-sm border p-3"
@@ -68,7 +87,7 @@ export function SheetNavigationPanel({ sideOfSidebar, activeSection }: SheetNavi
                 variant="default"
                 href="#form"
                 className="w-full p-6 md:hidden"
-                onClick={closeSheet}
+                onClick={handleOnlineBookingClick}
               >
                 Онлайн-запись
               </ButtonLink>
@@ -76,7 +95,7 @@ export function SheetNavigationPanel({ sideOfSidebar, activeSection }: SheetNavi
                 variant="secondary"
                 href="tel:+79272365108"
                 className="dark:bg-secondary/40 dark:text-foreground/90 lg:hidden"
-                onClick={closeSheet}
+                onClick={handlePhoneClick}
               >
                 Позвонить
               </ButtonLink>

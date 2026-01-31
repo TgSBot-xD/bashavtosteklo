@@ -1,4 +1,5 @@
 import emailjs from '@emailjs/browser';
+import { useMetrica } from 'next-yandex-metrica';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 
@@ -11,6 +12,7 @@ interface UseContactFormOptions {
 }
 
 export function useContactForm({ defaultService }: UseContactFormOptions) {
+  const { reachGoal } = useMetrica();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<SubmitStatus>('idle');
 
@@ -40,9 +42,11 @@ export function useContactForm({ defaultService }: UseContactFormOptions) {
       );
 
       setSubmitStatus('success');
+      reachGoal('form_submit_success', { service: data.service });
       form.reset();
     } catch {
       setSubmitStatus('error');
+      reachGoal('form_submit_error');
     } finally {
       setIsSubmitting(false);
     }
