@@ -63,3 +63,4 @@ export {
   DialogTitle,
   DialogDescription,
 } from './dialog';
+export { Skeleton } from './skeleton';

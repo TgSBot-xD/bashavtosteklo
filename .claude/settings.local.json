@@ -5,7 +5,8 @@
       "mcp__acp__Edit",
       "WebFetch(domain:docs.2gis.com)",
       "WebFetch(domain:yandex.ru)",
-      "WebFetch(domain:yandex.com)"
+      "WebFetch(domain:yandex.com)",
+      "mcp__acp__Write"
     ]
   }
 }

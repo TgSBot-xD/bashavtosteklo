@@ -56,4 +56,15 @@ test.describe('landing page visual regression', () => {
     await reviews.scrollIntoViewIfNeeded();
     await expect(reviews).toHaveScreenshot('footer.png');
   });
+
+  test('contacts block screenshot', async ({ page }) => {
+    const contacts = page.getByTestId('contacts');
+    await contacts.scrollIntoViewIfNeeded();
+
+    // Ждём загрузки карты
+    await page.waitForSelector('[class*="ymaps"]', { timeout: 10000 });
+    await page.waitForTimeout(1000);
+
+    await expect(contacts).toHaveScreenshot('contacts.png');
+  });
 });

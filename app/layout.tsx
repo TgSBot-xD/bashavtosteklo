@@ -88,7 +88,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru" suppressHydrationWarning>
-      <link rel="icon" href={favIcon.src} sizes="any" />
+      <head>
+        <link rel="icon" href={favIcon.src} sizes="any" />
+      </head>
       <body className="dark:bg-background font-sans">
         <ThemeProvider
           attribute="class"
@@ -96,6 +98,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+
           {children}
         </ThemeProvider>
       </body>

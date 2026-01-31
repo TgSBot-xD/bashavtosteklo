@@ -1,12 +1,9 @@
 'use client';
 
-import emailjs from '@emailjs/browser';
-import { useState } from 'react';
-import { Controller, useForm } from 'react-hook-form';
+import { Controller } from 'react-hook-form';
 
 import { serviceOptions } from 'pages/landing/config/contact-data';
-import { ContactFormData } from 'pages/landing/models/types';
-
+import { formatPhoneNumber } from 'shared/lib';
 import {
   Button,
   Input,
@@ -18,63 +15,21 @@ import {
   SelectValue,
   Textarea,
 } from 'shared/ui';
-
-function formatPhoneNumber(value: string): string {
-  const digits = value.replace(/\D/g, '').slice(0, 10);
-
-  if (digits.length === 0) return '';
-  if (digits.length <= 3) return `(${digits}`;
-  if (digits.length <= 6) return `(${digits.slice(0, 3)}) ${digits.slice(3)}`;
-  if (digits.length <= 8) return `(${digits.slice(0, 3)}) ${digits.slice(3, 6)}-${digits.slice(6)}`;
-  return `(${digits.slice(0, 3)}) ${digits.slice(3, 6)}-${digits.slice(6, 8)}-${digits.slice(8)}`;
-}
+import { useContactForm } from 'pages/landing/lib/use-contact-form';
 
 export function ContactForm() {
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const { form, isSubmitting, submitStatus, onSubmit } = useContactForm({
+    defaultService: serviceOptions[0],
+  });
 
   const {
     register,
-    handleSubmit,
     control,
-    reset,
     formState: { errors },
-  } = useForm<ContactFormData>({
-    defaultValues: {
-      name: '',
-      phone: '',
-      service: serviceOptions[0],
-      comment: '',
-    },
-  });
-
-  const onSubmit = async (data: ContactFormData) => {
-    setIsSubmitting(true);
-    setSubmitStatus('idle');
-
-    try {
-      await emailjs.send(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
-        {
-          title: data.service,
-          name: data.name,
-          message: `Телефон: +7 ${data.phone}\nУслуга: ${data.service}\nКомментарий: ${data.comment || 'Не указан'}`,
-        },
-        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!,
-      );
-
-      setSubmitStatus('success');
-      reset();
-    } catch {
-      setSubmitStatus('error');
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
+  } = form;
 
   return (
-    <form id="form" onSubmit={handleSubmit(onSubmit)}>
+    <form id="form" onSubmit={onSubmit}>
       <div className="flex flex-col">
         <div className="mt-2 flex flex-col">
           <Label
