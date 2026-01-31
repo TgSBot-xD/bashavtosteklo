@@ -29,17 +29,19 @@ export function MessengersDialog() {
 
   return (
     <Dialog onOpenChange={handleOpenChange}>
-      <DialogTrigger>Мессенджеры</DialogTrigger>
+      <DialogTrigger className="ring-foreground/30 text-foreground/80 hover:text-foreground hover:ring-foreground/60 cursor-pointer rounded-full p-2 px-3 ring transition-all">
+        Мессенджеры
+      </DialogTrigger>
       <DialogContent>
-        <DialogHeader>
+        <DialogHeader className="flex flex-col gap-6">
           <DialogTitle>Мессенджеры</DialogTitle>
-          <DialogDescription>
+          <DialogDescription className="flex w-full flex-col gap-4 self-center md:flex-row">
             {messengers.map(({ id, name, href, color }) => (
               <Link
                 key={id}
                 href={href}
                 rel="noopener noreferrer"
-                className={`${color} text-foreground flex items-center justify-center rounded-lg px-4 py-3 text-center font-medium transition-colors`}
+                className={`${color} text-foreground flex w-full items-center justify-center rounded-lg px-4 py-3 text-center font-medium transition-colors md:w-1/3`}
                 onClick={() => handleMessengerClick(id)}
               >
                 {name}

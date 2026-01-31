@@ -34,14 +34,14 @@ export function PaginationReviews({
           <PaginationItem className="flex justify-start">
             <PaginationPrevious
               href="#"
-              className="text-foreground ring-foreground/20 ring"
+              className="text-foreground ring-foreground/20 hover:bg-primary dar:hover:bg-primary/80 ring"
               onClick={handlePrevious}
             />
           </PaginationItem>
           <PaginationItem className="justify-start">
             <PaginationNext
               href="#"
-              className="text-foreground ring-foreground/20 ring"
+              className="text-foreground ring-foreground/20 focus:bg-primary hover:bg-primary dar:hover:bg-primary/80 ring"
               onClick={handleNext}
             />
           </PaginationItem>
