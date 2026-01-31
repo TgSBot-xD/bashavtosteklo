@@ -1,5 +1,7 @@
 'use client';
 
+import { useMetrica } from 'next-yandex-metrica';
+
 import { NavigationPanel } from './navigation-panel';
 import { SheetNavigationPanel } from './sheet-navigation-panel';
 import { Trademark } from './trademark';
@@ -10,6 +12,7 @@ import { cn } from 'shared/lib';
 import { ButtonLink, Divider } from 'shared/ui';
 
 export function Header() {
+  const { reachGoal } = useMetrica();
   const isScrolled = useScrolledDisplay();
   const activeSection = useActiveSection();
 
@@ -39,10 +42,15 @@ export function Header() {
               variant="link"
               href="tel:+79272365108"
               className="dark:text-foreground/80 text-foreground/80 hover:ring-foreground/20 hidden hover:no-underline hover:ring lg:flex xl:text-base dark:hover:ring-0"
+              onClick={() => reachGoal('phone_click', { location: 'header' })}
             >
               +7 (927) 236 51 08
             </ButtonLink>
-            <ButtonLink href="#form" className="hidden md:flex lg:p-5 xl:text-base">
+            <ButtonLink
+              href="#form"
+              className="hidden md:flex lg:p-5 xl:text-base"
+              onClick={() => reachGoal('online_booking_click', { location: 'header' })}
+            >
               Онлайн-запись
             </ButtonLink>
             <SheetNavigationPanel sideOfSidebar="right" activeSection={activeSection} />
