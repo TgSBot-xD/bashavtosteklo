@@ -1,4 +1,5 @@
 import { Dot } from 'lucide-react';
+import Link from 'next/link';
 
 import { HoverCard, HoverCardContent, HoverCardTrigger } from 'shared/ui';
 
@@ -22,7 +23,13 @@ export function Trademark() {
           <span>Черниковка</span>
         </HoverCardTrigger>
         <HoverCardContent data-testid="header-hover-content" className="bg-background">
-          ул. Дмитрия Донского, 50а
+          <Link
+            href="https://yandex.ru/maps/?pt=56.101349259825504,54.8229753078355&z=16&l=map"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            ул. Дмитрия Донского, 50а
+          </Link>
         </HoverCardContent>
       </HoverCard>
     </section>
