@@ -66,7 +66,7 @@ export function ContactForm() {
             rules={{
               required: 'Введите телефон',
               validate: (value) =>
-                value.replace(/\D/g, '').length === 10 || 'Введите корректный номер телефона',
+                value.replaceAll(/\D/g, '').length === 10 || 'Введите корректный номер телефона',
             }}
             render={({ field }) => (
               <div className="flex">

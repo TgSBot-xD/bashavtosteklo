@@ -16,6 +16,11 @@ interface NavigationPanelProps {
   readonly activeSection?: SectionId | null;
 }
 
+interface RenderNavigationListOptions {
+  onClick?: React.MouseEventHandler<HTMLAnchorElement>;
+  activeSection?: SectionId | null;
+}
+
 export function NavigationPanel({ activeSection }: NavigationPanelProps) {
   return (
     <section
@@ -32,23 +37,18 @@ export function NavigationPanel({ activeSection }: NavigationPanelProps) {
   );
 }
 
-interface RenderNavigationListOptions {
-  onClick?: React.MouseEventHandler<HTMLAnchorElement>;
-  activeSection?: SectionId | null;
-}
-
 export function renderNavigationList(options: RenderNavigationListOptions = {}) {
   const { onClick, activeSection } = options;
 
   return navigationItems.map(({ label, id, href }) => {
-    const sectionId = href.replace('#', '') as SectionId;
+    const sectionId = href.replace('#', '');
     const isActive = activeSection === sectionId;
 
     return (
       <NavigationMenuItem data-testid={id} key={id}>
         <NavigationMenuLink
           className={cn(
-            'text-nowrap hover:bg-inherit xl:hover:px-4 xl:hover:ring xl:hover:ring-offset-0 dark:hover:px-2 dark:hover:ring-0',
+            'focus:text-primary text-nowrap hover:bg-inherit xl:hover:px-4 xl:hover:ring xl:hover:ring-offset-0 dark:hover:px-2 dark:hover:ring-0 dark:focus:bg-inherit',
             isActive
               ? 'text-primary dark:text-primary font-semibold'
               : 'xl:hover:ring-foreground/20',

@@ -1,8 +1,7 @@
 import { Menu, X } from 'lucide-react';
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 import { renderNavigationList } from './navigation-panel';
-import { MessengersButton } from '../messengers-dialog';
 import { SectionId } from '../../lib/use-active-section';
 
 import {
@@ -17,6 +16,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from 'shared/ui';
+import { MessengersDialog } from '../messengers-dialog';
 
 interface SheetNavigationPanelProps {
   readonly sideOfSidebar: 'right' | 'bottom' | 'left' | 'top';
@@ -30,9 +30,8 @@ export function SheetNavigationPanel({ sideOfSidebar, activeSection }: SheetNavi
     setSheetPanel(false);
   };
 
-  const handleNavClick = (event: React.MouseEvent<HTMLAnchorElement | HTMLButtonElement>) => {
+  const handleNavClick = () => {
     closeSheet();
-    event.preventDefault();
   };
 
   return (
@@ -52,10 +51,7 @@ export function SheetNavigationPanel({ sideOfSidebar, activeSection }: SheetNavi
         >
           <SheetHeader>
             <SheetTitle asChild>
-              <div>
-                <h4>БАШАВТОСТЕКЛО</h4>
-                <p>Меню</p>
-              </div>
+              <h4>БАШАВТОСТЕКЛО</h4>
             </SheetTitle>
           </SheetHeader>
           <SheetFooter className="flex items-center gap-10 md:gap-10">
@@ -84,13 +80,7 @@ export function SheetNavigationPanel({ sideOfSidebar, activeSection }: SheetNavi
               >
                 Позвонить
               </ButtonLink>
-              <MessengersButton
-                variant="secondary"
-                className="dark:bg-secondary/40 dark:text-foreground/90"
-                onDialogOpenChange={(open) => !open && closeSheet()}
-              >
-                Мессенджеры
-              </MessengersButton>
+              <MessengersDialog />
             </div>
 
             {/* Отвечает за кнопку закрытия на панели */}

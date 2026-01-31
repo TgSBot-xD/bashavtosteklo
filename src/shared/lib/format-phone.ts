@@ -1,5 +1,5 @@
 export function formatPhoneNumber(value: string): string {
-  const digits = value.replace(/\D/g, '').slice(0, 10);
+  const digits = value.replaceAll(/\D/g, '').slice(0, 10);
 
   if (digits.length === 0) return '';
   if (digits.length <= 3) return `(${digits}`;

@@ -35,9 +35,6 @@ importers:
       '@react-input/mask':
         specifier: ^2.0.4
         version: 2.0.4(@types/react@19.2.8)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
-      '@types/yandex-maps':
-        specifier: ^2.1.36
-        version: 2.1.36
       class-variance-authority:
         specifier: ^0.7.1
         version: 0.7.1
@@ -102,6 +99,9 @@ importers:
       '@types/react-dom':
         specifier: ^19.2.3
         version: 19.2.3(@types/react@19.2.8)
+      '@types/yandex-maps':
+        specifier: ^2.1.36
+        version: 2.1.36
       eslint:
         specifier: ^9.39.2
         version: 9.39.2(jiti@2.6.1)
