@@ -20,12 +20,12 @@
 
 **Путь:** `src/pages/landing/ui/header/`
 
-| Компонент | Назначение |
-|-----------|------------|
-| `header.tsx` | Основной компонент |
-| `navigation-panel.tsx` | Desktop навигация |
-| `sheet-navigation-panel.tsx` | Mobile навигация |
-| `trademark.tsx` | Логотип/бренд |
+| Компонент                    | Назначение         |
+| ---------------------------- | ------------------ |
+| `header.tsx`                 | Основной компонент |
+| `navigation-panel.tsx`       | Desktop навигация  |
+| `sheet-navigation-panel.tsx` | Mobile навигация   |
+| `trademark.tsx`              | Логотип/бренд      |
 
 ---
 
@@ -35,12 +35,12 @@
 
 **Путь:** `src/pages/landing/ui/hero-section/`
 
-| Компонент | Назначение |
-|-----------|------------|
-| `hero-section.tsx` | Контейнер секции |
-| `hero-content.tsx` | Основной контент |
-| `breadcrumbs.tsx` | Навигационные крошки |
-| `highlights-panel.tsx` | Панель преимуществ |
+| Компонент              | Назначение           |
+| ---------------------- | -------------------- |
+| `hero-section.tsx`     | Контейнер секции     |
+| `hero-content.tsx`     | Основной контент     |
+| `breadcrumbs.tsx`      | Навигационные крошки |
+| `highlights-panel.tsx` | Панель преимуществ   |
 
 ---
 
@@ -50,9 +50,9 @@
 
 **Путь:** `src/pages/landing/ui/services/`
 
-| Компонент | Назначение |
-|-----------|------------|
-| `services.tsx` | Секция услуг |
+| Компонент            | Назначение     |
+| -------------------- | -------------- |
+| `services.tsx`       | Секция услуг   |
 | `services-items.tsx` | Карточки услуг |
 
 ---
@@ -63,10 +63,10 @@
 
 **Путь:** `src/pages/landing/ui/why-we/`
 
-| Компонент | Назначение |
-|-----------|------------|
-| `why-us.tsx` | Контейнер секции |
-| `hero-section.tsx` | Заголовок |
+| Компонент           | Назначение         |
+| ------------------- | ------------------ |
+| `why-us.tsx`        | Контейнер секции   |
+| `hero-section.tsx`  | Заголовок          |
 | `features-list.tsx` | Список преимуществ |
 
 ---
@@ -77,9 +77,9 @@
 
 **Путь:** `src/pages/landing/ui/examples-work/`
 
-| Компонент | Назначение |
-|-----------|------------|
-| `examples-work.tsx` | Секция примеров |
+| Компонент           | Назначение            |
+| ------------------- | --------------------- |
+| `examples-work.tsx` | Секция примеров       |
 | `image-compare.tsx` | Сравнение изображений |
 
 ---
@@ -90,9 +90,9 @@
 
 **Путь:** `src/pages/landing/ui/reviews/`
 
-| Компонент | Назначение |
-|-----------|------------|
-| `reviews.tsx` | Секция отзывов |
+| Компонент        | Назначение             |
+| ---------------- | ---------------------- |
+| `reviews.tsx`    | Секция отзывов         |
 | `pagination.tsx` | Навигация по страницам |
 
 ---
@@ -103,13 +103,13 @@
 
 **Путь:** `src/pages/landing/ui/contacts/`
 
-| Компонент | Назначение |
-|-----------|------------|
-| `contacts.tsx` | Секция контактов |
-| `contact-form.tsx` | Форма заявки |
-| `map.tsx` | Яндекс.Карта |
+| Компонент          | Назначение            |
+| ------------------ | --------------------- |
+| `contacts.tsx`     | Секция контактов      |
+| `contact-form.tsx` | Форма заявки          |
+| `map.tsx`          | Яндекс.Карта          |
 | `skeleton-map.tsx` | Skeleton при загрузке |
-| `footer.tsx` | Подвал сайта |
+| `footer.tsx`       | Подвал сайта          |
 
 ---
 
@@ -117,9 +117,9 @@
 
 **Путь:** `src/pages/landing/ui/`
 
-| Компонент | Назначение |
-|-----------|------------|
-| `main.tsx` | Главный компонент сборки секций |
+| Компонент               | Назначение                        |
+| ----------------------- | --------------------------------- |
+| `main.tsx`              | Главный компонент сборки секций   |
 | `messengers-dialog.tsx` | Модальное окно выбора мессенджера |
 
 ---
@@ -128,21 +128,21 @@
 
 **Путь:** `src/shared/ui/`
 
-| Компонент | Назначение |
-|-----------|------------|
-| `button.tsx` | Стилизованная кнопка |
-| `input.tsx` | Поле ввода |
-| `textarea.tsx` | Текстовое поле |
-| `label.tsx` | Метка |
-| `dialog.tsx` | Модальное окно |
-| `hover-card.tsx` | Всплывающая карточка |
-| `navigation-menu.tsx` | Навигационное меню |
-| `select.tsx` | Select dropdown |
-| `sheet.tsx` | Боковая панель |
-| `pagination.tsx` | Пагинация |
-| `breadcrumb.tsx` | Хлебные крошки |
-| `divider.tsx` | Разделитель |
-| `skeleton.tsx` | Skeleton loader |
+| Компонент             | Назначение           |
+| --------------------- | -------------------- |
+| `button.tsx`          | Стилизованная кнопка |
+| `input.tsx`           | Поле ввода           |
+| `textarea.tsx`        | Текстовое поле       |
+| `label.tsx`           | Метка                |
+| `dialog.tsx`          | Модальное окно       |
+| `hover-card.tsx`      | Всплывающая карточка |
+| `navigation-menu.tsx` | Навигационное меню   |
+| `select.tsx`          | Select dropdown      |
+| `sheet.tsx`           | Боковая панель       |
+| `pagination.tsx`      | Пагинация            |
+| `breadcrumb.tsx`      | Хлебные крошки       |
+| `divider.tsx`         | Разделитель          |
+| `skeleton.tsx`        | Skeleton loader      |
 
 ---
 
@@ -150,10 +150,10 @@
 
 **Путь:** `src/pages/landing/lib/`
 
-| Хук | Назначение |
-|-----|------------|
-| `use-active-section` | Отслеживание видимой секции при скролле |
-| `use-contact-form` | Логика формы обратной связи с EmailJS |
+| Хук                    | Назначение                              |
+| ---------------------- | --------------------------------------- |
+| `use-active-section`   | Отслеживание видимой секции при скролле |
+| `use-contact-form`     | Логика формы обратной связи с EmailJS   |
 | `use-scrolled-display` | Анимация появления при скролле (header) |
 
 ---
@@ -163,12 +163,13 @@
 **Путь:** `src/pages/landing/config/`
 
 | Файл | Содержимое |
-|------|------------|
-| `hero-data.ts` 
-| `services-data.ts` 
-| `header-data.ts` 
-| `contact-data.ts` 
-| `examples-data.ts` 
-| `reviews-data.ts` 
-| `why-we-data.ts` 
-| `messengers-dialog-data.ts` 
+| ---- | ---------- |
+
+| `hero-data.ts`
+| `services-data.ts`
+| `header-data.ts`
+| `contact-data.ts`
+| `examples-data.ts`
+| `reviews-data.ts`
+| `why-we-data.ts`
+| `messengers-dialog-data.ts`

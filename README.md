@@ -35,15 +35,15 @@ pnpm start
 
 ## Основные команды
 
-| Команда | Описание |
-|---------|----------|
-| `pnpm dev` | Dev-сервер на http://localhost:3000 |
-| `pnpm build` | Production сборка |
-| `pnpm lint` | Проверка ESLint |
-| `pnpm format` | Форматирование Prettier |
-| `pnpm test` | Unit-тесты (Jest) |
-| `pnpm test:pw` | E2E/визуальные тесты (Playwright) |
-| `pnpm validate` | Полная проверка проекта |
+| Команда         | Описание                            |
+| --------------- | ----------------------------------- |
+| `pnpm dev`      | Dev-сервер на http://localhost:3000 |
+| `pnpm build`    | Production сборка                   |
+| `pnpm lint`     | Проверка ESLint                     |
+| `pnpm format`   | Форматирование Prettier             |
+| `pnpm test`     | Unit-тесты (Jest)                   |
+| `pnpm test:pw`  | E2E/визуальные тесты (Playwright)   |
+| `pnpm validate` | Полная проверка проекта             |
 
 ## Документация
 
