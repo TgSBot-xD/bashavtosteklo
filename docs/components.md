@@ -162,14 +162,13 @@
 
 **Путь:** `src/pages/landing/config/`
 
-| Файл | Содержимое |
-| ---- | ---------- |
-
-| `hero-data.ts`
-| `services-data.ts`
-| `header-data.ts`
-| `contact-data.ts`
-| `examples-data.ts`
-| `reviews-data.ts`
-| `why-we-data.ts`
-| `messengers-dialog-data.ts`
+| Файл                        | Содержимое                                    |
+| --------------------------- | --------------------------------------------- |
+| `hero-data.ts`              | Breadcrumbs, highlights, secondaryInfo, perks |
+| `services-data.ts`          | Карточки 6 услуг                              |
+| `header-data.ts`            | Пункты навигации                              |
+| `contact-data.ts`           | Контактная информация, опции услуг для формы  |
+| `examples-data.ts`          | Примеры работ с изображениями                 |
+| `reviews-data.ts`           | Отзывы клиентов                               |
+| `why-we-data.ts`            | Преимущества компании, фичи                   |
+| `messengers-dialog-data.ts` | Ссылки на мессенджеры                         |
