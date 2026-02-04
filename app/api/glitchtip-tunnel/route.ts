@@ -16,6 +16,11 @@ function parseDsn(dsn: string) {
 export async function POST(request: NextRequest) {
   const dsn = process.env.SENTRY_DSN || process.env.NEXT_PUBLIC_SENTRY_DSN;
 
+  const contentLength = request.headers.get('content-length');
+  if (contentLength && parseInt(contentLength) > 50000) {
+    return NextResponse.json({ error: 'Payload too large' }, { status: 413 });
+  }
+
   if (!dsn) {
     return NextResponse.json({ error: 'DSN not configured' }, { status: 500 });
   }

@@ -1,6 +1,6 @@
 'use client';
 
-import { Suspense } from 'react';
+import React, { Suspense } from 'react';
 
 import { ContactForm } from './contact-form';
 import { ContactMap } from './map';
