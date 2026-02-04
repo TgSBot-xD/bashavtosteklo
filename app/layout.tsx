@@ -1,8 +1,10 @@
 import { type Metadata } from 'next';
+
 import favIcon from '../public/favicon.ico';
 
 import './globals.css';
 
+import { SentryProvider } from './_config/sentry-provider';
 import { ThemeProvider } from './_config/theme-provider';
 
 const keywordsMetadata = [
@@ -37,7 +39,6 @@ export const metadata: Metadata = {
     telephone: true,
   },
   metadataBase: new URL('https://башавтостекло.рф'),
-  /// TODO [BAS-4]: Проверить нужно ли менять на продакшн сборке
   alternates: {
     canonical: '/',
     languages: {
@@ -92,14 +93,16 @@ export default function RootLayout({
         <link rel="icon" href={favIcon.src} sizes="any" />
       </head>
       <body className="dark:bg-background font-sans">
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          {children}
-        </ThemeProvider>
+        <SentryProvider>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            {children}
+          </ThemeProvider>
+        </SentryProvider>
       </body>
     </html>
   );

@@ -1,4 +1,5 @@
 import emailjs from '@emailjs/browser';
+import * as Sentry from '@sentry/nextjs';
 import { useMetrica } from 'next-yandex-metrica';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
@@ -44,9 +45,13 @@ export function useContactForm({ defaultService }: UseContactFormOptions) {
       setSubmitStatus('success');
       reachGoal('form_submit_success', { service: data.service });
       form.reset();
-    } catch {
+    } catch (error) {
       setSubmitStatus('error');
       reachGoal('form_submit_error');
+      Sentry.captureException(error, {
+        tags: { component: 'ContactForm', action: 'emailSubmit' },
+        extra: { service: data.service },
+      });
     } finally {
       setIsSubmitting(false);
     }
