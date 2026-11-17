@@ -1,6 +1,8 @@
+export const dynamic = 'force-static';
 # robots.txt for башавтостекло.рф
 User-agent: *
 Allow: /
+
 
 # Sitemap
 Sitemap: https://башавтостекло.рф/sitemap.xml

@@ -1,0 +1,11 @@
+export default function sitemap() {
+  return [
+    {
+      url: 'https://башавтостекло.рф', // Замените на ваш реальный домен
+      lastModified: new Date(),
+      changeFrequency: 'yearly',
+      priority: 1,
+    },
+    // Добавьте сюда другие страницы вашего сайта
+  ]
+}

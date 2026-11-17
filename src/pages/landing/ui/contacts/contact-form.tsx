@@ -43,7 +43,7 @@ export function ContactForm() {
             id="formName"
             type="text"
             autoComplete="name"
-            placeholder="Например, Данил"
+            placeholder="Например, Максим"
             aria-invalid={errors.name ? 'true' : 'false'}
             {...register('name', {
               required: 'Введите имя',

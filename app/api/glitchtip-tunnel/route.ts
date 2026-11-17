@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 
+export const dynamic = 'force-static';
+
 function parseDsn(dsn: string) {
   try {
     const url = new URL(dsn);

@@ -39,7 +39,9 @@ export function useContactForm({ defaultService }: UseContactFormOptions) {
           name: data.name,
           message: `Телефон: +7 ${data.phone}\nУслуга: ${data.service}\nКомментарий: ${data.comment || 'Не указан'}`,
         },
-        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY ?? '',
+        {
+          publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY ?? '',
+        },
       );
 
       setSubmitStatus('success');

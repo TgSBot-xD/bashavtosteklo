@@ -16,7 +16,7 @@ export const messengers = [
   {
     id: 'max',
     name: 'MAX',
-    href: `https://max.ru/call/${PHONE_NUMBER}`,
+    href: `https://max.ru/u/f9LHodD0cOLQytlczxSzg6n-YrubJT-Ih5ZjFZKxIAPdnOllGUHI3ZcJF_k`,
     color: 'bg-purple-500/80 hover:bg-purple-600/80',
   },
 ] as const;
