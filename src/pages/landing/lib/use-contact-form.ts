@@ -25,19 +25,22 @@ export function useContactForm({ defaultService }: UseContactFormOptions) {
       comment: '',
     },
   });
-
   const onSubmit = async (data: ContactFormData) => {
     setIsSubmitting(true);
     setSubmitStatus('idle');
+
+    const cleanPhone = data.phone.replace(/\D/g, '');
 
     try {
       await emailjs.send(
         process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID ?? '',
         process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID ?? '',
         {
-          title: data.service,
-          name: data.name,
-          message: `Телефон: +7 ${data.phone}\nУслуга: ${data.service}\nКомментарий: ${data.comment || 'Не указан'}`,
+          name: data.name.trim(),
+          phone: `+7 ${data.phone}`,
+          phone_raw: `+7${cleanPhone}`,
+          service: data.service,
+          comment: data.comment?.trim() || 'Не указан',
         },
         {
           publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY ?? '',

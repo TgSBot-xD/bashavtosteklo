@@ -31,11 +31,6 @@ function renderServicesList() {
               <span className="text-foreground/80 text-sm">{label[1]}</span>
             </div>
           </div>
-
-          <div className="flex flex-row">
-            {/* Нижняя часть секции услуг */}
-            <span className="text-foreground/80 flex text-xs lg:text-sm">Подробнее</span>
-          </div>
         </div>
       </div>
     );

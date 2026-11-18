@@ -40,11 +40,11 @@ export function Header() {
           >
             <ButtonLink
               variant="link"
-              href="tel:+79272365108"
+              href="tel:+79272361784"
               className="dark:text-foreground/80 text-foreground/80 hover:ring-foreground/20 hidden hover:no-underline hover:ring lg:flex xl:text-base dark:hover:ring-0"
               onClick={() => reachGoal('phone_click', { location: 'header' })}
             >
-              +7 (927) 236 51 08
+              +7 (927) 236 17 84
             </ButtonLink>
             <ButtonLink
               href="#form"

@@ -41,7 +41,7 @@ export function MessengersDialog() {
                 key={id}
                 href={href}
                 rel="noopener noreferrer"
-                className={`${color} text-foreground flex w-full items-center justify-center rounded-lg px-4 py-3 text-center font-medium transition-colors md:w-1/3`}
+                className={`${color} text-foreground flex w-full items-center justify-center rounded-lg px-4 py-3 text-center font-medium transition-colors md:flex-1`}
                 onClick={() => handleMessengerClick(id)}
               >
                 {name}

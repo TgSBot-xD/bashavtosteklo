@@ -26,7 +26,7 @@ export function HeroContent() {
         <div className="flex flex-col items-center gap-6 md:flex-row">
           <div className="flex flex-row items-center gap-12 md:gap-6">
             <ButtonLink
-              href="tel:+79272365108"
+              href="tel:+79272361784"
               variant="default"
               className="text-background h-max w-max cursor-alias rounded-full py-3 text-base hover:saturate-150 md:text-base"
             >
